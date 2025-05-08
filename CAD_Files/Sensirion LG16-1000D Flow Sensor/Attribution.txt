@@ -1,0 +1,3 @@
+Model for Arduino Nano was downloaded from https://grabcad.com/library/arduino-nano--1 . I thank Andrew_Whitham the creator.
+Model for Sensirion LG16-1000D was download from the Sensirion Website: https://sensirion.com/products/catalog/LG16-1000D 
+STEP File Link: https://sensirion.com/media/documents/C2722CE1/6165A788/Sensirion_Liquid_Flow_Software_LG16-0431-1000-2000_CAD-model_D1.step

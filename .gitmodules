@@ -1,0 +1,6 @@
+[submodule "ivPID"]
+	path = ivPID
+	url = https://github.com/kanishkasthana/ivPID
+[submodule "arduino-liquid-flow-snippets"]
+	path = arduino-liquid-flow-snippets
+	url = https://github.com/kanishkasthana/arduino-liquid-flow-snippets.git

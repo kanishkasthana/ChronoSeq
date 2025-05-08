@@ -1,0 +1,3 @@
+These models were created by modifying the original files. These original files were designed in collaboration with Scott McAvoy at Digital Media Lab @ UCSD Main Library
+Also want to thank Scott for introducing me (Kanishk) to the world of 3D Printing and CAD modelling and for helping me get started.
+
