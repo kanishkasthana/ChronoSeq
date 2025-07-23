@@ -1,0 +1,30 @@
+File Name,Kanishk_2Sample_HPRT1_only.pcrd,,,,,,,,,,
+Created By User,admin,,,,,,,,,,
+Notes,,,,,,,,,,,
+ID,,,,,,,,,,,
+Run Started,07/23/2025 21:46:13 UTC,,,,,,,,,,
+Run Ended,07/24/2025 00:59:48 UTC,,,,,,,,,,
+Sample Vol,20,,,,,,,,,,
+Lid Temp,105,,,,,,,,,,
+Protocol File Name,Kanishk_1_STEP_Reverse_Transcription_PCR.prcl,,,,,,,,,,
+Plate Setup File Name,Kanishk_K562_Costimulation_LPS_Two_Samp_HPRT1_only.pltd,,,,,,,,,,
+Base Serial Number,795BR04480,,,,,,,,,,
+Optical Head Serial Number,795BR04480,,,,,,,,,,
+CFX Maestro Version,5.3.022.1030. ,,,,,,,,,,
+,,,,,,,,,,,
+Well group,All Wells,,,,,,,,,,
+Amplification step,4,,,,,,,,,,
+Melt step,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Well,Fluor,Target,Content,Replicate,Sample,Biological Set Name,Well Note,Cq,Starting Quantity (SQ),Cq Mean,Cq Std. Dev
+A01,SYBR,,Unkn,,HPRT1,2_Hour_1,REP1,NaN,NaN,0,0
+A02,SYBR,,Unkn,,HPRT1,2_Hour_1,REP2,NaN,NaN,0,0
+B01,SYBR,,Unkn,,HPRT1,0_Hour_1,REP1,NaN,NaN,0,0
+B02,SYBR,,Unkn,,HPRT1,0_Hour_1,REP2,NaN,NaN,0,0
+C01,SYBR,,Unkn,,HPRT1,No_Stim_1,REP1,32.4802622501,NaN,32.4802622501,0
+C02,SYBR,,Unkn,,HPRT1,No_Stim_1,REP2,32.2888005390983,NaN,32.2888005390983,0
+D01,SYBR,,Unkn,,HPRT1,TNFalpha_Stim_1,REP1,31.8818290569245,NaN,31.8818290569245,0
+D02,SYBR,,Unkn,,HPRT1,TNFalpha_Stim_1,REP2,31.6821886317231,NaN,31.6821886317231,0
+E01,SYBR,,Unkn,,HPRT1,Blank,REP1,NaN,NaN,0,0
+E02,SYBR,,Unkn,,HPRT1,Blank,REP2,NaN,NaN,0,0
