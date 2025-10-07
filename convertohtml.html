@@ -15201,7 +15201,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=46313d68">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d0388350">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15576,7 +15576,7 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ad0840d6">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=309066d4">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15590,8 +15590,8 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
     <span class="sd">"""</span>
 <span class="sd">    Generate a professional HTML site map listing all .html files, categorized by filename patterns and directory structure.</span>
 <span class="sd">    Includes "Main Hardware Pages", "Data Processing and Analysis" (with repo links), and other sections.</span>
-<span class="sd">    - "instructions*" files under "ChronoSeq Hardware Assembly".</span>
-<span class="sd">    - "protocol*" files under "ChronoSeq Protocols".</span>
+<span class="sd">    - "instructions*" files under "ChronoSeq Hardware Assembly" (with deprecated subsection).</span>
+<span class="sd">    - "protocol*" files under "ChronoSeq Protocols" (with deprecated subsection).</span>
 <span class="sd">    - Others under "Other Notebooks" (hierarchical by dir, including qPCR_validation_files and _files folders).</span>
 <span class="sd">    Ignores only ivPID directory and specified basenames: ChronoSeq_Overview, convertToHTML, index, removeLinksFromNBConvertHTML, sitemap.</span>
 <span class="sd">    </span>
@@ -15602,16 +15602,36 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
 <span class="sd">    """</span>
     <span class="n">root_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span>
     
-    <span class="c1"># Ignored filenames (case-insensitive, without .html extension) - convertToHTML is explicitly here</span>
+    <span class="c1"># Ignored filenames (case-insensitive, without .html extension)</span>
     <span class="n">ignored_basenames</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'chronoseq_overview'</span><span class="p">,</span> <span class="s1">'convertohtml'</span><span class="p">,</span> <span class="s1">'index'</span><span class="p">,</span> 
         <span class="s1">'removelinksfromnbconverthtml'</span><span class="p">,</span> <span class="s1">'sitemap'</span>
     <span class="p">}</span>
     
+    <span class="c1"># Deprecated hardware files (exact filenames without .html extension)</span>
+    <span class="n">deprecated_hardware_files</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'instructions_for_assembling_valve_controller'</span><span class="p">,</span>
+        <span class="s1">'instructions_for_assembling_valve_controller_esp32'</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Deprecated protocol files (exact filenames without .html extension)</span>
+    <span class="n">deprecated_protocol_files</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'protocol_and_software_for_running_chronoseq_device-originaldevice'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_chronoseqv3_and_dropseq_bead_modification_1mm'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_chronoseqv4_bead_modification_for_bulk_time_series'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_exo1_predigestion_for_chronoseqv2_and_dropseq_beads'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_preparing_cells'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_preparing_cells_experimentalusingbsa'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_qpcr_checking_of_k562_costimulation'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification'</span><span class="p">,</span>
+        <span class="s1">'protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version'</span>
+    <span class="p">}</span>
+    
     <span class="c1"># Manual main hardware links (adjust paths if not in root)</span>
     <span class="n">main_hardware_links</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'assembly'</span><span class="p">:</span> <span class="s1">'instructions_for_device_assembly_and_setup.html'</span><span class="p">,</span>
-        <span class="s1">'operation'</span><span class="p">:</span> <span class="s1">'protocol_and_software_for_running_chronoseq_device.html'</span>  <span class="c1"># Corrected for operation page</span>
+        <span class="s1">'operation'</span><span class="p">:</span> <span class="s1">'protocol_and_software_for_running_chronoseq_device.html'</span>
     <span class="p">}</span>
     
     <span class="c1"># ChronoSeq repo URL for linking all mentions</span>
@@ -15620,7 +15640,9 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
     <span class="c1"># Collect all .html files recursively, excluding ignored</span>
     <span class="n">html_files</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">hardware_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">deprecated_hardware_files_found</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Deprecated hardware</span>
     <span class="n">protocol_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">deprecated_protocol_files_found</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Deprecated protocols</span>
     <span class="n">all_found</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># For debug</span>
     <span class="n">qpcr_files</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Specific for qPCR_validation_files debug</span>
     
@@ -15642,7 +15664,7 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
                 <span class="k">if</span> <span class="n">basename_stripped</span> <span class="ow">in</span> <span class="n">ignored_basenames</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
                         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Ignored (basename match): </span><span class="si">{</span><span class="n">full_rel_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-                    <span class="k">continue</span>  <span class="c1"># Skip ignored files - this catches convertToHTML.html</span>
+                    <span class="k">continue</span>  <span class="c1"># Skip ignored files</span>
                 
                 <span class="n">all_found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
                 <span class="n">basename</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># For pattern matching</span>
@@ -15652,15 +15674,27 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
                     <span class="n">qpcr_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
                 
                 <span class="k">if</span> <span class="n">basename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'instructions'</span><span class="p">):</span>
-                    <span class="n">hardware_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
+                    <span class="c1"># Check if it's a deprecated hardware file</span>
+                    <span class="k">if</span> <span class="n">basename_stripped</span> <span class="ow">in</span> <span class="n">deprecated_hardware_files</span><span class="p">:</span>
+                        <span class="n">deprecated_hardware_files_found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Categorized as deprecated hardware: </span><span class="si">{</span><span class="n">full_rel_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">hardware_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
                 <span class="k">elif</span> <span class="n">basename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'protocol'</span><span class="p">):</span>
-                    <span class="n">protocol_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
+                    <span class="c1"># Check if it's a deprecated protocol file</span>
+                    <span class="k">if</span> <span class="n">basename_stripped</span> <span class="ow">in</span> <span class="n">deprecated_protocol_files</span><span class="p">:</span>
+                        <span class="n">deprecated_protocol_files_found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Categorized as deprecated protocol: </span><span class="si">{</span><span class="n">full_rel_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">protocol_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="c1"># For others, group by directory for hierarchy (use / for key)</span>
                     <span class="n">file_dir</span> <span class="o">=</span> <span class="n">rel_root</span> <span class="k">if</span> <span class="n">rel_root</span> <span class="o">!=</span> <span class="s1">'.'</span> <span class="k">else</span> <span class="s1">''</span>
                     <span class="k">if</span> <span class="n">file_dir</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">html_files</span><span class="p">:</span>
                         <span class="n">html_files</span><span class="p">[</span><span class="n">file_dir</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-                    <span class="n">html_files</span><span class="p">[</span><span class="n">file_dir</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>  <span class="c1"># Fixed: Use file_dir, not dir_key (undefined)</span>
+                    <span class="n">html_files</span><span class="p">[</span><span class="n">file_dir</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
     
     <span class="c1"># Debug output</span>
     <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
@@ -15668,25 +15702,31 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
         <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">all_found</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Hardware files (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Deprecated hardware files (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">deprecated_hardware_files_found</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">deprecated_hardware_files_found</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Protocol files (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Deprecated protocol files (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">deprecated_protocol_files_found</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">deprecated_protocol_files_found</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Other files by dir: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> directories"</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">dir_key</span><span class="p">,</span> <span class="n">flist</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-            <span class="k">if</span> <span class="s1">'_files'</span> <span class="ow">in</span> <span class="n">dir_key</span><span class="p">:</span>  <span class="c1"># Highlight _files for verification</span>
+            <span class="k">if</span> <span class="s1">'_files'</span> <span class="ow">in</span> <span class="n">dir_key</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">dir_key</span><span class="si">}</span><span class="s2"> (from _files folder): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span><span class="si">}</span><span class="s2"> files - </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">dir_key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span><span class="si">}</span><span class="s2"> files - </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">flist</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>  <span class="c1"># Truncate long lists</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">dir_key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span><span class="si">}</span><span class="s2"> files - </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">flist</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">qpcr_files</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">qPCR_validation_files specific files (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">qpcr_files</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">qpcr_files</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">qPCR_validation_files: No .html files found (check if only .ipynb or excluded). Run 'find qPCR_validation_files -name </span><span class="se">\"</span><span class="s2">*.html</span><span class="se">\"</span><span class="s2">' to verify."</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">qPCR_validation_files: No .html files found (check if only .ipynb or excluded)."</span><span class="p">)</span>
     
     <span class="c1"># Sort lists (ensure / paths)</span>
     <span class="n">hardware_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span>
+    <span class="n">deprecated_hardware_files_found</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">deprecated_hardware_files_found</span><span class="p">)</span>
     <span class="n">protocol_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span>
+    <span class="n">deprecated_protocol_files_found</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">deprecated_protocol_files_found</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">dir_key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
         <span class="n">html_files</span><span class="p">[</span><span class="n">dir_key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">[</span><span class="n">dir_key</span><span class="p">])</span>
     
-    <span class="n">total_files</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">files_list</span><span class="p">)</span> <span class="k">for</span> <span class="n">files_list</span> <span class="ow">in</span> <span class="n">html_files</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="n">total_files</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">deprecated_hardware_files_found</span><span class="p">)</span> <span class="o">+</span> 
+                   <span class="nb">len</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">deprecated_protocol_files_found</span><span class="p">)</span> <span class="o">+</span> 
+                   <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">files_list</span><span class="p">)</span> <span class="k">for</span> <span class="n">files_list</span> <span class="ow">in</span> <span class="n">html_files</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
     
     <span class="k">if</span> <span class="n">total_files</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"No .html files found in the directory (excluding ignored paths)."</span><span class="p">)</span>
@@ -15701,7 +15741,7 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
         <span class="s1">'    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;'</span><span class="p">,</span>
         <span class="s1">'    &lt;title&gt;ChronoSeq Links&lt;/title&gt;'</span><span class="p">,</span>
         <span class="s1">'    &lt;style&gt;'</span><span class="p">,</span>
-        <span class="s1">'        :root { --primary-color: #2c5aa0; --secondary-color: #4a90e2; --accent-color: #7ed321; --text-color: #333; --bg-color: #f8f9fa; --card-bg: #ffffff; --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); --border-radius: 8px; --transition: all 0.3s ease; }'</span><span class="p">,</span>
+        <span class="s1">'        :root { --primary-color: #2c5aa0; --secondary-color: #4a90e2; --accent-color: #7ed321; --text-color: #333; --bg-color: #f8f9fa; --card-bg: #ffffff; --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); --border-radius: 8px; --transition: all 0.3s ease; --deprecated-color: #dc3545; }'</span><span class="p">,</span>
         <span class="s1">'        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text-color); background: linear-gradient(135deg, var(--bg-color) 0%, #e3f2fd 100%); margin: 0; padding: 20px; }'</span><span class="p">,</span>
         <span class="s1">'        .container { max-width: 1200px; margin: 0 auto; }'</span><span class="p">,</span>
         <span class="s1">'        h1 { text-align: center; color: var(--primary-color); font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }'</span><span class="p">,</span>
@@ -15711,12 +15751,17 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
         <span class="s1">'        .section:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); }'</span><span class="p">,</span>
         <span class="s1">'        h2 { color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 20px; font-size: 1.8rem; }'</span><span class="p">,</span>
         <span class="s1">'        h3 { color: var(--secondary-color); margin: 20px 0 15px 0; font-size: 1.3rem; border-left: 4px solid var(--accent-color); padding-left: 10px; }'</span><span class="p">,</span>
+        <span class="s1">'        .deprecated h3 { color: var(--deprecated-color); border-left-color: var(--deprecated-color); }'</span><span class="p">,</span>
+        <span class="s1">'        .deprecated-notice { background: rgba(220, 53, 69, 0.1); padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 4px solid var(--deprecated-color); }'</span><span class="p">,</span>
         <span class="s1">'        ul { list-style: none; padding-left: 0; }'</span><span class="p">,</span>
         <span class="s1">'        li { margin: 12px 0; position: relative; padding-left: 25px; }'</span><span class="p">,</span>
         <span class="s1">'        li::before { content: "▶"; color: var(--accent-color); font-weight: bold; position: absolute; left: 0; }'</span><span class="p">,</span>
+        <span class="s1">'        .deprecated li::before { color: var(--deprecated-color); }'</span><span class="p">,</span>
         <span class="s1">'        a { text-decoration: none; color: var(--primary-color); font-weight: 500; padding: 8px 12px; background: rgba(74, 144, 226, 0.1); border-radius: 4px; display: inline-block; transition: var(--transition); }'</span><span class="p">,</span>
         <span class="s1">'        a:hover { background: var(--secondary-color); color: white; transform: scale(1.05); }'</span><span class="p">,</span>
         <span class="s1">'        a:focus { outline: 2px solid var(--accent-color); outline-offset: 2px; }'</span><span class="p">,</span>
+        <span class="s1">'        .deprecated a { background: rgba(220, 53, 69, 0.1); color: var(--deprecated-color); }'</span><span class="p">,</span>
+        <span class="s1">'        .deprecated a:hover { background: var(--deprecated-color); color: white; }'</span><span class="p">,</span>
         <span class="s1">'        .intro { text-align: center; background: rgba(126, 211, 33, 0.1); padding: 20px; border-radius: var(--border-radius); margin-bottom: 30px; font-style: italic; color: #555; }'</span><span class="p">,</span>
         <span class="s1">'        .analysis-desc { margin: 10px 0; color: var(--text-color); }'</span><span class="p">,</span>
         <span class="s1">'        .analysis-desc p { margin-bottom: 15px; }'</span><span class="p">,</span>
@@ -15744,7 +15789,7 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
         <span class="s1">'        &lt;/div&gt;'</span>
     <span class="p">])</span>
     
-    <span class="c1"># Updated Section: Data Processing and Analysis (matching provided Markdown in HTML)</span>
+    <span class="c1"># Section: Data Processing and Analysis</span>
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
         <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
         <span class="s1">'            &lt;h2&gt;Data Processing and Analysis&lt;/h2&gt;'</span><span class="p">,</span>
@@ -15758,29 +15803,75 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
         <span class="s1">'        &lt;/div&gt;'</span>
     <span class="p">])</span>
     
-    <span class="c1"># Section: ChronoSeq Hardware Assembly (flat)</span>
-    <span class="k">if</span> <span class="n">hardware_files</span><span class="p">:</span>
+    <span class="c1"># Section: ChronoSeq Hardware Assembly (with deprecated subsection)</span>
+    <span class="k">if</span> <span class="n">hardware_files</span> <span class="ow">or</span> <span class="n">deprecated_hardware_files_found</span><span class="p">:</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
             <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'            &lt;h2&gt;&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; Hardware Assembly&lt;/h2&gt;'</span><span class="p">,</span>
-            <span class="s1">'            &lt;ul&gt;'</span>
+            <span class="sa">f</span><span class="s1">'            &lt;h2&gt;&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; Hardware Assembly&lt;/h2&gt;'</span>
         <span class="p">])</span>
-        <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">hardware_files</span><span class="p">:</span>
-            <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>  <span class="c1"># Decode %20 for display</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
-        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">,</span> <span class="s1">'        &lt;/div&gt;'</span><span class="p">])</span>
+        
+        <span class="c1"># Current hardware files</span>
+        <span class="k">if</span> <span class="n">hardware_files</span><span class="p">:</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;ul&gt;'</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">hardware_files</span><span class="p">:</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>
+                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">)</span>
+        
+        <span class="c1"># Deprecated hardware subsection</span>
+        <span class="k">if</span> <span class="n">deprecated_hardware_files_found</span><span class="p">:</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="s1">'            &lt;div class="deprecated"&gt;'</span><span class="p">,</span>
+                <span class="s1">'                &lt;h3&gt;Deprecated&lt;/h3&gt;'</span><span class="p">,</span>
+                <span class="s1">'                &lt;div class="deprecated-notice"&gt;'</span><span class="p">,</span>
+                <span class="s1">'                    &lt;strong&gt;Note:&lt;/strong&gt; The following hardware instructions are deprecated and may not work with the current version of ChronoSeq.'</span><span class="p">,</span>
+                <span class="s1">'                &lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'                &lt;ul&gt;'</span>
+            <span class="p">])</span>
+            <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">deprecated_hardware_files_found</span><span class="p">:</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>
+                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                    &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="s1">'                &lt;/ul&gt;'</span><span class="p">,</span>
+                <span class="s1">'            &lt;/div&gt;'</span>
+            <span class="p">])</span>
+        
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'        &lt;/div&gt;'</span><span class="p">)</span>
     
-    <span class="c1"># Section: ChronoSeq Protocols (flat)</span>
-    <span class="k">if</span> <span class="n">protocol_files</span><span class="p">:</span>
+    <span class="c1"># Section: ChronoSeq Protocols (with deprecated subsection)</span>
+    <span class="k">if</span> <span class="n">protocol_files</span> <span class="ow">or</span> <span class="n">deprecated_protocol_files_found</span><span class="p">:</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
             <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'            &lt;h2&gt;&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; Protocols&lt;/h2&gt;'</span><span class="p">,</span>
-            <span class="s1">'            &lt;ul&gt;'</span>
+            <span class="sa">f</span><span class="s1">'            &lt;h2&gt;&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; Protocols&lt;/h2&gt;'</span>
         <span class="p">])</span>
-        <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">protocol_files</span><span class="p">:</span>
-            <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>  <span class="c1"># Decode %20</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
-        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">,</span> <span class="s1">'        &lt;/div&gt;'</span><span class="p">])</span>
+        
+        <span class="c1"># Current protocol files</span>
+        <span class="k">if</span> <span class="n">protocol_files</span><span class="p">:</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;ul&gt;'</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">protocol_files</span><span class="p">:</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>
+                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">)</span>
+        
+        <span class="c1"># Deprecated protocol subsection</span>
+        <span class="k">if</span> <span class="n">deprecated_protocol_files_found</span><span class="p">:</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="s1">'            &lt;div class="deprecated"&gt;'</span><span class="p">,</span>
+                <span class="s1">'                &lt;h3&gt;Deprecated&lt;/h3&gt;'</span><span class="p">,</span>
+                <span class="s1">'                &lt;div class="deprecated-notice"&gt;'</span><span class="p">,</span>
+                <span class="s1">'                    &lt;strong&gt;Note:&lt;/strong&gt; The following protocols are deprecated and may not work with the current version of ChronoSeq.'</span><span class="p">,</span>
+                <span class="s1">'                &lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'                &lt;ul&gt;'</span>
+            <span class="p">])</span>
+            <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">deprecated_protocol_files_found</span><span class="p">:</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>
+                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                    &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="s1">'                &lt;/ul&gt;'</span><span class="p">,</span>
+                <span class="s1">'            &lt;/div&gt;'</span>
+            <span class="p">])</span>
+        
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'        &lt;/div&gt;'</span><span class="p">)</span>
     
     <span class="c1"># Section: Other Notebooks (hierarchical by dir, with /)</span>
     <span class="k">if</span> <span class="n">html_files</span><span class="p">:</span>
@@ -15808,10 +15899,10 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
                 <span class="n">current_dir</span> <span class="o">=</span> <span class="n">dir_key</span>
             
             <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">html_files</span><span class="p">[</span><span class="n">dir_key</span><span class="p">]:</span>
-                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>  <span class="c1"># Decode %20 for readability</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>
                 <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
         
-        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">)</span>  <span class="c1"># Close final ul</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">)</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'        &lt;/div&gt;'</span><span class="p">)</span>
     
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
@@ -15826,8 +15917,9 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html_content</span><span class="p">))</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Generated professional sitemap.html with </span><span class="si">{</span><span class="n">total_files</span><span class="si">}</span><span class="s2"> HTML files at: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Hardware Assembly section includes </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">deprecated_hardware_files_found</span><span class="p">)</span><span class="si">}</span><span class="s2"> deprecated files."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Protocols section includes </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">deprecated_protocol_files_found</span><span class="p">)</span><span class="si">}</span><span class="s2"> deprecated files."</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Updated intro text and linked all 'ChronoSeq' mentions to https://github.com/kanishkasthana/ChronoSeq."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"convertToHTML.html excluded. Styling modern and responsive. _files scanned; qPCR_validation_files under 'Other Notebooks'."</span><span class="p">)</span>
 
 <span class="c1"># Example usage: Replace '.' with your directory path</span>
 <span class="n">directory</span> <span class="o">=</span> <span class="s1">'.'</span>  <span class="c1"># Current directory; change as needed</span>
@@ -15845,8 +15937,9 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Generated professional sitemap.html with 40 HTML files at: C:\Users\ChronoSeq\ChronoSeq\sitemap.html
+Hardware Assembly section includes 2 deprecated files.
+Protocols section includes 10 deprecated files.
 Updated intro text and linked all 'ChronoSeq' mentions to https://github.com/kanishkasthana/ChronoSeq.
-convertToHTML.html excluded. Styling modern and responsive. _files scanned; qPCR_validation_files under 'Other Notebooks'.
 </pre>
 </div>
 </div>
