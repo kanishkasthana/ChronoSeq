@@ -1,5 +1,5 @@
 
-# Software and Protocols for ChronoSeq
+# Software and Protocols for [ChronoSeq](https://github.com/kanishkasthana/ChronoSeq)
 
 ### Getting Started with Software 
 + Install [Git X86-64-Bit for Windows](https://git-scm.com/download/win) and [Anaconda X86-64-Bit for Windows](https://www.anaconda.com/download), on your [Windows X86-64 Bit PC](Computer%20Selection.md).
@@ -17,8 +17,8 @@
 + The links to the notebooks below are intended to be opened using Jupyter. Click the image below to watch a video of the process.
 <br>[<img src="https://img.youtube.com/vi/qbhCONpUdx0/hqdefault.jpg">](https://www.youtube.com/watch?v=qbhCONpUdx0)
 
-### Overview of Technology and Workflow
-+ [This notebook](ChronoSeq_Overview.ipynb) provides an overview of ChronoSeq technology. 
+### Sitemap
++ [This website](https://kanishkasthana.github.io/ChronoSeq/sitemap.html) provides an overview of ChronoSeq repository. You click on and directly go the the relevant notebook with this. There are two main notebooks for Device assembly and Device operation as linked below. These notebooks should have the links to help you follow the correct instructions in the right order. Please read the disclaimer below before starting. 
 
 ### Device Assembly
 + See the [Device Assembly and Setup notebook](instructions_for_device_assembly_and_setup.ipynb) for a detailed description of how to set everything up.
@@ -63,8 +63,11 @@ Thank you for choosing our open source hardware, and we hope that you enjoy the 
 Best regards,
 <br>ChronoSeq Team:
 <br>Kanishk Asthana [kasthana@ucsd.edu](mailto:kasthana@ucsd.edu)
+<br>Alexander Jambor [ajambor@ucsd.edu](mailto:ajambor@ucsd.edu)
 <br>Wei Wang [wei-wang@ucsd.edu](mailto:wei-wang@ucsd.edu)
 
 # Data Processing and Analysis
 
-+ Check out the [ChronoSeq Tools repo](https://github.com/kanishkasthana/ChronoSeq-Tools) to help analyse your data.
++ Check out the [ChronoSeq-Tools repo](https://github.com/kanishkasthana/ChronoSeq-Tools) to help process your raw data.
++ Check out the [ChronoSeq-QC repo](https://github.com/kanishkasthana/ChronoSeq-QC) to see how the QC plots were generated.
++ Check out the [ChronoSeq-Analysis repo](https://github.com/anjambor/ChronoSeq-Analysis) to see how the ChronoSeq data was analysed. 
