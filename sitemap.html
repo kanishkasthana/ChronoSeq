@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoSeq Links</title>
+    <style>
+        :root { --primary-color: #2c5aa0; --secondary-color: #4a90e2; --accent-color: #7ed321; --text-color: #333; --bg-color: #f8f9fa; --card-bg: #ffffff; --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); --border-radius: 8px; --transition: all 0.3s ease; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text-color); background: linear-gradient(135deg, var(--bg-color) 0%, #e3f2fd 100%); margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { text-align: center; color: var(--primary-color); font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        .subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px; }
+        .total { text-align: center; background: var(--card-bg); padding: 10px; border-radius: var(--border-radius); box-shadow: var(--shadow); display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--secondary-color); }
+        .section { background: var(--card-bg); margin: 20px 0; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); transition: var(--transition); }
+        .section:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); }
+        h2 { color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 20px; font-size: 1.8rem; }
+        h3 { color: var(--secondary-color); margin: 20px 0 15px 0; font-size: 1.3rem; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+        ul { list-style: none; padding-left: 0; }
+        li { margin: 12px 0; position: relative; padding-left: 25px; }
+        li::before { content: "▶"; color: var(--accent-color); font-weight: bold; position: absolute; left: 0; }
+        a { text-decoration: none; color: var(--primary-color); font-weight: 500; padding: 8px 12px; background: rgba(74, 144, 226, 0.1); border-radius: 4px; display: inline-block; transition: var(--transition); }
+        a:hover { background: var(--secondary-color); color: white; transform: scale(1.05); }
+        a:focus { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+        .intro { text-align: center; background: rgba(126, 211, 33, 0.1); padding: 20px; border-radius: var(--border-radius); margin-bottom: 30px; font-style: italic; color: #555; }
+        @media (max-width: 768px) { body { padding: 10px; } h1 { font-size: 2rem; } .section { padding: 15px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ChronoSeq Links</h1>
+        <p class="subtitle">Explore the key resources and documentation for the ChronoSeq project</p>
+        <p class="total">Total: 41 pages</p>
+        <div class="intro">Navigate through hardware assembly, protocols, and analysis notebooks for single-cell RNA sequencing innovation.</div>
+        <div class="section">
+            <h2>Main Hardware Pages</h2>
+            <h3>Hardware Assembly</h3>
+            <ul><li><a href="instructions_for_device_assembly_and_setup.html">View Main Hardware Assembly Page</a></li></ul>
+            <h3>Hardware Operation</h3>
+            <ul><li><a href="protocol_and_software_for_running_chronoseq_device.html">View Main Hardware Operation Page</a></li></ul>
+        </div>
+        <div class="section">
+            <h2>ChronoSeq Hardware Assembly</h2>
+            <ul>
+                <li><a href="./instructions_for_assembling_sensirion_flow_sensor.html">instructions_for_assembling_sensirion_flow_sensor</a></li>
+                <li><a href="./instructions_for_assembling_valve_controller.html">instructions_for_assembling_valve_controller</a></li>
+                <li><a href="./instructions_for_assembling_valve_controllerV2.html">instructions_for_assembling_valve_controllerV2</a></li>
+                <li><a href="./instructions_for_assembling_valve_controller_ESP32.html">instructions_for_assembling_valve_controller_ESP32</a></li>
+                <li><a href="./instructions_for_assembling_vortex_relay_controller.html">instructions_for_assembling_vortex_relay_controller</a></li>
+                <li><a href="./instructions_for_assembling_xy_robot_and_ice_boxes.html">instructions_for_assembling_xy_robot_and_ice_boxes</a></li>
+                <li><a href="./instructions_for_assembling_xyz_robot.html">instructions_for_assembling_xyz_robot</a></li>
+                <li><a href="./instructions_for_device_assembly_and_setup.html">instructions_for_device_assembly_and_setup</a></li>
+                <li><a href="./instructions_for_setting_coordinates_for_xyz_robot.html">instructions_for_setting_coordinates_for_xyz_robot</a></li>
+                <li><a href="./instructions_for_setting_up_valves_tubing_and_reservoirs.html">instructions_for_setting_up_valves_tubing_and_reservoirs</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>ChronoSeq Protocols</h2>
+            <ul>
+                <li><a href="./protocol_and_software_for_running_chronoseq_device-OriginalDevice.html">protocol_and_software_for_running_chronoseq_device-OriginalDevice</a></li>
+                <li><a href="./protocol_and_software_for_running_chronoseq_device.html">protocol_and_software_for_running_chronoseq_device</a></li>
+                <li><a href="./protocol_for_aquapel_treatment_of_microfluidic_chips.html">protocol_for_aquapel_treatment_of_microfluidic_chips</a></li>
+                <li><a href="./protocol_for_bonding_pdms_chips_to_glass.html">protocol_for_bonding_pdms_chips_to_glass</a></li>
+                <li><a href="./protocol_for_bulk_rna_seq_library_prep.html">protocol_for_bulk_rna_seq_library_prep</a></li>
+                <li><a href="./protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um.html">protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um</a></li>
+                <li><a href="./protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM.html">protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM</a></li>
+                <li><a href="./protocol_for_chronoseqv4_bead_modification_for_bulk_time_series.html">protocol_for_chronoseqv4_bead_modification_for_bulk_time_series</a></li>
+                <li><a href="./protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads.html">protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads</a></li>
+                <li><a href="./protocol_for_making_mold_using_su8_photolithography.html">protocol_for_making_mold_using_su8_photolithography</a></li>
+                <li><a href="./protocol_for_pdms_molding.html">protocol_for_pdms_molding</a></li>
+                <li><a href="./protocol_for_preparing_3.33X_lysis_buffer_stock.html">protocol_for_preparing_3.33X_lysis_buffer_stock</a></li>
+                <li><a href="./protocol_for_preparing_cells.html">protocol_for_preparing_cells</a></li>
+                <li><a href="./protocol_for_preparing_cells_AdditionalFiltration.html">protocol_for_preparing_cells_AdditionalFiltration</a></li>
+                <li><a href="./protocol_for_preparing_cells_ExperimentalUsingBSA.html">protocol_for_preparing_cells_ExperimentalUsingBSA</a></li>
+                <li><a href="./protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol.html">protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol</a></li>
+                <li><a href="./protocol_for_qPCR_checking_of_K562_Costimulation.html">protocol_for_qPCR_checking_of_K562_Costimulation</a></li>
+                <li><a href="./protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device.html">protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device</a></li>
+                <li><a href="./protocol_for_qPCR_validation_of_chronoseq_results.html">protocol_for_qPCR_validation_of_chronoseq_results</a></li>
+                <li><a href="./protocol_for_recycling_beads.html">protocol_for_recycling_beads</a></li>
+                <li><a href="./protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification.html">protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification</a></li>
+                <li><a href="./protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification.html">protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification</a></li>
+                <li><a href="./protocol_for_tagmentation_with_KAPA_PCR.html">protocol_for_tagmentation_with_KAPA_PCR</a></li>
+                <li><a href="./protocol_library_preparation_for_dropseq_chronoseq_beads.html">protocol_library_preparation_for_dropseq_chronoseq_beads</a></li>
+                <li><a href="./protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version.html">protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Other Notebooks</h2>
+                <li><a href="./convertToHTML.html">convertToHTML</a></li>
+            <h3>CAD_Files > 3 Port Reservoir</h3>
+            <ul>
+                <li><a href="CAD_Files/3 Port Reservoir/Manufacturing Notes.html">Manufacturing Notes</a></li>
+            </ul>
+            <h3>CAD_Files > XY Robot > Attribution</h3>
+            <ul>
+                <li><a href="CAD_Files/XY Robot/Attribution/attribution_card.html">attribution_card</a></li>
+            </ul>
+            <h3>CAD_Files > XYZ Robot > Attribution</h3>
+            <ul>
+                <li><a href="CAD_Files/XYZ Robot/Attribution/attribution_card.html">attribution_card</a></li>
+            </ul>
+            <h3>qPCR_validation_files</h3>
+            <ul>
+                <li><a href="qPCR_validation_files/qPCR Analysis.html">qPCR Analysis</a></li>
+            </ul>
+            <h3>qPCR_validation_files > K562_Costimulation_2_Samples</h3>
+            <ul>
+                <li><a href="qPCR_validation_files/K562_Costimulation_2_Samples/qPCR_analysis_publication_quality_plots.html">qPCR_analysis_publication_quality_plots</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
