@@ -1,7 +1,7 @@
 
 # Software and Protocols for [ChronoSeq](https://github.com/kanishkasthana/ChronoSeq)
 
-### Sitemap
+### [Sitemap](https://kanishkasthana.github.io/ChronoSeq/sitemap.html)
 + [This website](https://kanishkasthana.github.io/ChronoSeq/sitemap.html) provides an overview of the ChronoSeq project. You can click on and directly go the the relevant notebooks or repositories. There are two main notebooks for Device assembly and Device operation as linked below. These notebooks should have the links to help you follow the correct instructions in the right order. Please read the disclaimer below before starting. 
 
 ### Getting Started with Software 
