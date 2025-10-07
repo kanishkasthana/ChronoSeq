@@ -1,6 +1,9 @@
 
 # Software and Protocols for [ChronoSeq](https://github.com/kanishkasthana/ChronoSeq)
 
+### Sitemap
++ [This website](https://kanishkasthana.github.io/ChronoSeq/sitemap.html) provides an overview of the ChronoSeq project. You can click on and directly go the the relevant notebooks or repositories. There are two main notebooks for Device assembly and Device operation as linked below. These notebooks should have the links to help you follow the correct instructions in the right order. Please read the disclaimer below before starting. 
+
 ### Getting Started with Software 
 + Install [Git X86-64-Bit for Windows](https://git-scm.com/download/win) and [Anaconda X86-64-Bit for Windows](https://www.anaconda.com/download), on your [Windows X86-64 Bit PC](Computer%20Selection.md).
 + Type "Git Bash" in the Search bar next to the Start Button. Using Git Bash clone this repository.
@@ -17,8 +20,6 @@
 + The links to the notebooks below are intended to be opened using Jupyter. Click the image below to watch a video of the process.
 <br>[<img src="https://img.youtube.com/vi/qbhCONpUdx0/hqdefault.jpg">](https://www.youtube.com/watch?v=qbhCONpUdx0)
 
-### Sitemap
-+ [This website](https://kanishkasthana.github.io/ChronoSeq/sitemap.html) provides an overview of ChronoSeq repository. You click on and directly go the the relevant notebook with this. There are two main notebooks for Device assembly and Device operation as linked below. These notebooks should have the links to help you follow the correct instructions in the right order. Please read the disclaimer below before starting. 
 
 ### Device Assembly
 + See the [Device Assembly and Setup notebook](instructions_for_device_assembly_and_setup.ipynb) for a detailed description of how to set everything up.
