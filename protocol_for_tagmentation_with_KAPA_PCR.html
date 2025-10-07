@@ -1,13 +1,9 @@
 <!DOCTYPE html>
+
 <html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-
-
-
-
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -57,9 +53,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-
-
-
 <style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
@@ -14542,8 +14535,7 @@ div.jp-Cell-Placeholder-content-3 {
 }
 
 </style>
-
-    <style type="text/css">
+<style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
@@ -14965,7 +14957,6 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-switch-true-position-color: var(--md-orange-900);
 }
 </style>
-
 <style type="text/css">
 /* Force rendering true colors when outputing to pdf */
 * {
@@ -15066,11 +15057,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   }
 }
 </style>
-
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
     init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
@@ -15100,7 +15090,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><script type="module">
+<!-- End of mathjax configuration --><script type="module">
   document.addEventListener("DOMContentLoaded", async () => {
     const diagrams = document.querySelectorAll(".jp-Mermaid > pre.mermaid");
     // do not load mermaidjs if not needed
@@ -15211,14 +15201,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Tagmentation-input-calculation:">Tagmentation input calculation:<a class="anchor-link" href="#Tagmentation-input-calculation:">&#182;</a></h3><p><strong>Note</strong>: During the <a href="https://patentimages.storage.googleapis.com/3b/af/9c/67a9002a62d9a3/US20100120098A1.pdf">Tagmentation</a> process additional sequencing adapters are added and the library size is further reduced for Illumina Sequencers. Tagmentation is sensitive to the input DNA concentraion and the average length of DNA fragments used. Therefore to get consistent Post-tagmentation average library sizes between 570-620bp we developed an equation to help you calculate the input DNA amount.</p>
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Tagmentation-input-calculation:">Tagmentation input calculation:<a class="anchor-link" href="#Tagmentation-input-calculation:">¶</a></h3><p><strong>Note</strong>: During the <a href="https://patentimages.storage.googleapis.com/3b/af/9c/67a9002a62d9a3/US20100120098A1.pdf">Tagmentation</a> process additional sequencing adapters are added and the library size is further reduced for Illumina Sequencers. Tagmentation is sensitive to the input DNA concentraion and the average length of DNA fragments used. Therefore to get consistent Post-tagmentation average library sizes between 570-620bp we developed an equation to help you calculate the input DNA amount.</p>
 <p>For Estimated Center in bp&lt;=1350:
 $$
 Input\ DN A\ in\ ng = 1.37692 - 0.000576923\times{Estimated\ Center\ in\ bp}
@@ -15231,84 +15220,73 @@ $$</p>
 <table>
 <thead>
 <tr>
-  <th>Example 1</th>
-  <th>Example 2</th>
+<th>Example 1</th>
+<th>Example 2</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>Estimated Center: 986bp<br>Calculated Input DNA in ng: 0.81</td>
-  <td>Estimated Center: 968bp<br>Calculated Input DNA in ng: 0.82</td>
+<td>Estimated Center: 986bp<br/>Calculated Input DNA in ng: 0.81</td>
+<td>Estimated Center: 968bp<br/>Calculated Input DNA in ng: 0.82</td>
 </tr>
 <tr>
-  <td><img src="img/Picture1.png" alt="" /></td>
-  <td><img src="img/Picture2.png" alt="" /></td>
+<td><img alt="" src="img/Picture1.png"/></td>
+<td><img alt="" src="img/Picture2.png"/></td>
 </tr>
 <tr>
-  <td>Tagmented Library Center: 593bp</td>
-  <td>Tagmented Library Center: 620bp</td>
+<td>Tagmented Library Center: 593bp</td>
+<td>Tagmented Library Center: 620bp</td>
 </tr>
 <tr>
-  <td><img src="img/Screenshot 2023-08-28 at 11.20.27 PM.png"></td>
-  <td><img src="img/Screenshot 2023-08-28 at 11.20.49 PM.png"></td>
+<td><img src="img/Screenshot 2023-08-28 at 11.20.27 PM.png"/></td>
+<td><img src="img/Screenshot 2023-08-28 at 11.20.49 PM.png"/></td>
 </tr>
 </tbody>
 </table>
-
 </div>
 </div>
 </div>
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Calculate the Estimated Input DNA in ng by changing the value of estimated_center below.</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Calculate the Estimated Input DNA in ng by changing the value of estimated_center below.</span>
 <span class="n">estimated_center</span><span class="o">=</span><span class="mi">1420</span> <span class="c1">#in bp</span>
 <span class="n">total_ng_dna</span><span class="o">=</span><span class="mf">1.37692</span> <span class="o">-</span> <span class="mf">0.000576923</span><span class="o">*</span><span class="n">estimated_center</span>
 <span class="k">if</span> <span class="n">estimated_center</span><span class="o">&gt;</span><span class="mi">1350</span><span class="p">:</span>
     <span class="n">total_ng_dna</span><span class="o">=</span><span class="mf">0.6</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The estimated input &quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m&quot;</span><span class="o">+</span><span class="s2">&quot;Total DNA amount &quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="o">+</span><span class="s2">&quot;for the Tagmentation reaction for this library is &quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">total_ng_dna</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m&quot;</span><span class="o">+</span><span class="s2">&quot;ng&quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="o">+</span><span class="s2">&quot;.</span><span class="se">\n</span><span class="s2">Or a &quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m&quot;</span><span class="o">+</span><span class="s2">&quot;DNA Concentration &quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="o">+</span><span class="s2">&quot;of &quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">total_ng_dna</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m&quot;</span><span class="o">+</span><span class="s2">&quot;ng/</span><span class="se">\u03BC</span><span class="s2">&quot;</span><span class="o">+</span><span class="s2">&quot;l&quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="o">+</span><span class="s2">&quot; for a total input volume of &quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m&quot;</span><span class="o">+</span><span class="s2">&quot;5</span><span class="se">\u03BC</span><span class="s2">&quot;</span><span class="o">+</span><span class="s2">&quot;l&quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="o">+</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The estimated input "</span><span class="o">+</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1m"</span><span class="o">+</span><span class="s2">"Total DNA amount "</span><span class="o">+</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[0m"</span><span class="o">+</span><span class="s2">"for the Tagmentation reaction for this library is "</span><span class="o">+</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1m"</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">total_ng_dna</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1m"</span><span class="o">+</span><span class="s2">"ng"</span><span class="o">+</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[0m"</span><span class="o">+</span><span class="s2">".</span><span class="se">\n</span><span class="s2">Or a "</span><span class="o">+</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1m"</span><span class="o">+</span><span class="s2">"DNA Concentration "</span><span class="o">+</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[0m"</span><span class="o">+</span><span class="s2">"of "</span><span class="o">+</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1m"</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">total_ng_dna</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1m"</span><span class="o">+</span><span class="s2">"ng/</span><span class="se">\u03BC</span><span class="s2">"</span><span class="o">+</span><span class="s2">"l"</span><span class="o">+</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[0m"</span><span class="o">+</span><span class="s2">" for a total input volume of "</span><span class="o">+</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[1m"</span><span class="o">+</span><span class="s2">"5</span><span class="se">\u03BC</span><span class="s2">"</span><span class="o">+</span><span class="s2">"l"</span><span class="o">+</span><span class="s2">"</span><span class="se">\033</span><span class="s2">[0m"</span><span class="o">+</span><span class="s2">"."</span><span class="p">)</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>The estimated input <span class="ansi-bold">Total DNA amount </span>for the Tagmentation reaction for this library is <span class="ansi-bold"> 0.6 </span><span class="ansi-bold">ng</span>.
 Or a <span class="ansi-bold">DNA Concentration </span>of <span class="ansi-bold"> 0.12 </span><span class="ansi-bold">ng/μl</span> for a total input volume of <span class="ansi-bold">5μl</span>.
 </pre>
 </div>
 </div>
-
 </div>
-
 </div>
-
 </div>
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Note-on-Pooling-and-Indices-for-the-Sequencing-on-the-Same-Lane:">Note on Pooling and Indices for the Sequencing on the Same Lane:<a class="anchor-link" href="#Note-on-Pooling-and-Indices-for-the-Sequencing-on-the-Same-Lane:">&#182;</a></h3><ul>
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Note-on-Pooling-and-Indices-for-the-Sequencing-on-the-Same-Lane:">Note on Pooling and Indices for the Sequencing on the Same Lane:<a class="anchor-link" href="#Note-on-Pooling-and-Indices-for-the-Sequencing-on-the-Same-Lane:">¶</a></h3><ul>
 <li>You can choose to pool your PCR splits into a Single Tagmentation Reaction and use the same i7 index for all the splits.<ul>
 <li>You can also Tagment them separately with different i7 Indices. This choice is up to you.</li>
 <li>When you combine different splits together then equal amounts of DNA should be added to the Tagmentation reaction from each split. So for example, if you have two splits and your calculated input DNA is 0.80ng then 0.40ng should come from each split.</li>
@@ -15317,10 +15295,10 @@ Or a <span class="ansi-bold">DNA Concentration </span>of <span class="ansi-bold"
 <li>Different experimental conditions should always have different i7 indices if you are sequencing them on the same lane.</li>
 <li>Always use different indices for Bulk Experiments being sequenced on the same Lane.</li>
 <li>For the <a href="https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/nextera-xt-dna.html">Nextera Index Kit (FC-131-1001)</a> the i7 Indices are N701-N706. <a href="https://support.illumina.com/sequencing/sequencing_kits/nextera-xt-index-kit-v2/contents-storage.html">Other kits can provide even more indices</a> if you want more libraries on the Same Lane.</li>
-<li>When you submit your Libraries always use the i7 index Sequence in the &quot;i7 Bases for Sample Sheet&quot; Column <a href="https://support-docs.illumina.com/SHARE/AdapterSequences/Content/SHARE/AdapterSeq/Nextera/NexteraDNAIndexes.htm">mentioned here</a>.</li>
+<li>When you submit your Libraries always use the i7 index Sequence in the "i7 Bases for Sample Sheet" Column <a href="https://support-docs.illumina.com/SHARE/AdapterSequences/Content/SHARE/AdapterSeq/Nextera/NexteraDNAIndexes.htm">mentioned here</a>.</li>
 <li>If you have low plex (less than six libraries being pooled) make sure you use the correct combination of i7 Indices for Color compatibility. <a href="technote-nextera-rapid-capture-low-plex-pooling-guidelines.pdf">Please see Table 2 in this Low Plex Pooling Guide from Illumina</a>.</li>
 </ul>
-<h3 id="Tagmentation">Tagmentation<a class="anchor-link" href="#Tagmentation">&#182;</a></h3><h4 id="Preparing-for-Tagmentation">Preparing for Tagmentation<a class="anchor-link" href="#Preparing-for-Tagmentation">&#182;</a></h4><ul>
+<h3 id="Tagmentation">Tagmentation<a class="anchor-link" href="#Tagmentation">¶</a></h3><h4 id="Preparing-for-Tagmentation">Preparing for Tagmentation<a class="anchor-link" href="#Preparing-for-Tagmentation">¶</a></h4><ul>
 <li>Make sure there is no water condensation inside your PCR wells for your PCR machine.</li>
 </ul>
 <blockquote>
@@ -15345,7 +15323,7 @@ Or a <span class="ansi-bold">DNA Concentration </span>of <span class="ansi-bold"
 </ul>
 </li>
 </ul>
-<h4 id="Run-Tagmentation-Reaction">Run Tagmentation Reaction<a class="anchor-link" href="#Run-Tagmentation-Reaction">&#182;</a></h4><ul>
+<h4 id="Run-Tagmentation-Reaction">Run Tagmentation Reaction<a class="anchor-link" href="#Run-Tagmentation-Reaction">¶</a></h4><ul>
 <li>Keep a record of which i7 index (N70X Oligo) will be used with each PCR Tube.</li>
 <li>To each tube, add 10 μl of Tagment DNA buffer.</li>
 <li>Now add 5 μl of Amplicon Tagment Mix to each tube for a total volume of 20μl.</li>
@@ -15357,7 +15335,7 @@ Or a <span class="ansi-bold">DNA Concentration </span>of <span class="ansi-bold"
 <li>Spin down the PCR Tubes using a Tabletop centrifuge for PCR Tubes.</li>
 <li>Incubate at room temperature for 5 minutes.</li>
 </ul>
-<h4 id="Preparation-for-PCR">Preparation for PCR<a class="anchor-link" href="#Preparation-for-PCR">&#182;</a></h4><ul>
+<h4 id="Preparation-for-PCR">Preparation for PCR<a class="anchor-link" href="#Preparation-for-PCR">¶</a></h4><ul>
 <li>Get the KAPA HiFi Hotstart Readymix stored at -20°C. Put it in an ice bucket.</li>
 <li>Get the <a href="https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/nextera-xt-dna.html">Nextera Index Kit (FC-131-1001)</a> from -20°C. Leave the i7 Indices you plan to use for your samples on the bench to melt.</li>
 <li>Get the <strong>10μM</strong> New‐P5‐SMART PCR hybrid oligo from -20°C and leave it on your bench to melt.</li>
@@ -15376,31 +15354,31 @@ Or a <span class="ansi-bold">DNA Concentration </span>of <span class="ansi-bold"
 <li>Mix well by pipetting 5 times.</li>
 <li>Spin down the PCR Tubes using a Tabletop centrifuge for PCR Tubes.</li>
 </ul>
-<h3 id="Post-Tagmentation-PCR-Program">Post Tagmentation PCR Program<a class="anchor-link" href="#Post-Tagmentation-PCR-Program">&#182;</a></h3><p>Now run the Following PCR Program:</p>
+<h3 id="Post-Tagmentation-PCR-Program">Post Tagmentation PCR Program<a class="anchor-link" href="#Post-Tagmentation-PCR-Program">¶</a></h3><p>Now run the Following PCR Program:</p>
 <blockquote>
 <p>Lid Temperature 105°C
-<br> Volume of Liquid: <strong>100μl</strong></p>
+<br/> Volume of Liquid: <strong>100μl</strong></p>
 </blockquote>
-<p><br>72°C 3 min
-<br>95°C 30 s</p>
-<h5 id="16-cycles-of:">16 cycles of:<a class="anchor-link" href="#16-cycles-of:">&#182;</a></h5><ul>
+<p><br/>72°C 3 min
+<br/>95°C 30 s</p>
+<h5 id="16-cycles-of:">16 cycles of:<a class="anchor-link" href="#16-cycles-of:">¶</a></h5><ul>
 <li>95°C 10 s</li>
 <li>55°C 30 s</li>
 <li>72°C 30 s</li>
 </ul>
-<br> 
-72&deg;C 5 min <br>
-4&deg;C &infin;
+<br/> 
+72°C 5 min <br/>
+4°C ∞
 <blockquote>
 <p>This is a <strong>STOPPING STEP</strong>. You can leave the PCR Tubes at 4°C and finish the protocol later. Consider moving the beads to a refrigerator if you plan to resume after more than one day.</p>
 </blockquote>
-<h3 id="PCR-Cleanup">PCR Cleanup<a class="anchor-link" href="#PCR-Cleanup">&#182;</a></h3><ul>
+<h3 id="PCR-Cleanup">PCR Cleanup<a class="anchor-link" href="#PCR-Cleanup">¶</a></h3><ul>
 <li>Get the Ampure XP Beads eppie from 4°C.</li>
 <li>Vortex the AMpure beads at full speed for 10 seconds to resuspend the beads completely. Leave them on your bench till they reach room temperature.</li>
 <li>Spin down the PCR Tubes using a Tabletop centrifuge for PCR Tubes.</li>
 <li>We will do two rounds of purifications. First will be a 0.6X AMpure Fraction and the second will be a 0.9X AMpure Fraction.</li>
 </ul>
-<h4 id="First-round-0.6X-AMpure-Fraction:">First round 0.6X AMpure Fraction:<a class="anchor-link" href="#First-round-0.6X-AMpure-Fraction:">&#182;</a></h4><ul>
+<h4 id="First-round-0.6X-AMpure-Fraction:">First round 0.6X AMpure Fraction:<a class="anchor-link" href="#First-round-0.6X-AMpure-Fraction:">¶</a></h4><ul>
 <li>Vortex the eppie with the Ampure XP beads to evenly resuspend the beads.</li>
 <li>Add 60μl of Ampure XP beads to each 100μl PCR tube. This is a 0.6X AMpure beads fraction.</li>
 <li>Mix each PCR tube well by pipetting up and down at least 15 times.</li>
@@ -15424,7 +15402,7 @@ Or a <span class="ansi-bold">DNA Concentration </span>of <span class="ansi-bold"
 <li>Incubate at room temperature for 2 minutes.</li>
 <li>Place all the PCR tubes back in the Magnetic Rack. Wait two minutes for the liquid to become clear.</li>
 </ul>
-<h4 id="Second-round-0.9X-AMpure-Fraction:">Second round 0.9X AMpure Fraction:<a class="anchor-link" href="#Second-round-0.9X-AMpure-Fraction:">&#182;</a></h4><ul>
+<h4 id="Second-round-0.9X-AMpure-Fraction:">Second round 0.9X AMpure Fraction:<a class="anchor-link" href="#Second-round-0.9X-AMpure-Fraction:">¶</a></h4><ul>
 <li>Prepare another set of clean PCR tubes identical in number to the PCR tubes in the Magnetic rack.</li>
 <li>Without sucking up any AMpure beads, transfer 50μl of liquid from each PCR tube in the rack to its corresponding clean PCR tube.</li>
 <li>Vortex the eppie with the Ampure XP beads to evenly resuspend the beads.</li>
@@ -15452,7 +15430,7 @@ Or a <span class="ansi-bold">DNA Concentration </span>of <span class="ansi-bold"
 <li>Prepare clean 1.5ml Eppendorf tubes identical in number to the PCR tubes in the Magnetic rack. Label each tube with the i7(N70X) Oligo used, a short description of the experiment, your name and the date.</li>
 <li>Without sucking up any Ampure XP beads, transfer 15μl of liquid from each PCR tube in the rack to its corresponding eppie.</li>
 </ul>
-<h4 id="Tagmented-Library-Concentration-with-Qubit">Tagmented Library Concentration with Qubit<a class="anchor-link" href="#Tagmented-Library-Concentration-with-Qubit">&#182;</a></h4><blockquote>
+<h4 id="Tagmented-Library-Concentration-with-Qubit">Tagmented Library Concentration with Qubit<a class="anchor-link" href="#Tagmented-Library-Concentration-with-Qubit">¶</a></h4><blockquote>
 <p>⚠ <strong>IMPORTANT</strong>:For all Qubit Tubes <strong>only Pipette till the first stop</strong> even if there is liquid left in the pipette tip. <strong>Don't pipette up and down to mix.</strong></p>
 </blockquote>
 <ul>
@@ -15476,17 +15454,9 @@ Or a <span class="ansi-bold">DNA Concentration </span>of <span class="ansi-bold"
         }
     }
 </style>
-
 </div>
 </div>
 </div>
 </div>
 </body>
-
-
-
-
-
-
-
 </html>

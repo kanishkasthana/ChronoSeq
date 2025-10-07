@@ -1,13 +1,9 @@
 <!DOCTYPE html>
+
 <html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-
-
-
-
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -57,9 +53,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-
-
-
 <style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
@@ -14542,8 +14535,7 @@ div.jp-Cell-Placeholder-content-3 {
 }
 
 </style>
-
-    <style type="text/css">
+<style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
@@ -14965,7 +14957,6 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-switch-true-position-color: var(--md-orange-900);
 }
 </style>
-
 <style type="text/css">
 /* Force rendering true colors when outputing to pdf */
 * {
@@ -15066,11 +15057,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   }
 }
 </style>
-
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
     init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
@@ -15100,7 +15090,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><script type="module">
+<!-- End of mathjax configuration --><script type="module">
   document.addEventListener("DOMContentLoaded", async () => {
     const diagrams = document.querySelectorAll(".jp-Mermaid > pre.mermaid");
     // do not load mermaidjs if not needed
@@ -15211,15 +15201,15 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div id="cell-id=b19f65d0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c795f618">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
@@ -15227,7 +15217,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="kn">import</span> <span class="nn">nbformat</span>
 
 <span class="k">def</span> <span class="nf">update_ipynb_links_to_html</span><span class="p">(</span><span class="n">html_body</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">"""</span>
 <span class="sd">    Post-process HTML body to replace .ipynb links with .html equivalents, preserving fragments (#anchors).</span>
 <span class="sd">    </span>
 <span class="sd">    Args:</span>
@@ -15235,30 +15225,30 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="sd">    </span>
 <span class="sd">    Returns:</span>
 <span class="sd">        str: Updated HTML body.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Regex to match href=&quot;.../file.ipynb#fragment&quot; or href=&quot;file.ipynb&quot; (double quotes only)</span>
+<span class="sd">    """</span>
+    <span class="c1"># Regex to match href=".../file.ipynb#fragment" or href="file.ipynb" (double quotes only)</span>
     <span class="c1"># Captures: group(1) = path before .ipynb, group(2) = after .ipynb (e.g., #subheading or query)</span>
-    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(href=&quot;)([^&quot;]*\.)?(?P&lt;before&gt;[^&quot;#\.]*)ipynb(?P&lt;after&gt;#?[^&quot;]*)&quot;&#39;</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'(href=")([^"]*\.)?(?P&lt;before&gt;[^"#\.]*)ipynb(?P&lt;after&gt;#?[^"]*)"'</span>
     <span class="k">def</span> <span class="nf">replacer</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
         <span class="c1"># Replace .ipynb with .html, preserving path, before, and after (including #anchor)</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;before&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">html</span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;after&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"before"</span><span class="p">)</span><span class="si">}</span><span class="s1">html</span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"after"</span><span class="p">)</span><span class="si">}</span><span class="s1">"'</span>
     
     <span class="n">updated_body</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacer</span><span class="p">,</span> <span class="n">html_body</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">updated_body</span>
 
 <span class="k">def</span> <span class="nf">convert_ipynb_to_html_with_link_updates</span><span class="p">(</span><span class="n">directory_path</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">"""</span>
 <span class="sd">    Recursively convert all .ipynb files to HTML, preserving relative images and updating .ipynb links (with anchors) to .html.</span>
-<span class="sd">    Special handling: Rename &quot;OPEN ME FIRST - README - Main Menu.ipynb&quot; output to root index.html.</span>
+<span class="sd">    Special handling: Rename "OPEN ME FIRST - README - Main Menu.ipynb" output to root index.html.</span>
 <span class="sd">    </span>
 <span class="sd">    Args:</span>
 <span class="sd">        directory_path (str): Path to the root directory to search for .ipynb files.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># Find all .ipynb files recursively (sorted for consistent order)</span>
-    <span class="n">ipynb_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory_path</span><span class="p">,</span> <span class="s1">&#39;**&#39;</span><span class="p">,</span> <span class="s1">&#39;*.ipynb&#39;</span><span class="p">),</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="n">ipynb_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory_path</span><span class="p">,</span> <span class="s1">'**'</span><span class="p">,</span> <span class="s1">'*.ipynb'</span><span class="p">),</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
     
     <span class="k">if</span> <span class="ow">not</span> <span class="n">ipynb_files</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No .ipynb files found in the directory.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"No .ipynb files found in the directory."</span><span class="p">)</span>
         <span class="k">return</span>
     
     <span class="c1"># Configure exporter for relative paths (no embedding)</span>
@@ -15267,12 +15257,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="n">exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
     
     <span class="n">root_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span>
-    <span class="n">target_notebook_name</span> <span class="o">=</span> <span class="s2">&quot;OPEN ME FIRST - README - Main Menu.ipynb&quot;</span>  <span class="c1"># Exact filename with spaces</span>
+    <span class="n">target_notebook_name</span> <span class="o">=</span> <span class="s2">"OPEN ME FIRST - README - Main Menu.ipynb"</span>  <span class="c1"># Exact filename with spaces</span>
     
     <span class="k">for</span> <span class="n">ipynb_path</span> <span class="ow">in</span> <span class="n">ipynb_files</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># Read the notebook</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
             
             <span class="c1"># Convert to HTML</span>
@@ -15285,59 +15275,52 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             <span class="n">notebook_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">notebook_name</span> <span class="o">==</span> <span class="n">target_notebook_name</span><span class="p">:</span>
                 <span class="c1"># Special case: Rename to root index.html</span>
-                <span class="n">html_filename</span> <span class="o">=</span> <span class="s1">&#39;index.html&#39;</span>
+                <span class="n">html_filename</span> <span class="o">=</span> <span class="s1">'index.html'</span>
                 <span class="n">html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_dir</span><span class="p">,</span> <span class="n">html_filename</span><span class="p">)</span>
-                <span class="n">resource_dir_name</span> <span class="o">=</span> <span class="s1">&#39;index_files&#39;</span>  <span class="c1"># For attachments</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Special conversion: Renaming to root </span><span class="si">{</span><span class="n">html_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">resource_dir_name</span> <span class="o">=</span> <span class="s1">'index_files'</span>  <span class="c1"># For attachments</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Special conversion: Renaming to root </span><span class="si">{</span><span class="n">html_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="c1"># Standard: .html in same dir</span>
                 <span class="n">html_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
-                <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">notebook_name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;.html&#39;</span>
+                <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">notebook_name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
                 <span class="n">html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html_dir</span><span class="p">,</span> <span class="n">html_filename</span><span class="p">)</span>
-                <span class="n">resource_dir_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">_files&quot;</span>
+                <span class="n">resource_dir_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">_files"</span>
             
             <span class="c1"># Write updated HTML file</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
             
             <span class="c1"># Extract attachments to _files if present</span>
-            <span class="k">if</span> <span class="n">resources</span> <span class="ow">and</span> <span class="s1">&#39;files&#39;</span> <span class="ow">in</span> <span class="n">resources</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">resources</span> <span class="ow">and</span> <span class="s1">'files'</span> <span class="ow">in</span> <span class="n">resources</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">notebook_name</span> <span class="o">==</span> <span class="n">target_notebook_name</span><span class="p">:</span>
                     <span class="n">resource_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_dir</span><span class="p">,</span> <span class="n">resource_dir_name</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">resource_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">html_path</span><span class="p">),</span> <span class="n">resource_dir_name</span><span class="p">)</span>
                 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">resource_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">content</span> <span class="ow">in</span> <span class="n">resources</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;files&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">resource_dir</span><span class="p">,</span> <span class="n">file_path</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">res_file</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">content</span> <span class="ow">in</span> <span class="n">resources</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'files'</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">resource_dir</span><span class="p">,</span> <span class="n">file_path</span><span class="p">),</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">res_file</span><span class="p">:</span>
                         <span class="n">res_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Extracted attachments to: </span><span class="si">{</span><span class="n">resource_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Extracted attachments to: </span><span class="si">{</span><span class="n">resource_dir</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Converted and updated links (with anchors): </span><span class="si">{</span><span class="n">ipynb_path</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">html_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Converted and updated links (with anchors): </span><span class="si">{</span><span class="n">ipynb_path</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">html_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error converting </span><span class="si">{</span><span class="n">ipynb_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error converting </span><span class="si">{</span><span class="n">ipynb_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="c1"># Example usage: Replace &#39;.&#39; with your directory path</span>
-<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>  <span class="c1"># Current directory; change as needed</span>
+<span class="c1"># Example usage: Replace '.' with your directory path</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">'.'</span>  <span class="c1"># Current directory; change as needed</span>
 <span class="n">convert_ipynb_to_html_with_link_updates</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Converted and updated links (with anchors): .\CAD_Files\3 Port Reservoir\Manufacturing Notes.ipynb -&gt; .\CAD_Files\3 Port Reservoir\Manufacturing Notes.html
 Converted and updated links (with anchors): .\ChronoSeq_Overview.ipynb -&gt; .\ChronoSeq_Overview.html
@@ -15351,10 +15334,7 @@ Converted and updated links (with anchors): .\instructions_for_assembling_valve_
 </div>
 </div>
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>C:\Users\Kanishk Asthana\.conda\envs\chrono\lib\site-packages\nbformat\__init__.py:92: MissingIDFieldWarning: Code cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
   validate(nb)
@@ -15362,10 +15342,7 @@ Converted and updated links (with anchors): .\instructions_for_assembling_valve_
 </div>
 </div>
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Converted and updated links (with anchors): .\instructions_for_assembling_valve_controller_ESP32.ipynb -&gt; .\instructions_for_assembling_valve_controller_ESP32.html
 Converted and updated links (with anchors): .\instructions_for_assembling_vortex_relay_controller.ipynb -&gt; .\instructions_for_assembling_vortex_relay_controller.html
@@ -15373,10 +15350,7 @@ Converted and updated links (with anchors): .\instructions_for_assembling_vortex
 </div>
 </div>
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>C:\Users\Kanishk Asthana\.conda\envs\chrono\lib\site-packages\nbformat\__init__.py:92: MissingIDFieldWarning: Code cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
   validate(nb)
@@ -15384,10 +15358,7 @@ Converted and updated links (with anchors): .\instructions_for_assembling_vortex
 </div>
 </div>
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Converted and updated links (with anchors): .\instructions_for_assembling_xy_robot_and_ice_boxes.ipynb -&gt; .\instructions_for_assembling_xy_robot_and_ice_boxes.html
 Converted and updated links (with anchors): .\instructions_for_assembling_xyz_robot.ipynb -&gt; .\instructions_for_assembling_xyz_robot.html
@@ -15418,10 +15389,7 @@ Converted and updated links (with anchors): .\protocol_for_recycling_beads.ipynb
 </div>
 </div>
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>C:\Users\Kanishk Asthana\.conda\envs\chrono\lib\site-packages\nbformat\__init__.py:92: MissingIDFieldWarning: Code cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
   validate(nb)
@@ -15429,20 +15397,14 @@ Converted and updated links (with anchors): .\protocol_for_recycling_beads.ipynb
 </div>
 </div>
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Converted and updated links (with anchors): .\protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification.ipynb -&gt; .\protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification.html
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>C:\Users\Kanishk Asthana\.conda\envs\chrono\lib\site-packages\nbformat\__init__.py:92: MissingIDFieldWarning: Code cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
   validate(nb)
@@ -15450,10 +15412,7 @@ Converted and updated links (with anchors): .\protocol_for_recycling_beads.ipynb
 </div>
 </div>
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Converted and updated links (with anchors): .\protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification.ipynb -&gt; .\protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification.html
 Converted and updated links (with anchors): .\protocol_for_tagmentation_with_KAPA_PCR.ipynb -&gt; .\protocol_for_tagmentation_with_KAPA_PCR.html
@@ -15464,10 +15423,7 @@ Converted and updated links (with anchors): .\qPCR_validation_files\K562_Costimu
 </div>
 </div>
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>C:\Users\Kanishk Asthana\.conda\envs\chrono\lib\site-packages\nbformat\__init__.py:92: MissingIDFieldWarning: Code cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
   validate(nb)
@@ -15475,61 +15431,338 @@ Converted and updated links (with anchors): .\qPCR_validation_files\K562_Costimu
 </div>
 </div>
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Converted and updated links (with anchors): .\qPCR_validation_files\qPCR Analysis.ipynb -&gt; .\qPCR_validation_files\qPCR Analysis.html
 Converted and updated links (with anchors): .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvertHTML.html
 </pre>
 </div>
 </div>
-
 </div>
-
 </div>
-
-</div><div id="cell-id=e35b5442" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=89a796ba">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
+<span class="kn">from</span> <span class="nn">traitlets.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>  <span class="c1"># For parsing and replacing YouTube thumbnails</span>
+<span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="k">def</span> <span class="nf">generate_sitemap_html</span><span class="p">(</span><span class="n">directory_path</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="s1">&#39;sitemap.html&#39;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># Set up logging for replacement info</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">setup_nbconvert_config</span><span class="p">():</span>
+    <span class="sd">"""Configure nbconvert for HTML export with custom filters."""</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span>
+    
+    <span class="c1"># Template for clean HTML (no Jupyter UI, inline styles)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">NbConvertApp</span><span class="o">.</span><span class="n">export_format</span> <span class="o">=</span> <span class="s1">'html'</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">HTMLExporter</span><span class="o">.</span><span class="n">template_name</span> <span class="o">=</span> <span class="s1">'classic'</span>  <span class="c1"># Or 'lab' for modern look; adjust as needed</span>
+    
+    <span class="c1"># Remove internal Jupyter links and metadata</span>
+    <span class="k">def</span> <span class="nf">remove_internal_links</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
+        <span class="sd">"""Filter to remove Jupyter-specific links (e.g., to .ipynb sources)."""</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\.ipynb|\#|\?download=1'</span><span class="p">)):</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>  <span class="c1"># Remove the tag</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+    
+    <span class="c1"># Remove unnecessary metadata/scripts</span>
+    <span class="k">def</span> <span class="nf">clean_metadata</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
+        <span class="sd">"""Remove Jupyter metadata and scripts."""</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
+        <span class="c1"># Remove script tags with Jupyter code</span>
+        <span class="k">for</span> <span class="n">script</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'script'</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'jupyter|require'</span><span class="p">)):</span>
+            <span class="n">script</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+        <span class="c1"># Remove metadata divs</span>
+        <span class="k">for</span> <span class="n">div</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'div'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'metadata|tags|kernelspec'</span><span class="p">)):</span>
+            <span class="n">div</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+    
+    <span class="c1"># Apply filters</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">HTMLExporter</span><span class="o">.</span><span class="n">filters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'remove_internal_links'</span><span class="p">:</span> <span class="n">remove_internal_links</span><span class="p">,</span> <span class="s1">'clean_metadata'</span><span class="p">:</span> <span class="n">clean_metadata</span><span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">HTMLExporter</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">replace_youtube_thumbnails</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="n">input_filename</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Post-process HTML to replace YouTube thumbnail images (&lt;a&gt;&lt;img src="...hqdefault.jpg"&gt;&lt;/a&gt;)</span>
+<span class="sd">    with embedded iframes.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        html_content (str): Raw HTML string from nbconvert.</span>
+<span class="sd">        input_filename (str): Name of the input .ipynb for logging.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        str: Modified HTML with embeds.</span>
+<span class="sd">    """</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
+    <span class="n">replacements</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># Find all &lt;a&gt; containing &lt;img&gt; with YouTube thumbnail</span>
+    <span class="k">for</span> <span class="n">a_tag</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'youtube\.com/watch\?v=([a-zA-Z0-9_-]+)'</span><span class="p">)):</span>
+        <span class="n">img_tag</span> <span class="o">=</span> <span class="n">a_tag</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'img'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">img_tag</span> <span class="ow">and</span> <span class="s1">'src'</span> <span class="ow">in</span> <span class="n">img_tag</span><span class="o">.</span><span class="n">attrs</span><span class="p">:</span>
+            <span class="n">img_src</span> <span class="o">=</span> <span class="n">img_tag</span><span class="p">[</span><span class="s1">'src'</span><span class="p">]</span>
+            <span class="c1"># Extract VIDEO_ID from href (watch?v=VIDEO_ID)</span>
+            <span class="n">video_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'youtube\.com/watch\?v=([a-zA-Z0-9_-]+)'</span><span class="p">,</span> <span class="n">a_tag</span><span class="p">[</span><span class="s1">'href'</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">video_match</span><span class="p">:</span>
+                <span class="n">video_id</span> <span class="o">=</span> <span class="n">video_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="c1"># Confirm src is YouTube thumbnail (vi/VIDEO_ID/hqdefault.jpg or similar)</span>
+                <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">rf</span><span class="s1">'img\.youtube\.com/vi/</span><span class="si">{</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">video_id</span><span class="p">)</span><span class="si">}</span><span class="s1">/[a-z]+default\.jpg'</span><span class="p">,</span> <span class="n">img_src</span><span class="p">):</span>
+                    <span class="c1"># Create iframe</span>
+                    <span class="n">iframe</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">new_tag</span><span class="p">(</span><span class="s1">'iframe'</span><span class="p">,</span>
+                                          <span class="n">width</span><span class="o">=</span><span class="s2">"800"</span><span class="p">,</span>
+                                          <span class="n">height</span><span class="o">=</span><span class="s2">"600"</span><span class="p">,</span>
+                                          <span class="n">src</span><span class="o">=</span><span class="sa">f</span><span class="s2">"https://www.youtube.com/embed/</span><span class="si">{</span><span class="n">video_id</span><span class="si">}</span><span class="s2">?rel=0"</span><span class="p">,</span>
+                                          <span class="n">title</span><span class="o">=</span><span class="s2">"YouTube video player"</span><span class="p">,</span>
+                                          <span class="n">frameborder</span><span class="o">=</span><span class="s2">"0"</span><span class="p">,</span>
+                                          <span class="n">allow</span><span class="o">=</span><span class="s2">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"</span><span class="p">,</span>
+                                          <span class="n">referrerpolicy</span><span class="o">=</span><span class="s2">"strict-origin-when-cross-origin"</span><span class="p">,</span>
+                                          <span class="n">allowfullscreen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    
+                    <span class="c1"># Wrap in responsive div</span>
+                    <span class="n">responsive_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">new_tag</span><span class="p">(</span><span class="s1">'div'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;"</span><span class="p">)</span>
+                    <span class="n">responsive_div</span><span class="p">[</span><span class="s1">'class'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'youtube-embed'</span>
+                    <span class="n">iframe_wrap</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">new_tag</span><span class="p">(</span><span class="s1">'iframe'</span><span class="p">,</span> <span class="o">**</span><span class="n">iframe</span><span class="o">.</span><span class="n">attrs</span><span class="p">)</span>  <span class="c1"># Copy attrs to inner iframe</span>
+                    <span class="n">iframe_wrap</span><span class="p">[</span><span class="s1">'style'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"position: absolute; top: 0; left: 0; width: 100%; height: 100%;"</span>
+                    <span class="n">responsive_div</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">iframe_wrap</span><span class="p">)</span>
+                    
+                    <span class="c1"># Replace the &lt;a&gt;&lt;img&gt;&lt;/a&gt; with the div</span>
+                    <span class="n">a_tag</span><span class="o">.</span><span class="n">replace_with</span><span class="p">(</span><span class="n">responsive_div</span><span class="p">)</span>
+                    <span class="n">replacements</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Replaced YouTube thumbnail (</span><span class="si">{</span><span class="n">video_id</span><span class="si">}</span><span class="s2">) with iframe in </span><span class="si">{</span><span class="n">input_filename</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">replacements</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"No YouTube thumbnails found in </span><span class="si">{</span><span class="n">input_filename</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">convert_notebook_to_html</span><span class="p">(</span><span class="n">notebook_path</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">exporter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Convert a single .ipynb to .html using nbconvert, then post-process for YouTube embeds.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        notebook_path (str): Path to .ipynb file.</span>
+<span class="sd">        output_dir (str): Directory to save .html (default: current).</span>
+<span class="sd">        exporter (HTMLExporter): Configured exporter instance.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        str: Path to generated .html file.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">exporter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">exporter</span> <span class="o">=</span> <span class="n">setup_nbconvert_config</span><span class="p">()</span>
+    
+    <span class="c1"># Base name for output</span>
+    <span class="n">base_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">notebook_path</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">base_name</span><span class="si">}</span><span class="s2">.html"</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Export to temporary file first</span>
+        <span class="n">temp_body</span><span class="p">,</span> <span class="n">resources</span> <span class="o">=</span> <span class="n">exporter</span><span class="o">.</span><span class="n">from_filename</span><span class="p">(</span><span class="n">notebook_path</span><span class="p">)</span>
+        
+        <span class="c1"># Post-process for YouTube</span>
+        <span class="n">processed_html</span> <span class="o">=</span> <span class="n">replace_youtube_thumbnails</span><span class="p">(</span><span class="n">temp_body</span><span class="p">,</span> <span class="n">base_name</span><span class="p">)</span>
+        
+        <span class="c1"># Write final HTML (with minimal template)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">processed_html</span><span class="p">)</span>
+        
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Converted </span><span class="si">{</span><span class="n">notebook_path</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">output_path</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error converting </span><span class="si">{</span><span class="n">notebook_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">input_dir</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">'*.ipynb'</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Batch convert all .ipynb files in input_dir to .html in output_dir.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        input_dir (str): Directory containing .ipynb files.</span>
+<span class="sd">        output_dir (str): Directory to save .html files.</span>
+<span class="sd">        pattern (str): Glob pattern for notebooks (default: *.ipynb).</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_dir</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+    
+    <span class="n">exporter</span> <span class="o">=</span> <span class="n">setup_nbconvert_config</span><span class="p">()</span>
+    
+    <span class="c1"># Find all .ipynb files</span>
+    <span class="n">notebook_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_dir</span><span class="p">,</span> <span class="n">pattern</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">notebook_files</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">"No .ipynb files found in </span><span class="si">{</span><span class="n">input_dir</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">notebook_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> notebooks to convert"</span><span class="p">)</span>
+    
+    <span class="n">converted</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">nb_file</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">notebook_files</span><span class="p">):</span>
+        <span class="n">html_file</span> <span class="o">=</span> <span class="n">convert_notebook_to_html</span><span class="p">(</span><span class="n">nb_file</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">exporter</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">html_file</span><span class="p">:</span>
+            <span class="n">converted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">html_file</span><span class="p">)</span>
+    
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Successfully converted </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">converted</span><span class="p">)</span><span class="si">}</span><span class="s2"> notebooks to HTML with YouTube embeds"</span><span class="p">)</span>
+
+<span class="c1"># Run the conversion in the current directory (or specify paths)</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2025-10-07 00:21:20,750 - INFO - Found 39 notebooks to convert
+2025-10-07 00:21:21,240 - INFO - No YouTube thumbnails found in ChronoSeq_Overview
+2025-10-07 00:21:21,242 - INFO - Converted .\ChronoSeq_Overview.ipynb to .\ChronoSeq_Overview.html
+2025-10-07 00:21:21,513 - INFO - Replaced YouTube thumbnail (qbhCONpUdx0) with iframe in OPEN ME FIRST - README - Main Menu
+2025-10-07 00:21:21,513 - INFO - Replaced YouTube thumbnail (J2O1kA4chU0) with iframe in OPEN ME FIRST - README - Main Menu
+2025-10-07 00:21:21,513 - INFO - Replaced YouTube thumbnail (qFouf2HrKSk) with iframe in OPEN ME FIRST - README - Main Menu
+2025-10-07 00:21:21,513 - INFO - Replaced YouTube thumbnail (QpMUR4AgpgA) with iframe in OPEN ME FIRST - README - Main Menu
+2025-10-07 00:21:21,519 - INFO - Converted .\OPEN ME FIRST - README - Main Menu.ipynb to .\OPEN ME FIRST - README - Main Menu.html
+2025-10-07 00:21:22,010 - INFO - No YouTube thumbnails found in convertohtml
+2025-10-07 00:21:22,046 - INFO - Converted .\convertohtml.ipynb to .\convertohtml.html
+2025-10-07 00:21:22,385 - INFO - No YouTube thumbnails found in instructions_for_assembling_sensirion_flow_sensor
+2025-10-07 00:21:22,390 - INFO - Converted .\instructions_for_assembling_sensirion_flow_sensor.ipynb to .\instructions_for_assembling_sensirion_flow_sensor.html
+2025-10-07 00:21:22,852 - INFO - No YouTube thumbnails found in instructions_for_assembling_valve_controller
+2025-10-07 00:21:22,877 - INFO - Converted .\instructions_for_assembling_valve_controller.ipynb to .\instructions_for_assembling_valve_controller.html
+2025-10-07 00:21:23,277 - INFO - No YouTube thumbnails found in instructions_for_assembling_valve_controllerV2
+2025-10-07 00:21:23,288 - INFO - Converted .\instructions_for_assembling_valve_controllerV2.ipynb to .\instructions_for_assembling_valve_controllerV2.html
+C:\Users\Kanishk Asthana\.conda\envs\chrono\lib\site-packages\nbformat\__init__.py:92: MissingIDFieldWarning: Code cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+2025-10-07 00:21:23,717 - INFO - No YouTube thumbnails found in instructions_for_assembling_valve_controller_ESP32
+2025-10-07 00:21:23,744 - INFO - Converted .\instructions_for_assembling_valve_controller_ESP32.ipynb to .\instructions_for_assembling_valve_controller_ESP32.html
+2025-10-07 00:21:24,134 - INFO - No YouTube thumbnails found in instructions_for_assembling_vortex_relay_controller
+2025-10-07 00:21:24,142 - INFO - Converted .\instructions_for_assembling_vortex_relay_controller.ipynb to .\instructions_for_assembling_vortex_relay_controller.html
+C:\Users\Kanishk Asthana\.conda\envs\chrono\lib\site-packages\nbformat\__init__.py:92: MissingIDFieldWarning: Code cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+2025-10-07 00:21:24,585 - INFO - No YouTube thumbnails found in instructions_for_assembling_xy_robot_and_ice_boxes
+2025-10-07 00:21:24,609 - INFO - Converted .\instructions_for_assembling_xy_robot_and_ice_boxes.ipynb to .\instructions_for_assembling_xy_robot_and_ice_boxes.html
+2025-10-07 00:21:25,202 - INFO - No YouTube thumbnails found in instructions_for_assembling_xyz_robot
+2025-10-07 00:21:25,222 - INFO - Converted .\instructions_for_assembling_xyz_robot.ipynb to .\instructions_for_assembling_xyz_robot.html
+2025-10-07 00:21:26,023 - INFO - No YouTube thumbnails found in instructions_for_device_assembly_and_setup
+2025-10-07 00:21:26,057 - INFO - Converted .\instructions_for_device_assembly_and_setup.ipynb to .\instructions_for_device_assembly_and_setup.html
+2025-10-07 00:21:26,542 - INFO - No YouTube thumbnails found in instructions_for_setting_coordinates_for_xyz_robot
+2025-10-07 00:21:26,561 - INFO - Converted .\instructions_for_setting_coordinates_for_xyz_robot.ipynb to .\instructions_for_setting_coordinates_for_xyz_robot.html
+2025-10-07 00:21:27,120 - INFO - No YouTube thumbnails found in instructions_for_setting_up_valves_tubing_and_reservoirs
+2025-10-07 00:21:27,137 - INFO - Converted .\instructions_for_setting_up_valves_tubing_and_reservoirs.ipynb to .\instructions_for_setting_up_valves_tubing_and_reservoirs.html
+2025-10-07 00:21:30,252 - INFO - No YouTube thumbnails found in protocol_and_software_for_running_chronoseq_device-OriginalDevice
+2025-10-07 00:21:30,517 - INFO - Converted .\protocol_and_software_for_running_chronoseq_device-OriginalDevice.ipynb to .\protocol_and_software_for_running_chronoseq_device-OriginalDevice.html
+2025-10-07 00:21:33,286 - INFO - No YouTube thumbnails found in protocol_and_software_for_running_chronoseq_device
+2025-10-07 00:21:33,462 - INFO - Converted .\protocol_and_software_for_running_chronoseq_device.ipynb to .\protocol_and_software_for_running_chronoseq_device.html
+2025-10-07 00:21:33,816 - INFO - No YouTube thumbnails found in protocol_for_aquapel_treatment_of_microfluidic_chips
+2025-10-07 00:21:33,837 - INFO - Converted .\protocol_for_aquapel_treatment_of_microfluidic_chips.ipynb to .\protocol_for_aquapel_treatment_of_microfluidic_chips.html
+2025-10-07 00:21:34,180 - INFO - No YouTube thumbnails found in protocol_for_bonding_pdms_chips_to_glass
+2025-10-07 00:21:34,190 - INFO - Converted .\protocol_for_bonding_pdms_chips_to_glass.ipynb to .\protocol_for_bonding_pdms_chips_to_glass.html
+2025-10-07 00:21:34,507 - INFO - No YouTube thumbnails found in protocol_for_bulk_rna_seq_library_prep
+2025-10-07 00:21:34,514 - INFO - Converted .\protocol_for_bulk_rna_seq_library_prep.ipynb to .\protocol_for_bulk_rna_seq_library_prep.html
+2025-10-07 00:21:34,802 - INFO - No YouTube thumbnails found in protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um
+2025-10-07 00:21:34,810 - INFO - Converted .\protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um.ipynb to .\protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um.html
+2025-10-07 00:21:35,206 - INFO - No YouTube thumbnails found in protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM
+2025-10-07 00:21:35,217 - INFO - Converted .\protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM.ipynb to .\protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM.html
+2025-10-07 00:21:35,582 - INFO - No YouTube thumbnails found in protocol_for_chronoseqv4_bead_modification_for_bulk_time_series
+2025-10-07 00:21:35,590 - INFO - Converted .\protocol_for_chronoseqv4_bead_modification_for_bulk_time_series.ipynb to .\protocol_for_chronoseqv4_bead_modification_for_bulk_time_series.html
+2025-10-07 00:21:35,823 - INFO - No YouTube thumbnails found in protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads
+2025-10-07 00:21:35,823 - INFO - Converted .\protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads.ipynb to .\protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads.html
+2025-10-07 00:21:36,317 - INFO - No YouTube thumbnails found in protocol_for_making_mold_using_su8_photolithography
+2025-10-07 00:21:36,337 - INFO - Converted .\protocol_for_making_mold_using_su8_photolithography.ipynb to .\protocol_for_making_mold_using_su8_photolithography.html
+2025-10-07 00:21:36,778 - INFO - No YouTube thumbnails found in protocol_for_pdms_molding
+2025-10-07 00:21:36,785 - INFO - Converted .\protocol_for_pdms_molding.ipynb to .\protocol_for_pdms_molding.html
+2025-10-07 00:21:37,069 - INFO - No YouTube thumbnails found in protocol_for_preparing_3.33X_lysis_buffer_stock
+2025-10-07 00:21:37,077 - INFO - Converted .\protocol_for_preparing_3.33X_lysis_buffer_stock.ipynb to .\protocol_for_preparing_3.33X_lysis_buffer_stock.html
+2025-10-07 00:21:37,378 - INFO - No YouTube thumbnails found in protocol_for_preparing_cells
+2025-10-07 00:21:37,385 - INFO - Converted .\protocol_for_preparing_cells.ipynb to .\protocol_for_preparing_cells.html
+2025-10-07 00:21:37,761 - INFO - No YouTube thumbnails found in protocol_for_preparing_cells_AdditionalFiltration
+2025-10-07 00:21:37,773 - INFO - Converted .\protocol_for_preparing_cells_AdditionalFiltration.ipynb to .\protocol_for_preparing_cells_AdditionalFiltration.html
+2025-10-07 00:21:38,036 - INFO - No YouTube thumbnails found in protocol_for_preparing_cells_ExperimentalUsingBSA
+2025-10-07 00:21:38,046 - INFO - Converted .\protocol_for_preparing_cells_ExperimentalUsingBSA.ipynb to .\protocol_for_preparing_cells_ExperimentalUsingBSA.html
+2025-10-07 00:21:38,463 - INFO - No YouTube thumbnails found in protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol
+2025-10-07 00:21:38,486 - INFO - Converted .\protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol.ipynb to .\protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol.html
+2025-10-07 00:21:38,726 - INFO - No YouTube thumbnails found in protocol_for_qPCR_checking_of_K562_Costimulation
+2025-10-07 00:21:38,726 - INFO - Converted .\protocol_for_qPCR_checking_of_K562_Costimulation.ipynb to .\protocol_for_qPCR_checking_of_K562_Costimulation.html
+2025-10-07 00:21:39,022 - INFO - No YouTube thumbnails found in protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device
+2025-10-07 00:21:39,026 - INFO - Converted .\protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device.ipynb to .\protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device.html
+2025-10-07 00:21:39,294 - INFO - No YouTube thumbnails found in protocol_for_qPCR_validation_of_chronoseq_results
+2025-10-07 00:21:39,294 - INFO - Converted .\protocol_for_qPCR_validation_of_chronoseq_results.ipynb to .\protocol_for_qPCR_validation_of_chronoseq_results.html
+2025-10-07 00:21:39,590 - INFO - No YouTube thumbnails found in protocol_for_recycling_beads
+2025-10-07 00:21:39,597 - INFO - Converted .\protocol_for_recycling_beads.ipynb to .\protocol_for_recycling_beads.html
+C:\Users\Kanishk Asthana\.conda\envs\chrono\lib\site-packages\nbformat\__init__.py:92: MissingIDFieldWarning: Code cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+2025-10-07 00:21:39,960 - INFO - No YouTube thumbnails found in protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification
+2025-10-07 00:21:39,971 - INFO - Converted .\protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification.ipynb to .\protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification.html
+C:\Users\Kanishk Asthana\.conda\envs\chrono\lib\site-packages\nbformat\__init__.py:92: MissingIDFieldWarning: Code cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+2025-10-07 00:21:40,285 - INFO - No YouTube thumbnails found in protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification
+2025-10-07 00:21:40,294 - INFO - Converted .\protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification.ipynb to .\protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification.html
+2025-10-07 00:21:40,612 - INFO - No YouTube thumbnails found in protocol_for_tagmentation_with_KAPA_PCR
+2025-10-07 00:21:40,619 - INFO - Converted .\protocol_for_tagmentation_with_KAPA_PCR.ipynb to .\protocol_for_tagmentation_with_KAPA_PCR.html
+2025-10-07 00:21:41,093 - INFO - No YouTube thumbnails found in protocol_library_preparation_for_dropseq_chronoseq_beads
+2025-10-07 00:21:41,117 - INFO - Converted .\protocol_library_preparation_for_dropseq_chronoseq_beads.ipynb to .\protocol_library_preparation_for_dropseq_chronoseq_beads.html
+2025-10-07 00:21:41,494 - INFO - No YouTube thumbnails found in protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version
+2025-10-07 00:21:41,515 - INFO - Converted .\protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version.ipynb to .\protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version.html
+2025-10-07 00:21:41,801 - INFO - No YouTube thumbnails found in removeLinksFromNBConvertHTML
+2025-10-07 00:21:41,806 - INFO - Converted .\removeLinksFromNBConvertHTML.ipynb to .\removeLinksFromNBConvertHTML.html
+2025-10-07 00:21:41,806 - INFO - Successfully converted 39 notebooks to HTML with YouTube embeds
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3ba2fbb2">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">generate_sitemap_html</span><span class="p">(</span><span class="n">directory_path</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="s1">'sitemap.html'</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">"""</span>
 <span class="sd">    Generate a professional HTML site map listing all .html files, categorized by filename patterns and directory structure.</span>
-<span class="sd">    Includes &quot;Main Hardware Pages&quot;, &quot;Data Processing and Analysis&quot; (with repo links), and other sections.</span>
-<span class="sd">    - &quot;instructions*&quot; files under &quot;ChronoSeq Hardware Assembly&quot;.</span>
-<span class="sd">    - &quot;protocol*&quot; files under &quot;ChronoSeq Protocols&quot;.</span>
-<span class="sd">    - Others under &quot;Other Notebooks&quot; (hierarchical by dir, including qPCR_validation_files and _files folders).</span>
+<span class="sd">    Includes "Main Hardware Pages", "Data Processing and Analysis" (with repo links), and other sections.</span>
+<span class="sd">    - "instructions*" files under "ChronoSeq Hardware Assembly".</span>
+<span class="sd">    - "protocol*" files under "ChronoSeq Protocols".</span>
+<span class="sd">    - Others under "Other Notebooks" (hierarchical by dir, including qPCR_validation_files and _files folders).</span>
 <span class="sd">    Ignores only ivPID directory and specified basenames: ChronoSeq_Overview, convertToHTML, index, removeLinksFromNBConvertHTML, sitemap.</span>
 <span class="sd">    </span>
 <span class="sd">    Args:</span>
 <span class="sd">        directory_path (str): Path to the root directory to scan for .html files.</span>
 <span class="sd">        output_file (str): Name of the output HTML file (default: sitemap.html in root).</span>
 <span class="sd">        debug (bool): If True, print found .html paths (including qPCR_validation_files and _files specifics) to console.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">root_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span>
     
     <span class="c1"># Ignored filenames (case-insensitive, without .html extension) - convertToHTML is explicitly here</span>
     <span class="n">ignored_basenames</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;chronoseq_overview&#39;</span><span class="p">,</span> <span class="s1">&#39;convertohtml&#39;</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span> 
-        <span class="s1">&#39;removelinksfromnbconverthtml&#39;</span><span class="p">,</span> <span class="s1">&#39;sitemap&#39;</span>
+        <span class="s1">'chronoseq_overview'</span><span class="p">,</span> <span class="s1">'convertohtml'</span><span class="p">,</span> <span class="s1">'index'</span><span class="p">,</span> 
+        <span class="s1">'removelinksfromnbconverthtml'</span><span class="p">,</span> <span class="s1">'sitemap'</span>
     <span class="p">}</span>
     
     <span class="c1"># Manual main hardware links (adjust paths if not in root)</span>
     <span class="n">main_hardware_links</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;assembly&#39;</span><span class="p">:</span> <span class="s1">&#39;instructions_for_device_assembly_and_setup.html&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;operation&#39;</span><span class="p">:</span> <span class="s1">&#39;protocol_and_software_for_running_chronoseq_device.html&#39;</span>  <span class="c1"># Corrected for operation page</span>
+        <span class="s1">'assembly'</span><span class="p">:</span> <span class="s1">'instructions_for_device_assembly_and_setup.html'</span><span class="p">,</span>
+        <span class="s1">'operation'</span><span class="p">:</span> <span class="s1">'protocol_and_software_for_running_chronoseq_device.html'</span>  <span class="c1"># Corrected for operation page</span>
     <span class="p">}</span>
     
     <span class="c1"># ChronoSeq repo URL for linking all mentions</span>
-    <span class="n">chronoseq_repo</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/kanishkasthana/ChronoSeq&#39;</span>
+    <span class="n">chronoseq_repo</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq'</span>
     
     <span class="c1"># Collect all .html files recursively, excluding ignored</span>
     <span class="n">html_files</span> <span class="o">=</span> <span class="p">{}</span>
@@ -15539,60 +15772,60 @@ Converted and updated links (with anchors): .\removeLinksFromNBConvertHTML.ipynb
     <span class="n">qpcr_files</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Specific for qPCR_validation_files debug</span>
     
     <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-        <span class="n">rel_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span>  <span class="c1"># Normalize to /</span>
+        <span class="n">rel_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>  <span class="c1"># Normalize to /</span>
         
         <span class="c1"># Skip ivPID directory only</span>
-        <span class="k">if</span> <span class="s1">&#39;ivPID&#39;</span> <span class="ow">in</span> <span class="n">rel_root</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">'ivPID'</span> <span class="ow">in</span> <span class="n">rel_root</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">):</span>
             <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Prevent further walking</span>
             <span class="k">continue</span>
         
         <span class="c1"># No skipping _files directories - scan inside them for .html</span>
         
         <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.html&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">):</span>
                 <span class="c1"># Check for ignored basenames (case-insensitive)</span>
                 <span class="n">basename_stripped</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-                <span class="n">full_rel_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rel_root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span>
+                <span class="n">full_rel_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rel_root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">basename_stripped</span> <span class="ow">in</span> <span class="n">ignored_basenames</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ignored (basename match): </span><span class="si">{</span><span class="n">full_rel_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Ignored (basename match): </span><span class="si">{</span><span class="n">full_rel_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
                     <span class="k">continue</span>  <span class="c1"># Skip ignored files - this catches convertToHTML.html</span>
                 
                 <span class="n">all_found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
                 <span class="n">basename</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># For pattern matching</span>
                 
                 <span class="c1"># Specific debug for qPCR_validation_files</span>
-                <span class="k">if</span> <span class="s1">&#39;qpcr_validation_files&#39;</span> <span class="ow">in</span> <span class="n">rel_root</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">'qpcr_validation_files'</span> <span class="ow">in</span> <span class="n">rel_root</span><span class="p">:</span>
                     <span class="n">qpcr_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
                 
-                <span class="k">if</span> <span class="n">basename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;instructions&#39;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">basename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'instructions'</span><span class="p">):</span>
                     <span class="n">hardware_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
-                <span class="k">elif</span> <span class="n">basename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;protocol&#39;</span><span class="p">):</span>
+                <span class="k">elif</span> <span class="n">basename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'protocol'</span><span class="p">):</span>
                     <span class="n">protocol_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="c1"># For others, group by directory for hierarchy (use / for key)</span>
-                    <span class="n">file_dir</span> <span class="o">=</span> <span class="n">rel_root</span> <span class="k">if</span> <span class="n">rel_root</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+                    <span class="n">file_dir</span> <span class="o">=</span> <span class="n">rel_root</span> <span class="k">if</span> <span class="n">rel_root</span> <span class="o">!=</span> <span class="s1">'.'</span> <span class="k">else</span> <span class="s1">''</span>
                     <span class="k">if</span> <span class="n">file_dir</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">html_files</span><span class="p">:</span>
                         <span class="n">html_files</span><span class="p">[</span><span class="n">file_dir</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
                     <span class="n">html_files</span><span class="p">[</span><span class="n">file_dir</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>  <span class="c1"># Fixed: Use file_dir, not dir_key (undefined)</span>
     
     <span class="c1"># Debug output</span>
     <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All found .html files (excluding ignored like convertToHTML.html, with / paths; now including _files folders):&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"All found .html files (excluding ignored like convertToHTML.html, with / paths; now including _files folders):"</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">all_found</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hardware files (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Protocol files (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Other files by dir: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> directories&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Hardware files (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Protocol files (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Other files by dir: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> directories"</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">dir_key</span><span class="p">,</span> <span class="n">flist</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-            <span class="k">if</span> <span class="s1">&#39;_files&#39;</span> <span class="ow">in</span> <span class="n">dir_key</span><span class="p">:</span>  <span class="c1"># Highlight _files for verification</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">dir_key</span><span class="si">}</span><span class="s2"> (from _files folder): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span><span class="si">}</span><span class="s2"> files - </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s1">'_files'</span> <span class="ow">in</span> <span class="n">dir_key</span><span class="p">:</span>  <span class="c1"># Highlight _files for verification</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">dir_key</span><span class="si">}</span><span class="s2"> (from _files folder): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span><span class="si">}</span><span class="s2"> files - </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">dir_key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span><span class="si">}</span><span class="s2"> files - </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">flist</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>  <span class="c1"># Truncate long lists</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">dir_key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span><span class="si">}</span><span class="s2"> files - </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">flist</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>  <span class="c1"># Truncate long lists</span>
         <span class="k">if</span> <span class="n">qpcr_files</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">qPCR_validation_files specific files (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">qpcr_files</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">qpcr_files</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">qPCR_validation_files specific files (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">qpcr_files</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">qpcr_files</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">qPCR_validation_files: No .html files found (check if only .ipynb or excluded). Run &#39;find qPCR_validation_files -name </span><span class="se">\&quot;</span><span class="s2">*.html</span><span class="se">\&quot;</span><span class="s2">&#39; to verify.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">qPCR_validation_files: No .html files found (check if only .ipynb or excluded). Run 'find qPCR_validation_files -name </span><span class="se">\"</span><span class="s2">*.html</span><span class="se">\"</span><span class="s2">' to verify."</span><span class="p">)</span>
     
     <span class="c1"># Sort lists (ensure / paths)</span>
     <span class="n">hardware_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span>
@@ -15603,186 +15836,183 @@ Converted and updated links (with anchors): .\removeLinksFromNBConvertHTML.ipynb
     <span class="n">total_files</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">files_list</span><span class="p">)</span> <span class="k">for</span> <span class="n">files_list</span> <span class="ow">in</span> <span class="n">html_files</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
     
     <span class="k">if</span> <span class="n">total_files</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No .html files found in the directory (excluding ignored paths).&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"No .html files found in the directory (excluding ignored paths)."</span><span class="p">)</span>
         <span class="k">return</span>
     
     <span class="c1"># Build HTML content with professional styling</span>
     <span class="n">html_content</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;&lt;!DOCTYPE html&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;&lt;html lang=&quot;en&quot;&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;&lt;head&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;    &lt;title&gt;ChronoSeq Links&lt;/title&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;    &lt;style&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        :root { --primary-color: #2c5aa0; --secondary-color: #4a90e2; --accent-color: #7ed321; --text-color: #333; --bg-color: #f8f9fa; --card-bg: #ffffff; --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); --border-radius: 8px; --transition: all 0.3s ease; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        body { font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, sans-serif; line-height: 1.6; color: var(--text-color); background: linear-gradient(135deg, var(--bg-color) 0%, #e3f2fd 100%); margin: 0; padding: 20px; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        .container { max-width: 1200px; margin: 0 auto; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        h1 { text-align: center; color: var(--primary-color); font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        .subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        .total { text-align: center; background: var(--card-bg); padding: 10px; border-radius: var(--border-radius); box-shadow: var(--shadow); display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--secondary-color); }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        .section { background: var(--card-bg); margin: 20px 0; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); transition: var(--transition); }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        .section:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        h2 { color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 20px; font-size: 1.8rem; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        h3 { color: var(--secondary-color); margin: 20px 0 15px 0; font-size: 1.3rem; border-left: 4px solid var(--accent-color); padding-left: 10px; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        ul { list-style: none; padding-left: 0; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        li { margin: 12px 0; position: relative; padding-left: 25px; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        li::before { content: &quot;▶&quot;; color: var(--accent-color); font-weight: bold; position: absolute; left: 0; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        a { text-decoration: none; color: var(--primary-color); font-weight: 500; padding: 8px 12px; background: rgba(74, 144, 226, 0.1); border-radius: 4px; display: inline-block; transition: var(--transition); }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        a:hover { background: var(--secondary-color); color: white; transform: scale(1.05); }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        a:focus { outline: 2px solid var(--accent-color); outline-offset: 2px; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        .intro { text-align: center; background: rgba(126, 211, 33, 0.1); padding: 20px; border-radius: var(--border-radius); margin-bottom: 30px; font-style: italic; color: #555; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        .analysis-desc { margin: 10px 0; color: var(--text-color); }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        .analysis-desc p { margin-bottom: 15px; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        .analysis-desc ul li { list-style-type: disc; padding-left: 0; margin-left: 20px; position: relative; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        .analysis-desc ul li::before { content: none; }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        @media (max-width: 768px) { body { padding: 10px; } h1 { font-size: 2rem; } .section { padding: 15px; } }&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;    &lt;/style&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;&lt;/head&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;&lt;body&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;    &lt;div class=&quot;container&quot;&gt;&#39;</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">&#39;        &lt;h1&gt;&lt;a href=&quot;</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">&quot;&gt;ChronoSeq&lt;/a&gt; Links&lt;/h1&gt;&#39;</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">&#39;        &lt;p class=&quot;subtitle&quot;&gt;Explore the key resources and documentation for the &lt;a href=&quot;</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">&quot;&gt;ChronoSeq&lt;/a&gt; project&lt;/p&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        &lt;p class=&quot;total&quot;&gt;Total: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_files</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; pages&lt;/p&gt;&#39;</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">&#39;        &lt;div class=&quot;intro&quot;&gt;Navigate through hardware assembly, protocols, and analysis notebooks for the &lt;a href=&quot;</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">&quot;&gt;ChronoSeq&lt;/a&gt; project.&lt;/div&gt;&#39;</span>
+        <span class="s1">'&lt;!DOCTYPE html&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;html lang="en"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;head&gt;'</span><span class="p">,</span>
+        <span class="s1">'    &lt;meta charset="UTF-8"&gt;'</span><span class="p">,</span>
+        <span class="s1">'    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;'</span><span class="p">,</span>
+        <span class="s1">'    &lt;title&gt;ChronoSeq Links&lt;/title&gt;'</span><span class="p">,</span>
+        <span class="s1">'    &lt;style&gt;'</span><span class="p">,</span>
+        <span class="s1">'        :root { --primary-color: #2c5aa0; --secondary-color: #4a90e2; --accent-color: #7ed321; --text-color: #333; --bg-color: #f8f9fa; --card-bg: #ffffff; --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); --border-radius: 8px; --transition: all 0.3s ease; }'</span><span class="p">,</span>
+        <span class="s1">'        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text-color); background: linear-gradient(135deg, var(--bg-color) 0%, #e3f2fd 100%); margin: 0; padding: 20px; }'</span><span class="p">,</span>
+        <span class="s1">'        .container { max-width: 1200px; margin: 0 auto; }'</span><span class="p">,</span>
+        <span class="s1">'        h1 { text-align: center; color: var(--primary-color); font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }'</span><span class="p">,</span>
+        <span class="s1">'        .subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px; }'</span><span class="p">,</span>
+        <span class="s1">'        .total { text-align: center; background: var(--card-bg); padding: 10px; border-radius: var(--border-radius); box-shadow: var(--shadow); display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--secondary-color); }'</span><span class="p">,</span>
+        <span class="s1">'        .section { background: var(--card-bg); margin: 20px 0; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); transition: var(--transition); }'</span><span class="p">,</span>
+        <span class="s1">'        .section:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); }'</span><span class="p">,</span>
+        <span class="s1">'        h2 { color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 20px; font-size: 1.8rem; }'</span><span class="p">,</span>
+        <span class="s1">'        h3 { color: var(--secondary-color); margin: 20px 0 15px 0; font-size: 1.3rem; border-left: 4px solid var(--accent-color); padding-left: 10px; }'</span><span class="p">,</span>
+        <span class="s1">'        ul { list-style: none; padding-left: 0; }'</span><span class="p">,</span>
+        <span class="s1">'        li { margin: 12px 0; position: relative; padding-left: 25px; }'</span><span class="p">,</span>
+        <span class="s1">'        li::before { content: "▶"; color: var(--accent-color); font-weight: bold; position: absolute; left: 0; }'</span><span class="p">,</span>
+        <span class="s1">'        a { text-decoration: none; color: var(--primary-color); font-weight: 500; padding: 8px 12px; background: rgba(74, 144, 226, 0.1); border-radius: 4px; display: inline-block; transition: var(--transition); }'</span><span class="p">,</span>
+        <span class="s1">'        a:hover { background: var(--secondary-color); color: white; transform: scale(1.05); }'</span><span class="p">,</span>
+        <span class="s1">'        a:focus { outline: 2px solid var(--accent-color); outline-offset: 2px; }'</span><span class="p">,</span>
+        <span class="s1">'        .intro { text-align: center; background: rgba(126, 211, 33, 0.1); padding: 20px; border-radius: var(--border-radius); margin-bottom: 30px; font-style: italic; color: #555; }'</span><span class="p">,</span>
+        <span class="s1">'        .analysis-desc { margin: 10px 0; color: var(--text-color); }'</span><span class="p">,</span>
+        <span class="s1">'        .analysis-desc p { margin-bottom: 15px; }'</span><span class="p">,</span>
+        <span class="s1">'        .analysis-desc ul li { list-style-type: disc; padding-left: 0; margin-left: 20px; position: relative; }'</span><span class="p">,</span>
+        <span class="s1">'        .analysis-desc ul li::before { content: none; }'</span><span class="p">,</span>
+        <span class="s1">'        @media (max-width: 768px) { body { padding: 10px; } h1 { font-size: 2rem; } .section { padding: 15px; } }'</span><span class="p">,</span>
+        <span class="s1">'    &lt;/style&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/head&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;body&gt;'</span><span class="p">,</span>
+        <span class="s1">'    &lt;div class="container"&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'        &lt;h1&gt;&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; Links&lt;/h1&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'        &lt;p class="subtitle"&gt;Explore the key resources and documentation for the &lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; project&lt;/p&gt;'</span><span class="p">,</span>
+        <span class="s1">'        &lt;p class="total"&gt;Total: '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_files</span><span class="p">)</span> <span class="o">+</span> <span class="s1">' pages&lt;/p&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'        &lt;div class="intro"&gt;Navigate through hardware assembly, protocols, and analysis notebooks for the &lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; project.&lt;/div&gt;'</span>
     <span class="p">]</span>
     
     <span class="c1"># Section: Main Hardware Pages</span>
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-        <span class="s1">&#39;        &lt;div class=&quot;section&quot;&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;            &lt;h2&gt;Main Hardware Pages&lt;/h2&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;            &lt;h3&gt;Hardware Assembly&lt;/h3&gt;&#39;</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">&#39;            &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">&quot;assembly&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot;&gt;View Main Hardware Assembly Page&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;            &lt;h3&gt;Hardware Operation&lt;/h3&gt;&#39;</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">&#39;            &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">&quot;operation&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot;&gt;View Main Hardware Operation Page&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        &lt;/div&gt;&#39;</span>
+        <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
+        <span class="s1">'            &lt;h2&gt;Main Hardware Pages&lt;/h2&gt;'</span><span class="p">,</span>
+        <span class="s1">'            &lt;h3&gt;Hardware Assembly&lt;/h3&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'            &lt;ul&gt;&lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"assembly"</span><span class="p">]</span><span class="si">}</span><span class="s1">"&gt;View Main Hardware Assembly Page&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'            &lt;h3&gt;Hardware Operation&lt;/h3&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'            &lt;ul&gt;&lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"operation"</span><span class="p">]</span><span class="si">}</span><span class="s1">"&gt;View Main Hardware Operation Page&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'        &lt;/div&gt;'</span>
     <span class="p">])</span>
     
     <span class="c1"># Updated Section: Data Processing and Analysis (matching provided Markdown in HTML)</span>
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-        <span class="s1">&#39;        &lt;div class=&quot;section&quot;&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;            &lt;h2&gt;Data Processing and Analysis&lt;/h2&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;            &lt;div class=&quot;analysis-desc&quot;&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;                &lt;ul&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;                    &lt;li&gt;Check out the &lt;a href=&quot;https://github.com/kanishkasthana/ChronoSeq-Tools&quot;&gt;ChronoSeq-Tools repo&lt;/a&gt; to help process your raw data.&lt;/li&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;                    &lt;li&gt;Check out the &lt;a href=&quot;https://github.com/kanishkasthana/ChronoSeq-QC&quot;&gt;ChronoSeq-QC repo&lt;/a&gt; to see how the QC plots were generated.&lt;/li&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;                    &lt;li&gt;Check out the &lt;a href=&quot;https://github.com/anjambor/ChronoSeq-Analysis&quot;&gt;ChronoSeq-Analysis repo&lt;/a&gt; to see how the ChronoSeq data was analysed.&lt;/li&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;                &lt;/ul&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;            &lt;/div&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;        &lt;/div&gt;&#39;</span>
+        <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
+        <span class="s1">'            &lt;h2&gt;Data Processing and Analysis&lt;/h2&gt;'</span><span class="p">,</span>
+        <span class="s1">'            &lt;div class="analysis-desc"&gt;'</span><span class="p">,</span>
+        <span class="s1">'                &lt;ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'                    &lt;li&gt;Check out the &lt;a href="https://github.com/kanishkasthana/ChronoSeq-Tools"&gt;ChronoSeq-Tools repo&lt;/a&gt; to help process your raw data.&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'                    &lt;li&gt;Check out the &lt;a href="https://github.com/kanishkasthana/ChronoSeq-QC"&gt;ChronoSeq-QC repo&lt;/a&gt; to see how the QC plots were generated.&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'                    &lt;li&gt;Check out the &lt;a href="https://github.com/anjambor/ChronoSeq-Analysis"&gt;ChronoSeq-Analysis repo&lt;/a&gt; to see how the ChronoSeq data was analysed.&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'                &lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'            &lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'        &lt;/div&gt;'</span>
     <span class="p">])</span>
     
     <span class="c1"># Section: ChronoSeq Hardware Assembly (flat)</span>
     <span class="k">if</span> <span class="n">hardware_files</span><span class="p">:</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-            <span class="s1">&#39;        &lt;div class=&quot;section&quot;&gt;&#39;</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">&#39;            &lt;h2&gt;&lt;a href=&quot;</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">&quot;&gt;ChronoSeq&lt;/a&gt; Hardware Assembly&lt;/h2&gt;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;            &lt;ul&gt;&#39;</span>
+            <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s1">'            &lt;h2&gt;&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; Hardware Assembly&lt;/h2&gt;'</span><span class="p">,</span>
+            <span class="s1">'            &lt;ul&gt;'</span>
         <span class="p">])</span>
         <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">hardware_files</span><span class="p">:</span>
-            <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.html&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;%20&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>  <span class="c1"># Decode %20 for display</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;                &lt;li&gt;&lt;a href=&quot;</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">&quot;&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="p">)</span>
-        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;            &lt;/ul&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;        &lt;/div&gt;&#39;</span><span class="p">])</span>
+            <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>  <span class="c1"># Decode %20 for display</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">,</span> <span class="s1">'        &lt;/div&gt;'</span><span class="p">])</span>
     
     <span class="c1"># Section: ChronoSeq Protocols (flat)</span>
     <span class="k">if</span> <span class="n">protocol_files</span><span class="p">:</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-            <span class="s1">&#39;        &lt;div class=&quot;section&quot;&gt;&#39;</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">&#39;            &lt;h2&gt;&lt;a href=&quot;</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">&quot;&gt;ChronoSeq&lt;/a&gt; Protocols&lt;/h2&gt;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;            &lt;ul&gt;&#39;</span>
+            <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s1">'            &lt;h2&gt;&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; Protocols&lt;/h2&gt;'</span><span class="p">,</span>
+            <span class="s1">'            &lt;ul&gt;'</span>
         <span class="p">])</span>
         <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">protocol_files</span><span class="p">:</span>
-            <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.html&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;%20&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>  <span class="c1"># Decode %20</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;                &lt;li&gt;&lt;a href=&quot;</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">&quot;&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="p">)</span>
-        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;            &lt;/ul&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;        &lt;/div&gt;&#39;</span><span class="p">])</span>
+            <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>  <span class="c1"># Decode %20</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">,</span> <span class="s1">'        &lt;/div&gt;'</span><span class="p">])</span>
     
     <span class="c1"># Section: Other Notebooks (hierarchical by dir, with /)</span>
     <span class="k">if</span> <span class="n">html_files</span><span class="p">:</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-            <span class="s1">&#39;        &lt;div class=&quot;section&quot;&gt;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;            &lt;h2&gt;Other Notebooks&lt;/h2&gt;&#39;</span>
+            <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
+            <span class="s1">'            &lt;h2&gt;Other Notebooks&lt;/h2&gt;'</span>
         <span class="p">])</span>
         <span class="n">sorted_dirs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-        <span class="n">current_dir</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">current_dir</span> <span class="o">=</span> <span class="s2">""</span>
         <span class="k">for</span> <span class="n">dir_key</span> <span class="ow">in</span> <span class="n">sorted_dirs</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">dir_key</span> <span class="o">!=</span> <span class="n">current_dir</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">current_dir</span><span class="p">:</span>
-                    <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;            &lt;/ul&gt;&#39;</span><span class="p">)</span>
+                    <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">dir_key</span><span class="p">:</span>
-                    <span class="n">dir_display</span> <span class="o">=</span> <span class="n">dir_key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39; &gt; &#39;</span><span class="p">)</span>
+                    <span class="n">dir_display</span> <span class="o">=</span> <span class="n">dir_key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">' &gt; '</span><span class="p">)</span>
                     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                        <span class="sa">f</span><span class="s1">&#39;            &lt;h3&gt;</span><span class="si">{</span><span class="n">dir_display</span><span class="si">}</span><span class="s1">&lt;/h3&gt;&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;            &lt;ul&gt;&#39;</span>
+                        <span class="sa">f</span><span class="s1">'            &lt;h3&gt;</span><span class="si">{</span><span class="n">dir_display</span><span class="si">}</span><span class="s1">&lt;/h3&gt;'</span><span class="p">,</span>
+                        <span class="s1">'            &lt;ul&gt;'</span>
                     <span class="p">])</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                        <span class="s1">&#39;            &lt;h3&gt;Root Directory&lt;/h3&gt;&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;            &lt;ul&gt;&#39;</span>
+                        <span class="s1">'            &lt;h3&gt;Root Directory&lt;/h3&gt;'</span><span class="p">,</span>
+                        <span class="s1">'            &lt;ul&gt;'</span>
                     <span class="p">])</span>
                 <span class="n">current_dir</span> <span class="o">=</span> <span class="n">dir_key</span>
             
             <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">html_files</span><span class="p">[</span><span class="n">dir_key</span><span class="p">]:</span>
-                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.html&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;%20&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>  <span class="c1"># Decode %20 for readability</span>
-                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;                &lt;li&gt;&lt;a href=&quot;</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">&quot;&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="p">)</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>  <span class="c1"># Decode %20 for readability</span>
+                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
         
-        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;            &lt;/ul&gt;&#39;</span><span class="p">)</span>  <span class="c1"># Close final ul</span>
-        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;        &lt;/div&gt;&#39;</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">)</span>  <span class="c1"># Close final ul</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'        &lt;/div&gt;'</span><span class="p">)</span>
     
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-        <span class="s1">&#39;    &lt;/div&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;&lt;/body&gt;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;&lt;/html&gt;&#39;</span>
+        <span class="s1">'    &lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/body&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/html&gt;'</span>
     <span class="p">])</span>
     
     <span class="c1"># Write to sitemap.html in root</span>
     <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_dir</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html_content</span><span class="p">))</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html_content</span><span class="p">))</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated professional sitemap.html with </span><span class="si">{</span><span class="n">total_files</span><span class="si">}</span><span class="s2"> HTML files at: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Updated intro text and linked all &#39;ChronoSeq&#39; mentions to https://github.com/kanishkasthana/ChronoSeq.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;convertToHTML.html excluded. Styling modern and responsive. _files scanned; qPCR_validation_files under &#39;Other Notebooks&#39;.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Generated professional sitemap.html with </span><span class="si">{</span><span class="n">total_files</span><span class="si">}</span><span class="s2"> HTML files at: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Updated intro text and linked all 'ChronoSeq' mentions to https://github.com/kanishkasthana/ChronoSeq."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"convertToHTML.html excluded. Styling modern and responsive. _files scanned; qPCR_validation_files under 'Other Notebooks'."</span><span class="p">)</span>
 
-<span class="c1"># Example usage: Replace &#39;.&#39; with your directory path</span>
-<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>  <span class="c1"># Current directory; change as needed</span>
+<span class="c1"># Example usage: Replace '.' with your directory path</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">'.'</span>  <span class="c1"># Current directory; change as needed</span>
 <span class="n">generate_sitemap_html</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Set debug=True if needed for verification</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Generated professional sitemap.html with 40 HTML files at: C:\Users\ChronoSeq\ChronoSeq\sitemap.html
-Updated intro text and linked all &#39;ChronoSeq&#39; mentions to https://github.com/kanishkasthana/ChronoSeq.
-convertToHTML.html excluded. Styling modern and responsive. _files scanned; qPCR_validation_files under &#39;Other Notebooks&#39;.
+<pre>Generated professional sitemap.html with 41 HTML files at: C:\Users\ChronoSeq\ChronoSeq\sitemap.html
+Updated intro text and linked all 'ChronoSeq' mentions to https://github.com/kanishkasthana/ChronoSeq.
+convertToHTML.html excluded. Styling modern and responsive. _files scanned; qPCR_validation_files under 'Other Notebooks'.
 </pre>
 </div>
 </div>
-
 </div>
-
 </div>
-
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ed03affe">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </body>
-
-
-
-
-
-
-
 </html>

@@ -1,13 +1,9 @@
 <!DOCTYPE html>
+
 <html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-
-
-
-
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -57,9 +53,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-
-
-
 <style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
@@ -14542,8 +14535,7 @@ div.jp-Cell-Placeholder-content-3 {
 }
 
 </style>
-
-    <style type="text/css">
+<style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
@@ -14965,7 +14957,6 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-switch-true-position-color: var(--md-orange-900);
 }
 </style>
-
 <style type="text/css">
 /* Force rendering true colors when outputing to pdf */
 * {
@@ -15066,11 +15057,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   }
 }
 </style>
-
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
     init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
@@ -15100,7 +15090,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><script type="module">
+<!-- End of mathjax configuration --><script type="module">
   document.addEventListener("DOMContentLoaded", async () => {
     const diagrams = document.querySelectorAll(".jp-Mermaid > pre.mermaid");
     // do not load mermaidjs if not needed
@@ -15211,43 +15201,41 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div id="cell-id=7f6ba82c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7f6ba82c">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Setting-the-Coordinates-for-the-XYZ-Robot">Setting the Coordinates for the XYZ Robot<a class="anchor-link" href="#Setting-the-Coordinates-for-the-XYZ-Robot">&#182;</a></h2><ul>
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Setting-the-Coordinates-for-the-XYZ-Robot">Setting the Coordinates for the XYZ Robot<a class="anchor-link" href="#Setting-the-Coordinates-for-the-XYZ-Robot">¶</a></h2><ul>
 <li>We want to store the coordinates for the various positions in Ice Box 1 and Ice Box 2.</li>
 <li>This notebook will help you set those positions and store them in a config file.</li>
 <li>We will the following:<ul>
 <li><a href="https://ecatalog.corning.com/life-sciences/b2c/US/en/Liquid-Handling/Tubes,-Liquid-Handling/Centrifuge-Tubes/Falcon%C2%AE-Conical-Centrifuge-Tubes/p/352098">50ml Tubes</a></li>
 <li><a href="https://ecatalog.corning.com/life-sciences/b2c/US/en/Liquid-Handling/Tubes,-Liquid-Handling/Centrifuge-Tubes/Falcon%C2%AE-Conical-Centrifuge-Tubes/p/352097">15ml Tubes</a></li>
-<li><a href="https://www.vici.com/profiles/prof_ps.php">1/16&quot; ID 0.5mm ID PTFE tubing {CAT NO. JR-T-4183-M25}</a><ul>
+<li><a href="https://www.vici.com/profiles/prof_ps.php">1/16" ID 0.5mm ID PTFE tubing {CAT NO. JR-T-4183-M25}</a><ul>
 <li>Email precision@vici.com for a Quote. Tell them your credit card details for payment.</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Cut a 30cm Piece of PTFE Tubing using a <a href="https://www.grainger.com/product/STANLEY-Razor-Blade-1-1-2-in-Bladde-4A807">Stanley Razor Blade</a>.</li>
-<li>Put the 15ml and 50ml Tubes in the Ice Boxes as shown.<br><img src="img/IMG_4433.jpg" height="50%" width="50%"></li>
-<li>Push the cut tubing to the position shown through the Pipette Tip on the Linear Rail.<br><img src="img/IMG_4434.jpg" height="50%" width="50%"></li>
+<li>Put the 15ml and 50ml Tubes in the Ice Boxes as shown.<br/><img height="50%" src="img/IMG_4433.jpg" width="50%"/></li>
+<li>Push the cut tubing to the position shown through the Pipette Tip on the Linear Rail.<br/><img height="50%" src="img/IMG_4434.jpg" width="50%"/></li>
 <li>Execute the cells below to Intialize your device and define some Classes for our Robots.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=f93376c7" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f93376c7">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># coding : utf8</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># coding : utf8</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -15255,15 +15243,15 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="kn">import</span> <span class="nn">ivPID.PID</span> <span class="k">as</span> <span class="nn">PID_controller</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;.\config&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">".\config"</span><span class="p">)</span>
 
 <span class="c1">#Adding required directories to sys.path. Make sure you are in the Directory with the Git Repo when you start Jupyter Notebook</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">());</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">DLL64&quot;</span><span class="p">);</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">+</span><span class="s2">"</span><span class="se">\\</span><span class="s2">DLL64"</span><span class="p">);</span>
 
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">Elveflow64</span>
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -15276,23 +15264,16 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">pygame</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>C:\Users\kanis\Documents\ChronoSeq
 pygame 2.5.2 (SDL 2.28.3, Python 3.7.16)
@@ -15300,141 +15281,114 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 </pre>
 </div>
 </div>
-
 </div>
-
 </div>
-
-</div><div id="cell-id=516027d3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=516027d3">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
 <span class="nx">IPython</span><span class="p">.</span><span class="nx">OutputArea</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_should_scroll</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">lines</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-
-<div id="16cc78f1-491e-4797-b91e-7f026c80d0f8" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedJavaScript jp-OutputArea-output" data-mime-type="application/javascript" id="906f2a98-afcf-43b0-9115-e63306ee465d">
 <script type="text/javascript">
-var element = document.getElementById('16cc78f1-491e-4797-b91e-7f026c80d0f8');
+var element = document.getElementById('906f2a98-afcf-43b0-9115-e63306ee465d');
 IPython.OutputArea.prototype._should_scroll = function(lines) {
     return false;
 }
 
 </script>
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-<div id="cell-id=c5b8d871" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c5b8d871">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Note-on-Ipython-Magics">Note on Ipython Magics<a class="anchor-link" href="#Note-on-Ipython-Magics">&#182;</a></h3><ul>
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Note-on-Ipython-Magics">Note on Ipython Magics<a class="anchor-link" href="#Note-on-Ipython-Magics">¶</a></h3><ul>
 <li>We will store device specific configuration in the config folder using <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#">Ipython Magics</a></li>
 <li>We modified the <code>%%writefile</code> magic as follows.</li>
 <li>Execute the cell below</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=16724c25" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=16724c25">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.magic</span> <span class="kn">import</span> <span class="n">register_cell_magic</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.magic</span> <span class="kn">import</span> <span class="n">register_cell_magic</span>
 
 <span class="nd">@register_cell_magic</span>
 <span class="k">def</span> <span class="nf">write_and_run</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
     <span class="n">argz</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
     <span class="n">file</span> <span class="o">=</span> <span class="n">argz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">argz</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">argz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-a&#39;</span><span class="p">:</span>
-        <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
+    <span class="n">mode</span> <span class="o">=</span> <span class="s1">'w'</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">argz</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">argz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'-a'</span><span class="p">:</span>
+        <span class="n">mode</span> <span class="o">=</span> <span class="s1">'a'</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
     <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
-</div><div id="cell-id=558cbaf2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=558cbaf2">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -i config/instrument_initialization.py
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -i config/instrument_initialization.py
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Pressure Controller Connection Started
 Pressure Controller ID: 0
 True
-{&#39;baudrate&#39;: 9600, &#39;bytesize&#39;: 8, &#39;parity&#39;: &#39;N&#39;, &#39;stopbits&#39;: 1, &#39;xonxoff&#39;: False, &#39;dsrdtr&#39;: False, &#39;rtscts&#39;: False, &#39;timeout&#39;: 1, &#39;write_timeout&#39;: 0, &#39;inter_byte_timeout&#39;: None}
+{'baudrate': 9600, 'bytesize': 8, 'parity': 'N', 'stopbits': 1, 'xonxoff': False, 'dsrdtr': False, 'rtscts': False, 'timeout': 1, 'write_timeout': 0, 'inter_byte_timeout': None}
 True
-{&#39;baudrate&#39;: 9600, &#39;bytesize&#39;: 8, &#39;parity&#39;: &#39;N&#39;, &#39;stopbits&#39;: 1, &#39;xonxoff&#39;: False, &#39;dsrdtr&#39;: False, &#39;rtscts&#39;: False, &#39;timeout&#39;: 1, &#39;write_timeout&#39;: 0, &#39;inter_byte_timeout&#39;: None}
+{'baudrate': 9600, 'bytesize': 8, 'parity': 'N', 'stopbits': 1, 'xonxoff': False, 'dsrdtr': False, 'rtscts': False, 'timeout': 1, 'write_timeout': 0, 'inter_byte_timeout': None}
 True
-{&#39;baudrate&#39;: 9600, &#39;bytesize&#39;: 8, &#39;parity&#39;: &#39;N&#39;, &#39;stopbits&#39;: 1, &#39;xonxoff&#39;: False, &#39;dsrdtr&#39;: False, &#39;rtscts&#39;: False, &#39;timeout&#39;: 1, &#39;write_timeout&#39;: 0, &#39;inter_byte_timeout&#39;: None}
+{'baudrate': 9600, 'bytesize': 8, 'parity': 'N', 'stopbits': 1, 'xonxoff': False, 'dsrdtr': False, 'rtscts': False, 'timeout': 1, 'write_timeout': 0, 'inter_byte_timeout': None}
 COM12
-{&#39;baudrate&#39;: 9600, &#39;bytesize&#39;: 8, &#39;parity&#39;: &#39;N&#39;, &#39;stopbits&#39;: 1, &#39;xonxoff&#39;: False, &#39;dsrdtr&#39;: False, &#39;rtscts&#39;: False, &#39;timeout&#39;: 1, &#39;write_timeout&#39;: 0, &#39;inter_byte_timeout&#39;: None}
+{'baudrate': 9600, 'bytesize': 8, 'parity': 'N', 'stopbits': 1, 'xonxoff': False, 'dsrdtr': False, 'rtscts': False, 'timeout': 1, 'write_timeout': 0, 'inter_byte_timeout': None}
 True
 Cell Channel Flow Meter ID: 3000
 error 0 :
@@ -15449,34 +15403,31 @@ Oil Channel Density:
 Oil Channel Flow rate:
 -1659.781160837623
 COM15
-{&#39;baudrate&#39;: 9600, &#39;bytesize&#39;: 8, &#39;parity&#39;: &#39;N&#39;, &#39;stopbits&#39;: 1, &#39;xonxoff&#39;: False, &#39;dsrdtr&#39;: False, &#39;rtscts&#39;: False, &#39;timeout&#39;: 1, &#39;write_timeout&#39;: 1, &#39;inter_byte_timeout&#39;: None}
+{'baudrate': 9600, 'bytesize': 8, 'parity': 'N', 'stopbits': 1, 'xonxoff': False, 'dsrdtr': False, 'rtscts': False, 'timeout': 1, 'write_timeout': 1, 'inter_byte_timeout': None}
 True
 COM9
-{&#39;baudrate&#39;: 9600, &#39;bytesize&#39;: 8, &#39;parity&#39;: &#39;N&#39;, &#39;stopbits&#39;: 1, &#39;xonxoff&#39;: False, &#39;dsrdtr&#39;: False, &#39;rtscts&#39;: False, &#39;timeout&#39;: 1, &#39;write_timeout&#39;: 1, &#39;inter_byte_timeout&#39;: None}
+{'baudrate': 9600, 'bytesize': 8, 'parity': 'N', 'stopbits': 1, 'xonxoff': False, 'dsrdtr': False, 'rtscts': False, 'timeout': 1, 'write_timeout': 1, 'inter_byte_timeout': None}
 True
 COM7
-{&#39;baudrate&#39;: 9600, &#39;bytesize&#39;: 8, &#39;parity&#39;: &#39;N&#39;, &#39;stopbits&#39;: 1, &#39;xonxoff&#39;: False, &#39;dsrdtr&#39;: False, &#39;rtscts&#39;: False, &#39;timeout&#39;: 1, &#39;write_timeout&#39;: 1, &#39;inter_byte_timeout&#39;: None}
+{'baudrate': 9600, 'bytesize': 8, 'parity': 'N', 'stopbits': 1, 'xonxoff': False, 'dsrdtr': False, 'rtscts': False, 'timeout': 1, 'write_timeout': 1, 'inter_byte_timeout': None}
 True
 COM10
-{&#39;baudrate&#39;: 9600, &#39;bytesize&#39;: 8, &#39;parity&#39;: &#39;N&#39;, &#39;stopbits&#39;: 1, &#39;xonxoff&#39;: False, &#39;dsrdtr&#39;: False, &#39;rtscts&#39;: False, &#39;timeout&#39;: 1, &#39;write_timeout&#39;: 0, &#39;inter_byte_timeout&#39;: None}
+{'baudrate': 9600, 'bytesize': 8, 'parity': 'N', 'stopbits': 1, 'xonxoff': False, 'dsrdtr': False, 'rtscts': False, 'timeout': 1, 'write_timeout': 0, 'inter_byte_timeout': None}
 True
 </pre>
 </div>
 </div>
-
 </div>
-
 </div>
-
-</div><div id="cell-id=5aae8219" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5aae8219">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">robot_action</span><span class="p">():</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">robot_action</span><span class="p">():</span>
     
     <span class="n">all_time_points</span><span class="o">=</span><span class="p">{}</span>
     <span class="n">in_tube</span><span class="o">=</span><span class="kc">False</span>
@@ -15496,8 +15447,8 @@ True
     
     <span class="k">def</span> <span class="nf">goToCoordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">robot_action</span><span class="o">.</span><span class="n">in_tube</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
-        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;G&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xpos</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ypos</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"|X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"G"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xpos</span><span class="p">)</span><span class="o">+</span><span class="s2">","</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ypos</span><span class="p">)</span><span class="o">+</span><span class="s2">"|Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">"|X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">True</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span>
@@ -15506,8 +15457,8 @@ True
     
     <span class="k">def</span> <span class="nf">goToCoordinatesFast</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">robot_action</span><span class="o">.</span><span class="n">in_tube</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
-        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;G&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xpos</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ypos</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"|X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"G"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xpos</span><span class="p">)</span><span class="o">+</span><span class="s2">","</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ypos</span><span class="p">)</span><span class="o">+</span><span class="s2">"|Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">"|X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">True</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span>
@@ -15516,12 +15467,12 @@ True
     
     
     <span class="k">def</span> <span class="nf">goToCoordinatesSmoothly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_x</span><span class="o">==</span><span class="bp">self</span><span class="o">.</span><span class="n">xpos</span> <span class="p">,</span> <span class="s2">&quot;Please only change the Y coordinate for this movement. Changing the X coordinate is not currently supported. &quot;</span>
-        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">==</span><span class="mi">0</span> <span class="p">,</span> <span class="s2">&quot;No X and Y offsets are supported for this movement both for Previous and Current Position. Please remove all offsets for starting and ending postion.&quot;</span>
-        <span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ypos</span><span class="o">-</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_y</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1000</span><span class="p">,</span><span class="s2">&quot;The final Y positions have to differ by more than 1000 steps.&quot;</span>
+        <span class="k">assert</span> <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_x</span><span class="o">==</span><span class="bp">self</span><span class="o">.</span><span class="n">xpos</span> <span class="p">,</span> <span class="s2">"Please only change the Y coordinate for this movement. Changing the X coordinate is not currently supported. "</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">==</span><span class="mi">0</span> <span class="p">,</span> <span class="s2">"No X and Y offsets are supported for this movement both for Previous and Current Position. Please remove all offsets for starting and ending postion."</span>
+        <span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ypos</span><span class="o">-</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_y</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1000</span><span class="p">,</span><span class="s2">"The final Y positions have to differ by more than 1000 steps."</span>
         <span class="k">if</span> <span class="n">robot_action</span><span class="o">.</span><span class="n">in_tube</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
-        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;S&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xpos</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ypos</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"|X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"S"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xpos</span><span class="p">)</span><span class="o">+</span><span class="s2">","</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ypos</span><span class="p">)</span><span class="o">+</span><span class="s2">"|Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">"|X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">True</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span>
@@ -15531,8 +15482,8 @@ True
     
     <span class="k">def</span> <span class="nf">goToCoordinatesKeepTubeUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">robot_action</span><span class="o">.</span><span class="n">in_tube</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
-        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;U&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xpos</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ypos</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"|X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"U"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xpos</span><span class="p">)</span><span class="o">+</span><span class="s2">","</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ypos</span><span class="p">)</span><span class="o">+</span><span class="s2">"|Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">"|X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">True</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">yoffset</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">xoffset</span>
@@ -15541,10 +15492,10 @@ True
         
     <span class="k">def</span> <span class="nf">getCoordinatesFromPosition</span><span class="p">():</span>
         <span class="n">buffer</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">plotter</span><span class="o">.</span><span class="n">inWaiting</span><span class="p">())</span>
-        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;C</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"C</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">7.0</span><span class="p">)</span>
         <span class="n">buffer</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">plotter</span><span class="o">.</span><span class="n">inWaiting</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-        <span class="n">lines</span><span class="o">=</span><span class="n">buffer</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">=</span><span class="n">buffer</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">goHome</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -15552,25 +15503,25 @@ True
 
     <span class="k">def</span> <span class="nf">robotGoHome</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">robot_action</span><span class="o">.</span><span class="n">in_tube</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
-        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;H</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_yoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"|X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">robot_action</span><span class="o">.</span><span class="n">previous_xoffset</span><span class="o">*-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"H</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="n">robot_action</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">False</span>
         <span class="n">droplet_collection</span><span class="o">.</span><span class="n">droplet_collector_go_home</span><span class="p">()</span>
         
     <span class="k">def</span> <span class="nf">enableRobot</span><span class="p">():</span>
-        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;E</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"E</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">disableRobot</span><span class="p">():</span>
-        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;D</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"D</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">tubeUp</span><span class="p">():</span>
-        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;T1</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"T1</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">tubeDown</span><span class="p">():</span>
-        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;T0</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"T0</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
     
     <span class="k">def</span> <span class="nf">manuallyMove</span><span class="p">():</span>
-        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;D|T1</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">plotter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"D|T1</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
 
 <span class="k">class</span> <span class="nc">droplet_collection</span><span class="p">():</span>
     <span class="n">in_tube</span><span class="o">=</span><span class="kc">False</span>
@@ -15582,20 +15533,20 @@ True
         <span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span><span class="o">=</span><span class="n">time_taken_from_home</span>
     <span class="k">def</span> <span class="nf">goToCoordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">==</span><span class="kc">False</span> <span class="ow">and</span> <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
-            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;A&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|W&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|B&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"A"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">"|W"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span><span class="p">)</span><span class="o">+</span><span class="s2">"|B"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">True</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">current_time_delay_from_home</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">=</span><span class="kc">False</span>
         <span class="k">elif</span> <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">==</span><span class="kc">False</span> <span class="ow">and</span> <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
             <span class="n">time_diff</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">droplet_collection</span><span class="o">.</span><span class="n">current_time_delay_from_home</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span><span class="p">)</span>
-            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;A&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|W&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">time_diff</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|B&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"A"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">"|W"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">time_diff</span><span class="p">)</span><span class="o">+</span><span class="s2">"|B"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">True</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">current_time_delay_from_home</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">=</span><span class="kc">False</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="n">time_diff</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">droplet_collection</span><span class="o">.</span><span class="n">current_time_delay_from_home</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span><span class="p">)</span>
-            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;B0|W500|A&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|W&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">time_diff</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|B&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"B0|W500|A"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">"|W"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">time_diff</span><span class="p">)</span><span class="o">+</span><span class="s2">"|B"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">True</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">current_time_delay_from_home</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">=</span><span class="kc">False</span>
@@ -15605,31 +15556,31 @@ True
         
     <span class="k">def</span> <span class="nf">goToCoordinatesSlowly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">==</span><span class="kc">False</span> <span class="ow">and</span> <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
-            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">"|Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">True</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">current_time_delay_from_home</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">=</span><span class="kc">False</span>
         <span class="k">elif</span> <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">==</span><span class="kc">False</span> <span class="ow">and</span> <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
-            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">"|Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">True</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">current_time_delay_from_home</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">=</span><span class="kc">False</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="c1">#time_diff=abs(droplet_collection.current_time_delay_from_home-self.time_taken_from_home)</span>
-            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;Y0|X&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;|Y&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"Y0|X"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">"|Y"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle2</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">True</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">current_time_delay_from_home</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">=</span><span class="kc">False</span>
         
     <span class="k">def</span> <span class="nf">goToCoordinatesKeepTubeUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
-            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;A&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"A"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">False</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">=</span><span class="kc">False</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">current_time_delay_from_home</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;B0|W500|A&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"B0|W500|A"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo_angle1</span><span class="p">)</span><span class="o">+</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">False</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">=</span><span class="kc">False</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">current_time_delay_from_home</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_taken_from_home</span>
@@ -15638,11 +15589,11 @@ True
     
     <span class="k">def</span> <span class="nf">droplet_collector_go_home</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
-            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;H</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"H</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">False</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">=</span><span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">&quot;B0|W500|H</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+            <span class="n">droplet_collector</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s2">"B0|W500|H</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">in_tube</span><span class="o">=</span><span class="kc">False</span>
             <span class="n">droplet_collection</span><span class="o">.</span><span class="n">at_home</span><span class="o">=</span><span class="kc">True</span>
 
@@ -15651,189 +15602,156 @@ True
 <span class="n">good_collection_tube</span><span class="o">=</span><span class="n">droplet_collection</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">bad_collection_tube</span><span class="o">=</span><span class="n">droplet_collection</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">350</span><span class="p">)</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
 </div>
-<div id="cell-id=f3155d78" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f3155d78">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Execute the cell below to watch a video of how to get the coordinates for a Certain Position on the Ice Boxes.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=4213d902" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4213d902">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%HTML</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;600&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/fFkCPMRG7UE?si=EZtgWsnKRZRd1p_b&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">&quot;strict-origin-when-cross-origin&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%HTML</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">"800"</span> <span class="na">height</span><span class="o">=</span><span class="s">"600"</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://www.youtube.com/embed/fFkCPMRG7UE?si=EZtgWsnKRZRd1p_b"</span> <span class="na">title</span><span class="o">=</span><span class="s">"YouTube video player"</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">"0"</span> <span class="na">allow</span><span class="o">=</span><span class="s">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"</span> <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">"strict-origin-when-cross-origin"</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<iframe width="800" height="600" src="https://www.youtube.com/embed/fFkCPMRG7UE?si=EZtgWsnKRZRd1p_b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="600" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/fFkCPMRG7UE?si=EZtgWsnKRZRd1p_b" title="YouTube video player" width="800"></iframe>
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-<div id="cell-id=07f3be2a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=07f3be2a">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Execute the cell below to Manually Move the Device to Position 1 in Ice Box 2.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=a329b23e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a329b23e">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">robot_action</span><span class="o">.</span><span class="n">manuallyMove</span><span class="p">()</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
 </div>
-<div id="cell-id=6d772cd9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6d772cd9">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Manually move to position. Pull up the Tubing if it collides with the 15ml or 50ml Tubes.</li>
 <li>Now we will put the Tubing in the Down Position.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=16ff37d0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=16ff37d0">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">robot_action</span><span class="o">.</span><span class="n">tubeDown</span><span class="p">()</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
 </div>
-<div id="cell-id=6e3300d5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6e3300d5">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Try to move the XYZ Robot as close to the Center of the Tubes as possible.</li>
 <li>The robot can still be moved after the Tube has moved to the down position.</li>
 <li>Execute the cell below to get the coordinates of this position.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=b520084a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b520084a">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">robot_action</span><span class="o">.</span><span class="n">getCoordinatesFromPosition</span><span class="p">()</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">robot_action</span><span class="o">.</span><span class="n">getCoordinatesFromPosition</span><span class="p">()</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>No remaining commands with the following input:
 </pre>
 </div>
 </div>
-
 </div>
-
 </div>
-
 </div>
-<div id="cell-id=b74f9f5f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b74f9f5f">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>We will now save these X and Y coordinates in a List</li>
 <li>The <code>robot_action</code> object sets the coordinates as follows:</li>
@@ -15842,34 +15760,31 @@ True
 <ul>
 <li>Copy the measured X and Y coodinates in the Object in the list <code>bead_time_point_collection_tubes</code> below.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=de3f4055" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=de3f4055">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bead_time_point_collection_tubes</span><span class="o">=</span><span class="p">[]</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">bead_time_point_collection_tubes</span><span class="o">=</span><span class="p">[]</span>
 <span class="n">bead_time_point_collection_tubes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">robot_action</span><span class="p">(</span><span class="o">-</span><span class="mi">8510</span><span class="p">,</span><span class="o">-</span><span class="mi">8515</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
 </div>
-<div id="cell-id=1269cb21" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1269cb21">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>We can now check our Coordinate by moving the Robot to that position.</li>
 <li>The robot will move by the Yoffset of 500 after the Tube goes down.<ul>
@@ -15878,34 +15793,31 @@ True
 </li>
 <li>Execute the cell below to move the robot to the first position.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=f28fce3e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f28fce3e">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">position</span><span class="o">=</span><span class="mi">1</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">position</span><span class="o">=</span><span class="mi">1</span>
 <span class="n">bead_time_point_collection_tubes</span><span class="p">[</span><span class="n">position</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">goToCoordinates</span><span class="p">()</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
 </div>
-<div id="cell-id=750f3b3b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=750f3b3b">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>We can use the same principle to find the Coordinates for Waste Tube 1 and Waste Tube 2.<ul>
 <li>However in their case we will use a X Offset to prevent liquid droplets from dripping to other tubes during robot movement.</li>
@@ -15915,199 +15827,175 @@ True
 <li>The robot can still be moved after the Tube has moved to the down position.</li>
 <li>Execute the cell below to Home the Robot and then manually move to Waste Tube 2.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=9dabd1da" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9dabd1da">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">robot_action</span><span class="o">.</span><span class="n">robotGoHome</span><span class="p">()</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">robot_action</span><span class="o">.</span><span class="n">robotGoHome</span><span class="p">()</span>
 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">robot_action</span><span class="o">.</span><span class="n">manuallyMove</span><span class="p">()</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
 </div>
-<div id="cell-id=2c230436" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2c230436">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Execute the cell below to move the Tubing to the Down Position.</li>
 <li>Move the tip of the Tubing as close to the Center Position as possible.</li>
 <li>You should not trigger the Limit Switch.</li>
 <li>If the Limit switch is accidentally triggered then you might have to move your XY Robot, Ice Box 1 and Ice Box 2 a little bit further away from the XYZ Robot.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=52df61ae" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=52df61ae">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">robot_action</span><span class="o">.</span><span class="n">tubeDown</span><span class="p">()</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">robot_action</span><span class="o">.</span><span class="n">tubeDown</span><span class="p">()</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
 </div>
-<div id="cell-id=4c84cf9f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4c84cf9f">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Execute the cell below to get the Coordinates for Waste Tube 2.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=b9c6bfbf" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b9c6bfbf">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">robot_action</span><span class="o">.</span><span class="n">getCoordinatesFromPosition</span><span class="p">()</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">robot_action</span><span class="o">.</span><span class="n">getCoordinatesFromPosition</span><span class="p">()</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>D
 </pre>
 </div>
 </div>
-
 </div>
-
 </div>
-
 </div>
-<div id="cell-id=54a6bdda" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=54a6bdda">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Copy the X and Y Coordinate Values to the Object Below.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=e1a0fe1b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e1a0fe1b">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">waste_tube2</span><span class="o">=</span><span class="n">robot_action</span><span class="p">(</span><span class="o">-</span><span class="mi">1920</span><span class="p">,</span><span class="o">-</span><span class="mi">263</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">waste_tube2</span><span class="o">=</span><span class="n">robot_action</span><span class="p">(</span><span class="o">-</span><span class="mi">1920</span><span class="p">,</span><span class="o">-</span><span class="mi">263</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
 </div>
-<div id="cell-id=1a508da0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1a508da0">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>We can now check our Coordinates by moving the Robot to that position.</li>
 <li>The robot will move by the Yoffset of 1000 after the Tube goes down.</li>
 <li>Execute the cell below to move the robot to Waste Tube 2.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=10fd237c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=10fd237c">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">waste_tube2</span><span class="o">.</span><span class="n">goToCoordinates</span><span class="p">()</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">waste_tube2</span><span class="o">.</span><span class="n">goToCoordinates</span><span class="p">()</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
 </div>
-<div id="cell-id=e324a2ff" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e324a2ff">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Now we can repeat this method of getting the Coordinates for all the Positions in Ice Box 1 and 2.</li>
 <li>Complete replace the X and Y Coordinate Values for all the Positions below.</li>
 <li>These coordinates will be stored in the file <code>config/xyzRobotCoordinateObjects.py</code></li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=49096032" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=49096032">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">write_and_run</span> config/xyzRobotCoordinateObjects.py
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">write_and_run</span> config/xyzRobotCoordinateObjects.py
 waste_tube1=robot_action(-1983,-3202,1000,0)
 waste_tube2=robot_action(-1920,-263,1000,0)
 bead_time_point_collection_tubes=[]
@@ -16128,19 +16016,17 @@ bead_time_point_collection_tubes.append(robot_action(-6336,-14785,0,500,14))
 bead_time_point_collection_tubes.append(robot_action(-3971,-14721,0,500,15))
 bead_time_point_collection_tubes.append(robot_action(-1694,-14879,0,500,16))
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
 </div>
-<div id="cell-id=32c8ec09" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=32c8ec09">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Next we will test all the Coordinates for our XYZ and XY Robots.<ul>
 <li>Make adjustments if necessary.</li>
@@ -16148,19 +16034,18 @@ bead_time_point_collection_tubes.append(robot_action(-1694,-14879,0,500,16))
 </li>
 <li>Execute the cell below to test the coordinates.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=5b5cc5c7" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5b5cc5c7">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_robot</span><span class="p">():</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_robot</span><span class="p">():</span>
     <span class="n">waste_tube1</span><span class="o">.</span><span class="n">goToCoordinates</span><span class="p">()</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
     <span class="n">good_collection_tube</span><span class="o">.</span><span class="n">goToCoordinates</span><span class="p">()</span>
@@ -16179,112 +16064,88 @@ bead_time_point_collection_tubes.append(robot_action(-1694,-14879,0,500,16))
     
 <span class="n">test_robot</span><span class="p">()</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
 </div>
-<div id="cell-id=6b48324e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6b48324e">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Execute the cell below to see a video of our XYZ and XY Robot coordinate test.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=145117d0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=145117d0">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%HTML</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;600&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/FhH23Al3K14?si=yRKEauGkWJupocM6&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">&quot;strict-origin-when-cross-origin&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%HTML</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">"800"</span> <span class="na">height</span><span class="o">=</span><span class="s">"600"</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://www.youtube.com/embed/FhH23Al3K14?si=yRKEauGkWJupocM6"</span> <span class="na">title</span><span class="o">=</span><span class="s">"YouTube video player"</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">"0"</span> <span class="na">allow</span><span class="o">=</span><span class="s">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"</span> <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">"strict-origin-when-cross-origin"</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<iframe width="800" height="600" src="https://www.youtube.com/embed/FhH23Al3K14?si=yRKEauGkWJupocM6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="600" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/FhH23Al3K14?si=yRKEauGkWJupocM6" title="YouTube video player" width="800"></iframe>
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-<div id="cell-id=c964b34e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c964b34e">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Tape the cables for the XYZ Robot to your bench as shown.<ul>
 <li>Use Labelling Tape.</li>
-<li>This should prevent unwanted Tangles or accidental disconnection.<br><img src="img/IMG_4455.jpg" height="50%" width="50%"></li>
+<li>This should prevent unwanted Tangles or accidental disconnection.<br/><img height="50%" src="img/IMG_4455.jpg" width="50%"/></li>
 </ul>
 </li>
 <li>Execute the cell below to Shutdown the ChronoSeq device and close all the Serial connections.</li>
 </ul>
-
 </div>
 </div>
 </div>
-</div><div id="cell-id=7870c862" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7870c862">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -i config/deviceShutdown.py
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -i config/deviceShutdown.py
 </pre></div>
-
-     </div>
 </div>
 </div>
 </div>
-
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Pressure Controller Connection Closed!
 Valve Controller 1 Connection Closed!
@@ -16300,18 +16161,8 @@ Connection to the Vortex Relay closed successfully!
 </pre>
 </div>
 </div>
-
 </div>
-
 </div>
-
 </div>
 </body>
-
-
-
-
-
-
-
 </html>

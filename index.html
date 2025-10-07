@@ -1,13 +1,9 @@
 <!DOCTYPE html>
+
 <html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-
-
-
-
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -57,9 +53,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-
-
-
 <style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
@@ -14542,8 +14535,7 @@ div.jp-Cell-Placeholder-content-3 {
 }
 
 </style>
-
-    <style type="text/css">
+<style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
@@ -14965,7 +14957,6 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-switch-true-position-color: var(--md-orange-900);
 }
 </style>
-
 <style type="text/css">
 /* Force rendering true colors when outputing to pdf */
 * {
@@ -15066,11 +15057,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   }
 }
 </style>
-
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
     init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
@@ -15100,7 +15090,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><script type="module">
+<!-- End of mathjax configuration --><script type="module">
   document.addEventListener("DOMContentLoaded", async () => {
     const diagrams = document.querySelectorAll(".jp-Mermaid > pre.mermaid");
     // do not load mermaidjs if not needed
@@ -15211,60 +15201,59 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div id="cell-id=b4bcd475" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b4bcd475">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Software-and-Protocols-for-ChronoSeq">Software and Protocols for <a href="https://github.com/kanishkasthana/ChronoSeq">ChronoSeq</a><a class="anchor-link" href="#Software-and-Protocols-for-ChronoSeq">&#182;</a></h1><h3 id="Sitemap">Sitemap<a class="anchor-link" href="#Sitemap">&#182;</a></h3><ul>
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Software-and-Protocols-for-ChronoSeq">Software and Protocols for <a href="https://github.com/kanishkasthana/ChronoSeq">ChronoSeq</a><a class="anchor-link" href="#Software-and-Protocols-for-ChronoSeq">¶</a></h1><h3 id="Sitemap">Sitemap<a class="anchor-link" href="#Sitemap">¶</a></h3><ul>
 <li><a href="https://kanishkasthana.github.io/ChronoSeq/sitemap.html">This website</a> provides an overview of the ChronoSeq project. You can click on and directly go the the relevant notebooks or repositories. There are two main notebooks for Device assembly and Device operation as linked below. These notebooks should have the links to help you follow the correct instructions in the right order. Please read the disclaimer below before starting.</li>
 </ul>
-<h3 id="Getting-Started-with-Software">Getting Started with Software<a class="anchor-link" href="#Getting-Started-with-Software">&#182;</a></h3><ul>
+<h3 id="Getting-Started-with-Software">Getting Started with Software<a class="anchor-link" href="#Getting-Started-with-Software">¶</a></h3><ul>
 <li>Install <a href="https://git-scm.com/download/win">Git X86-64-Bit for Windows</a> and <a href="https://www.anaconda.com/download">Anaconda X86-64-Bit for Windows</a>, on your <a href="Computer%20Selection.md">Windows X86-64 Bit PC</a>.</li>
-<li>Type &quot;Git Bash&quot; in the Search bar next to the Start Button. Using Git Bash clone this repository.<ul>
+<li>Type "Git Bash" in the Search bar next to the Start Button. Using Git Bash clone this repository.<ul>
 <li>Using Git Bash <a href="https://tutorials.codebar.io/command-line/introduction/tutorial.html">Navigate to the directory</a> where you want to store this repository.</li>
 <li>This repository has submodules. In Git Bash, use the command <code>&gt; git clone --recursive https://github.com/kanishkasthana/ChronoSeq.git</code>  when cloning this repository so the submodules are also cloned.</li>
 </ul>
 </li>
-<li>Type &quot;Anaconda Prompt&quot; in the Search bar next to the Start Button. Now create a <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file">new environment</a> called Chrono from <a href="conda_environment_file/chrono.env.yml">this file</a></li>
+<li>Type "Anaconda Prompt" in the Search bar next to the Start Button. Now create a <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file">new environment</a> called Chrono from <a href="conda_environment_file/chrono.env.yml">this file</a></li>
 <li><a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment">Activate the Environment</a> from the Anaconda Prompt.</li>
 <li>Using the Anaconda Prompt navigate to the directory for the git repository you cloned.<ul>
 <li>Alternatively you can modify your Anaconda Prompt shortcut so that it always activates the Chrono Environment and launches at the location of your Git repository. I've included <a href="conda_environment_file/Anaconda%20Prompt.lnk">an example here</a>.</li>
-<li>Open Run and type <code>shell:startup</code> to open your startup folder.<br><img src="img/Screenshot%202024-10-24%20184651.png"></li>
+<li>Open Run and type <code>shell:startup</code> to open your startup folder.<br/><img src="img/Screenshot%202024-10-24%20184651.png"/></li>
 <li>You can copy the shortcut included to this startup folder.</li>
-<li>Then right click the shortcut and change the <code>Target</code> and <code>Start In</code> sections so that a command line terminal with the environment automatically activated opens during startup.<br><img src="img/Screenshot%202024-10-24%20184946.png"></li>
+<li>Then right click the shortcut and change the <code>Target</code> and <code>Start In</code> sections so that a command line terminal with the environment automatically activated opens during startup.<br/><img src="img/Screenshot%202024-10-24%20184946.png"/></li>
 </ul>
 </li>
 <li>Using Anaconda Prompt Run <code>&gt; jupyter notebook</code></li>
 <li>The links to the notebooks below are intended to be opened using Jupyter. Click the image below to watch a video of the process.</li>
 </ul>
-<p><br><a href="https://www.youtube.com/watch?v=qbhCONpUdx0"><img src="https://img.youtube.com/vi/qbhCONpUdx0/hqdefault.jpg"></a></p>
-<h3 id="Device-Assembly">Device Assembly<a class="anchor-link" href="#Device-Assembly">&#182;</a></h3><ul>
+<p><br/><div class="youtube-embed" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="True" frameborder="0" height="600" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/qbhCONpUdx0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="YouTube video player" width="800"></iframe></div></p>
+<h3 id="Device-Assembly">Device Assembly<a class="anchor-link" href="#Device-Assembly">¶</a></h3><ul>
 <li>See the <a href="instructions_for_device_assembly_and_setup.html">Device Assembly and Setup notebook</a> for a detailed description of how to set everything up.</li>
 </ul>
-<h3 id="Storage-of-Dropseq-beads-upon-receipt">Storage of Dropseq beads upon receipt<a class="anchor-link" href="#Storage-of-Dropseq-beads-upon-receipt">&#182;</a></h3><ul>
+<h3 id="Storage-of-Dropseq-beads-upon-receipt">Storage of Dropseq beads upon receipt<a class="anchor-link" href="#Storage-of-Dropseq-beads-upon-receipt">¶</a></h3><ul>
 <li>You should receive your beads suspended in Ethanol.</li>
 <li>Store these beads in a new box at -20°C before you start your experiments or for long term storage. Label the box with the Date you received the beads, the bead type and the batch number.</li>
 </ul>
-<h3 id="Running-the-Device-and-Preparation-for-Experiment">Running the Device and Preparation for Experiment<a class="anchor-link" href="#Running-the-Device-and-Preparation-for-Experiment">&#182;</a></h3><ul>
+<h3 id="Running-the-Device-and-Preparation-for-Experiment">Running the Device and Preparation for Experiment<a class="anchor-link" href="#Running-the-Device-and-Preparation-for-Experiment">¶</a></h3><ul>
 <li>Once you are ready, see <a href="protocol_and_software_for_running_chronoseq_device.html#Protocol-for-Preparation-and-Operation-of-the-ChronoSeq-Device-for-an-Experiment.">this notebook</a> on how to run the Device and the preparation needed.</li>
 </ul>
-<h3 id="Videos-of-Device-Operation">Videos of Device Operation<a class="anchor-link" href="#Videos-of-Device-Operation">&#182;</a></h3><ul>
-<li>Click the image below to watch a video of the view from inside the microfluidic chip during an Injection.<br><a href="https://www.youtube.com/watch?v=J2O1kA4chU0"><img src="https://img.youtube.com/vi/J2O1kA4chU0/hqdefault.jpg"></a></li>
-<li>Click the image below to watch an outside view of the ChronoSeq device during an Injection. <br><a href="https://www.youtube.com/watch?v=qFouf2HrKSk"><img src="https://img.youtube.com/vi/qFouf2HrKSk/hqdefault.jpg"></a></li>
+<h3 id="Videos-of-Device-Operation">Videos of Device Operation<a class="anchor-link" href="#Videos-of-Device-Operation">¶</a></h3><ul>
+<li>Click the image below to watch a video of the view from inside the microfluidic chip during an Injection.<br/><div class="youtube-embed" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="True" frameborder="0" height="600" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/J2O1kA4chU0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="YouTube video player" width="800"></iframe></div></li>
+<li>Click the image below to watch an outside view of the ChronoSeq device during an Injection. <br/><div class="youtube-embed" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="True" frameborder="0" height="600" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/qFouf2HrKSk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="YouTube video player" width="800"></iframe></div></li>
 </ul>
-<h3 id="Build-Compilation-Music-Video">Build Compilation Music Video<a class="anchor-link" href="#Build-Compilation-Music-Video">&#182;</a></h3><ul>
-<li>Click the image below to watch a music video of the iteration/build process for making the ChronoSeq device.<br><a href="https://www.youtube.com/watch?v=QpMUR4AgpgA"><img src="https://img.youtube.com/vi/QpMUR4AgpgA/hqdefault.jpg"></a></li>
+<h3 id="Build-Compilation-Music-Video">Build Compilation Music Video<a class="anchor-link" href="#Build-Compilation-Music-Video">¶</a></h3><ul>
+<li>Click the image below to watch a music video of the iteration/build process for making the ChronoSeq device.<br/><div class="youtube-embed" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="True" frameborder="0" height="600" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/QpMUR4AgpgA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="YouTube video player" width="800"></iframe></div></li>
 </ul>
-<h1 id="License">License<a class="anchor-link" href="#License">&#182;</a></h1><p>We have released this work under a <a href="LICENSE">CC BY-NC-SA 4.0 License</a>.</p>
-<h1 id="Disclaimer">Disclaimer<a class="anchor-link" href="#Disclaimer">&#182;</a></h1><p>Dear Fellow Users and Researchers,
-<br><br>
-We are thrilled that you are interested in assembling the ChronoSeq Device we have created. However, it is important to note that we cannot be held responsible for any injuries that may occur during the assembly and operation process.<br>
-While we strive to provide clear and concise instructions, the assembly of this open source hardware requires a certain level of skill and experience. Therefore, we strongly recommend that you take all necessary precautions to ensure your safety.<br>
-Please read and follow all instructions carefully, and make sure that you have the necessary tools and protective equipment. If you are unsure about any step or procedure, do not hesitate to seek the advice of a qualified professional. You are also welcome to raise <a href="https://github.com/kanishkasthana/ChronoSeq/issues">an issue on the Github repo</a> if you have any questions or if anything is unclear.<br></p>
-<br>
+<h1 id="License">License<a class="anchor-link" href="#License">¶</a></h1><p>We have released this work under a <a href="LICENSE">CC BY-NC-SA 4.0 License</a>.</p>
+<h1 id="Disclaimer">Disclaimer<a class="anchor-link" href="#Disclaimer">¶</a></h1><p>Dear Fellow Users and Researchers,
+<br/><br/>
+We are thrilled that you are interested in assembling the ChronoSeq Device we have created. However, it is important to note that we cannot be held responsible for any injuries that may occur during the assembly and operation process.<br/>
+While we strive to provide clear and concise instructions, the assembly of this open source hardware requires a certain level of skill and experience. Therefore, we strongly recommend that you take all necessary precautions to ensure your safety.<br/>
+Please read and follow all instructions carefully, and make sure that you have the necessary tools and protective equipment. If you are unsure about any step or procedure, do not hesitate to seek the advice of a qualified professional. You are also welcome to raise <a href="https://github.com/kanishkasthana/ChronoSeq/issues">an issue on the Github repo</a> if you have any questions or if anything is unclear.<br/></p>
+<br/>
 By using or constructing this open source hardware design, you acknowledge and agree to the following:
 1. Liability Waiver: The creators, designers, and contributors of this open source hardware project cannot be held liable for any injuries, damages, or losses resulting from the use, construction, or modification of this hardware.
 2. Assumption of Risk: You, as the builder or user, assume all risks associated with the construction, use, and modification of this hardware. This includes, but is not limited to, personal injury, property damage, or any other potential harm.
@@ -15272,30 +15261,22 @@ By using or constructing this open source hardware design, you acknowledge and a
 4. No Warranty: This open source hardware is provided "as is" without any express or implied warranties. The creators make no guarantees regarding its safety, functionality, or fitness for any particular purpose.
 5. Responsibility: You are solely responsible for ensuring that you follow all safety precautions, local laws, and regulations when building or using this hardware.
 6. Modifications: Any modifications you make to the original design are your sole responsibility, and the original creators bear no liability for the results of such modifications.
-<br>By proceeding with the use or construction of this open source hardware, you indicate your understanding and acceptance of these terms.
+<br/>By proceeding with the use or construction of this open source hardware, you indicate your understanding and acceptance of these terms.
 <p>Thank you for choosing our open source hardware, and we hope that you enjoy the building and operation process.
-<br><br>
+<br/><br/>
 Best regards,
-<br>ChronoSeq Team:
-<br>Kanishk Asthana <a href="mailto:kasthana@ucsd.edu">kasthana@ucsd.edu</a>
-<br>Alexander Jambor <a href="mailto:ajambor@ucsd.edu">ajambor@ucsd.edu</a>
-<br>Wei Wang <a href="mailto:wei-wang@ucsd.edu">wei-wang@ucsd.edu</a></p>
-<h1 id="Data-Processing-and-Analysis">Data Processing and Analysis<a class="anchor-link" href="#Data-Processing-and-Analysis">&#182;</a></h1><ul>
+<br/>ChronoSeq Team:
+<br/>Kanishk Asthana <a href="mailto:kasthana@ucsd.edu">kasthana@ucsd.edu</a>
+<br/>Alexander Jambor <a href="mailto:ajambor@ucsd.edu">ajambor@ucsd.edu</a>
+<br/>Wei Wang <a href="mailto:wei-wang@ucsd.edu">wei-wang@ucsd.edu</a></p>
+<h1 id="Data-Processing-and-Analysis">Data Processing and Analysis<a class="anchor-link" href="#Data-Processing-and-Analysis">¶</a></h1><ul>
 <li>Check out the <a href="https://github.com/kanishkasthana/ChronoSeq-Tools">ChronoSeq-Tools repo</a> to help process your raw data.</li>
 <li>Check out the <a href="https://github.com/kanishkasthana/ChronoSeq-QC">ChronoSeq-QC repo</a> to see how the QC plots were generated.</li>
 <li>Check out the <a href="https://github.com/anjambor/ChronoSeq-Analysis">ChronoSeq-Analysis repo</a> to see how the ChronoSeq data was analysed.</li>
 </ul>
-
 </div>
 </div>
 </div>
 </div>
 </body>
-
-
-
-
-
-
-
 </html>
