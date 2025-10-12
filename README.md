@@ -48,7 +48,7 @@ Dear Fellow Users and Researchers,
 <br><br>
 We are thrilled that you are interested in assembling the ChronoSeq Device we have created. However, it is important to note that we cannot be held responsible for any injuries that may occur during the assembly and operation process.<br>
 While we strive to provide clear and concise instructions, the assembly of this open source hardware requires a certain level of skill and experience. Therefore, we strongly recommend that you take all necessary precautions to ensure your safety.<br>
-Please read and follow all instructions carefully, and make sure that you have the necessary tools and protective equipment. If you are unsure about any step or procedure, do not hesitate to seek the advice of a qualified professional. You are also welcome to raise [an issue on the Github repo](https://github.com/kanishkasthana/ChronoSeq/issues) if you have any questions or if anything is unclear.<br> 
+Please read and follow all instructions carefully, and make sure that you have the necessary tools and protective equipment. If you are unsure about any step or procedure, do not hesitate to seek the advice of a qualified professional. You are also welcome to raise [an issue](https://github.com/kanishkasthana/ChronoSeq/issues) or [start a discussion](https://github.com/kanishkasthana/ChronoSeq/discussions) if you have any questions or if anything is unclear.<br> 
 <br>
 By using or constructing this open source hardware design, you acknowledge and agree to the following:
 1. Liability Waiver: The creators, designers, and contributors of this open source hardware project cannot be held liable for any injuries, damages, or losses resulting from the use, construction, or modification of this hardware.
@@ -63,7 +63,7 @@ Thank you for choosing our open source hardware, and we hope that you enjoy the 
 <br><br>
 Best regards,
 <br>ChronoSeq Team:
-<br>Kanishk Asthana [kasthana@ucsd.edu](mailto:kasthana@ucsd.edu)
+<br>Kanishk Asthana [kasthana@ucsd.edu](mailto:kasthana@ucsd.edu) , [X/Twitter](https://x.com/kanishk_asthana)
 <br>Alexander Jambor [ajambor@ucsd.edu](mailto:ajambor@ucsd.edu)
 <br>Wei Wang [wei-wang@ucsd.edu](mailto:wei-wang@ucsd.edu)
 
