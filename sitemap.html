@@ -5,33 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChronoSeq Links</title>
     <style>
-        :root { --primary-color: #2c5aa0; --secondary-color: #4a90e2; --accent-color: #7ed321; --text-color: #333; --bg-color: #f8f9fa; --card-bg: #ffffff; --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); --border-radius: 8px; --transition: all 0.3s ease; --deprecated-color: #dc3545; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text-color); background: linear-gradient(135deg, var(--bg-color) 0%, #e3f2fd 100%); margin: 0; padding: 20px; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        h1 { text-align: center; color: var(--primary-color); font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
-        .subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px; }
-        .total { text-align: center; background: var(--card-bg); padding: 10px; border-radius: var(--border-radius); box-shadow: var(--shadow); display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--secondary-color); }
-        .section { background: var(--card-bg); margin: 20px 0; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); transition: var(--transition); }
-        .section:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); }
-        h2 { color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 20px; font-size: 1.8rem; }
-        h3 { color: var(--secondary-color); margin: 20px 0 15px 0; font-size: 1.3rem; border-left: 4px solid var(--accent-color); padding-left: 10px; }
-        .deprecated h3 { color: var(--deprecated-color); border-left-color: var(--deprecated-color); }
-        .deprecated-notice { background: rgba(220, 53, 69, 0.1); padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 4px solid var(--deprecated-color); }
-        ul { list-style: none; padding-left: 0; }
-        li { margin: 12px 0; position: relative; padding-left: 25px; }
-        li::before { content: "▶"; color: var(--accent-color); font-weight: bold; position: absolute; left: 0; }
-        .deprecated li::before { color: var(--deprecated-color); }
-        a { text-decoration: none; color: var(--primary-color); font-weight: 500; padding: 8px 12px; background: rgba(74, 144, 226, 0.1); border-radius: 4px; display: inline-block; transition: var(--transition); }
-        a:hover { background: var(--secondary-color); color: white; transform: scale(1.05); }
-        a:focus { outline: 2px solid var(--accent-color); outline-offset: 2px; }
-        .deprecated a { background: rgba(220, 53, 69, 0.1); color: var(--deprecated-color); }
-        .deprecated a:hover { background: var(--deprecated-color); color: white; }
-        .intro { text-align: center; background: rgba(126, 211, 33, 0.1); padding: 20px; border-radius: var(--border-radius); margin-bottom: 30px; font-style: italic; color: #555; }
-        .analysis-desc { margin: 10px 0; color: var(--text-color); }
-        .analysis-desc p { margin-bottom: 15px; }
-        .analysis-desc ul li { list-style-type: disc; padding-left: 0; margin-left: 20px; position: relative; }
-        .analysis-desc ul li::before { content: none; }
-        @media (max-width: 768px) { body { padding: 10px; } h1 { font-size: 2rem; } .section { padding: 15px; } }
+        :root { --primary-color: #2c5aa0; --secondary-color: #4a90e2; --accent-color: #7ed321; --text-color: #333; --bg-color: #f8f9fa; --card-bg: #ffffff; --shadow: 0 4px 6px rgba(0,0,0,0.1); --border-radius: 8px; --transition: all 0.3s ease; --deprecated-color: #dc3545; --discord-color: #5865f2; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text-color); background: linear-gradient(135deg,var(--bg-color) 0%,#e3f2fd 100%); margin:0; padding:20px; }
+        .container { max-width:1200px; margin:0 auto; }
+        h1 { text-align:center; color:var(--primary-color); font-size:2.5rem; margin-bottom:10px; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .subtitle { text-align:center; font-size:1.1rem; color:#666; margin-bottom:30px; }
+        .total { text-align:center; background:var(--card-bg); padding:10px; border-radius:var(--border-radius); box-shadow:var(--shadow); display:inline-block; margin-bottom:30px; font-weight:bold; color:var(--secondary-color); }
+        .section { background:var(--card-bg); margin:20px 0; padding:25px; border-radius:var(--border-radius); box-shadow:var(--shadow); transition:var(--transition); }
+        .section:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0,0,0,0.15); }
+        h2 { color:var(--primary-color); border-bottom:2px solid var(--secondary-color); padding-bottom:10px; margin-bottom:20px; font-size:1.8rem; }
+        h3 { color:var(--secondary-color); margin:20px 0 15px 0; font-size:1.3rem; border-left:4px solid var(--accent-color); padding-left:10px; }
+        .deprecated h3 { color:var(--deprecated-color); border-left-color:var(--deprecated-color); }
+        .deprecated-notice { background:rgba(220,53,69,0.1); padding:10px; border-radius:4px; margin-bottom:15px; border-left:4px solid var(--deprecated-color); }
+        ul { list-style:none; padding-left:0; }
+        li { margin:12px 0; position:relative; padding-left:25px; }
+        li::before { content:"▶"; color:var(--accent-color); font-weight:bold; position: absolute; left:0; }
+        .deprecated li::before { color:var(--deprecated-color); }
+        a { text-decoration:none; color:var(--primary-color); font-weight:500; padding:8px 12px; background:rgba(74,144,226,0.1); border-radius:4px; display:inline-block; transition:var(--transition); }
+        a:hover { background:var(--secondary-color); color:white; transform:scale(1.05); }
+        a:focus { outline:2px solid var(--accent-color); outline-offset:2px; }
+        .deprecated a { background:rgba(220,53,69,0.1); color:var(--deprecated-color); }
+        .deprecated a:hover { background:var(--deprecated-color); color:white; }
+        .discord-link { background:rgba(88,101,242,0.1); color:var(--discord-color); }
+        .discord-link:hover { background:var(--discord-color); color:white; }
+        .github-link { background:rgba(44,90,160,0.08); color:var(--primary-color); }
+        .github-link:hover { background:var(--primary-color); color:white; }
+        .community-desc { margin:10px 0; color:var(--text-color); font-size:1rem; line-height:1.6; }
     </style>
 </head>
 <body>
@@ -55,6 +54,18 @@
                     <li>Check out the <a href="https://github.com/anjambor/ChronoSeq-Analysis">ChronoSeq-Analysis repo</a> to see how the ChronoSeq data was analysed.</li>
                 </ul>
             </div>
+        </div>
+        <div class="section">
+            <h2>Community</h2>
+            <div class="community-desc">
+                <p>Connect with ChronoSeq users, ask questions, share experiences, and get support:<br></p>
+            </div>
+            <h3>Join & Discuss</h3>
+            <ul>
+                <li><a href="https://discord.gg/aJC6938N" class="discord-link" target="_blank">ChronoSeq Discord Server</a></li>
+                <li><a href="https://github.com/kanishkasthana/ChronoSeq/discussions" class="github-link" target="_blank">GitHub Discussions</a></li>
+                <li><a href="https://github.com/kanishkasthana/ChronoSeq/issues" class="github-link" target="_blank">GitHub Issues / Bug Reports</a></li>
+            </ul>
         </div>
         <div class="section">
             <h2><a href="https://github.com/kanishkasthana/ChronoSeq">ChronoSeq</a> Hardware Assembly</h2>
