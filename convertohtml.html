@@ -15201,7 +15201,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=573233e8">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=68004bfb">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15231,6 +15231,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="sd">    2. Replace YouTube thumbnail images with embedded iframes.</span>
 <span class="sd">    3. Replace local directory/file links with GitHub repository links (EXCLUDING .html and .pdf links).</span>
 <span class="sd">    4. Replace .md file links with GitHub blob URLs.</span>
+<span class="sd">    5. Handle Git submodules - redirect to their actual repositories instead of main repo.</span>
 <span class="sd">    </span>
 <span class="sd">    Args:</span>
 <span class="sd">        html_body (str): The HTML content as a string.</span>
@@ -15238,6 +15239,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="sd">    Returns:</span>
 <span class="sd">        str: Updated HTML body.</span>
 <span class="sd">    """</span>
+    <span class="c1"># Submodule mappings: local path prefix -&gt; actual GitHub repo URL</span>
+    <span class="c1"># Add more submodules here as needed</span>
+    <span class="n">submodule_mappings</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'arduino-liquid-flow-snippets'</span><span class="p">:</span> <span class="s1">'https://github.com/kanishkasthana/arduino-liquid-flow-snippets/tree/master'</span><span class="p">,</span>
+        <span class="s1">'ivPID'</span><span class="p">:</span> <span class="s1">'https://github.com/kanishkasthana/ivPID/tree/master'</span><span class="p">,</span>
+    <span class="p">}</span>
+    
     <span class="c1"># First, handle .ipynb link replacement</span>
     <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'(href=")([^"]*\.)?(?P&lt;before&gt;[^"#\.]*)ipynb(?P&lt;after&gt;#?[^"]*)"'</span>
     <span class="k">def</span> <span class="nf">replacer</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
@@ -15287,6 +15295,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="c1"># Handle local directory/file links - redirect to GitHub repository</span>
     <span class="c1"># EXCLUDE ANY links containing ".html" or ".pdf" anywhere in the href</span>
     <span class="c1"># SPECIAL HANDLING for .md files - use blob URLs instead of tree URLs</span>
+    <span class="c1"># SPECIAL HANDLING for submodules - redirect to actual submodule repo</span>
     <span class="n">github_base_url</span> <span class="o">=</span> <span class="s2">"https://github.com/kanishkasthana/ChronoSeq"</span>
     <span class="n">github_tree_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_base_url</span><span class="si">}</span><span class="s2">/tree/master"</span>
     <span class="n">github_blob_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_base_url</span><span class="si">}</span><span class="s2">/blob/master"</span>
@@ -15317,19 +15326,35 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             <span class="k">if</span> <span class="n">clean_path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'../'</span><span class="p">):</span>
                 <span class="n">clean_path</span> <span class="o">=</span> <span class="n">clean_path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'../'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
             
-            <span class="c1"># Determine if it's a .md file or other file type vs directory</span>
-            <span class="k">if</span> <span class="n">clean_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.md'</span><span class="p">):</span>
-                <span class="c1"># For .md files, use blob URL</span>
-                <span class="n">github_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_blob_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">clean_path</span><span class="si">}</span><span class="s2">"</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Redirected .md file: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">github_url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="s1">'.'</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">clean_path</span><span class="p">):</span>
-                <span class="c1"># For other files with extensions, use blob URL  </span>
-                <span class="n">github_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_blob_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">clean_path</span><span class="si">}</span><span class="s2">"</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Redirected file: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">github_url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="c1"># For directories (no extension), use tree URL</span>
-                <span class="n">github_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_tree_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">clean_path</span><span class="si">}</span><span class="s2">"</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Redirected directory: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">github_url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="c1"># Check if path is within a submodule</span>
+            <span class="n">github_url</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">for</span> <span class="n">submodule_path</span><span class="p">,</span> <span class="n">submodule_repo_url</span> <span class="ow">in</span> <span class="n">submodule_mappings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">clean_path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">submodule_path</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">)</span> <span class="ow">or</span> <span class="n">clean_path</span> <span class="o">==</span> <span class="n">submodule_path</span><span class="p">:</span>
+                    <span class="c1"># This is a submodule path - redirect to the actual submodule repo</span>
+                    <span class="c1"># Remove the submodule prefix and append to submodule repo URL</span>
+                    <span class="n">subpath</span> <span class="o">=</span> <span class="n">clean_path</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">submodule_path</span><span class="p">):]</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">subpath</span><span class="p">:</span>
+                        <span class="n">github_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">submodule_repo_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">subpath</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">github_url</span> <span class="o">=</span> <span class="n">submodule_repo_url</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Redirected submodule link: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">github_url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+                    <span class="k">break</span>
+            
+            <span class="c1"># If not a submodule, use standard GitHub URL logic</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">github_url</span><span class="p">:</span>
+                <span class="c1"># Determine if it's a .md file or other file type vs directory</span>
+                <span class="k">if</span> <span class="n">clean_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.md'</span><span class="p">):</span>
+                    <span class="c1"># For .md files, use blob URL</span>
+                    <span class="n">github_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_blob_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">clean_path</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Redirected .md file: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">github_url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="s1">'.'</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">clean_path</span><span class="p">):</span>
+                    <span class="c1"># For other files with extensions, use blob URL  </span>
+                    <span class="n">github_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_blob_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">clean_path</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Redirected file: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">github_url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># For directories (no extension), use tree URL</span>
+                    <span class="n">github_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_tree_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">clean_path</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Redirected directory: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">github_url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             
             <span class="c1"># Update the href</span>
             <span class="n">a_tag</span><span class="p">[</span><span class="s1">'href'</span><span class="p">]</span> <span class="o">=</span> <span class="n">github_url</span>
@@ -15354,6 +15379,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="sd">    2. YouTube thumbnails -&gt; embedded iframes (560x315)</span>
 <span class="sd">    3. Local directory/file links -&gt; GitHub repository links (EXCLUDING .html and .pdf links)</span>
 <span class="sd">    4. .md files -&gt; GitHub blob URLs</span>
+<span class="sd">    5. Submodule paths -&gt; Actual submodule repository URLs</span>
+<span class="sd">       - arduino-liquid-flow-snippets -&gt; https://github.com/kanishkasthana/arduino-liquid-flow-snippets</span>
+<span class="sd">       - ivPID -&gt; https://github.com/kanishkasthana/ivPID</span>
 <span class="sd">    Special handling: Rename "OPEN ME FIRST - README - Main Menu.ipynb" output to root index.html.</span>
 <span class="sd">    </span>
 <span class="sd">    Args:</span>
@@ -15383,7 +15411,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             <span class="c1"># Convert to HTML</span>
             <span class="n">body</span><span class="p">,</span> <span class="n">resources</span> <span class="o">=</span> <span class="n">exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
             
-            <span class="c1"># Post-process: Update all links (ipynb-&gt;html, YouTube embeds, GitHub redirects)</span>
+            <span class="c1"># Post-process: Update all links (ipynb-&gt;html, YouTube embeds, GitHub redirects, submodules)</span>
             <span class="n">body</span> <span class="o">=</span> <span class="n">update_ipynb_links_to_html</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
             
             <span class="c1"># Determine output path</span>
@@ -15456,7 +15484,7 @@ Converted with all link updates: .\OPEN ME FIRST - README - Main Menu.ipynb -&gt
 Converted with all link updates: .\convertohtml.ipynb -&gt; .\convertohtml.html
 Redirected file: CAD_Files/Sensirion%20LG16-1000D%20Flow%20Sensor/LG16-1000D%20Sensirion%20Housing%20With%20Arduino%20Nano.3mf -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/CAD_Files/Sensirion%20LG16-1000D%20Flow%20Sensor/LG16-1000D%20Sensirion%20Housing%20With%20Arduino%20Nano.3mf
 Redirected directory: CAD_Files/Sensirion%20LG16-1000D%20Flow%20Sensor -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sensirion%20LG16-1000D%20Flow%20Sensor
-Redirected directory: arduino-liquid-flow-snippets/example_03_read_scalefactor_and_unit -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/arduino-liquid-flow-snippets/example_03_read_scalefactor_and_unit
+Redirected submodule link: arduino-liquid-flow-snippets/example_03_read_scalefactor_and_unit -&gt; https://github.com/kanishkasthana/arduino-liquid-flow-snippets/tree/master/example_03_read_scalefactor_and_unit
 Total local directory/file links redirected to GitHub: 3
 Converted with all link updates: .\instructions_for_assembling_sensirion_flow_sensor.ipynb -&gt; .\instructions_for_assembling_sensirion_flow_sensor.html
 Redirected file: CAD_Files/Valve%20Controller/Valve%20Relay%20Controller%20Housing.3mf -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/CAD_Files/Valve%20Controller/Valve%20Relay%20Controller%20Housing.3mf
@@ -15583,12 +15611,12 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0e2d3718">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=79092b5c">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
