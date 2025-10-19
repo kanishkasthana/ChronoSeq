@@ -1,156 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChronoSeq Links</title>
-    <style>
-        :root { --primary-color: #2c5aa0; --secondary-color: #4a90e2; --accent-color: #7ed321; --text-color: #333; --bg-color: #f8f9fa; --card-bg: #ffffff; --shadow: 0 4px 6px rgba(0,0,0,0.1); --border-radius: 8px; --transition: all 0.3s ease; --deprecated-color: #dc3545; --discord-color: #5865f2; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text-color); background: linear-gradient(135deg,var(--bg-color) 0%,#e3f2fd 100%); margin:0; padding:20px; }
-        .container { max-width:1200px; margin:0 auto; }
-        h1 { text-align:center; color:var(--primary-color); font-size:2.5rem; margin-bottom:10px; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .subtitle { text-align:center; font-size:1.1rem; color:#666; margin-bottom:30px; }
-        .total { text-align:center; background:var(--card-bg); padding:10px; border-radius:var(--border-radius); box-shadow:var(--shadow); display:inline-block; margin-bottom:30px; font-weight:bold; color:var(--secondary-color); }
-        .section { background:var(--card-bg); margin:20px 0; padding:25px; border-radius:var(--border-radius); box-shadow:var(--shadow); transition:var(--transition); }
-        .section:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0,0,0,0.15); }
-        h2 { color:var(--primary-color); border-bottom:2px solid var(--secondary-color); padding-bottom:10px; margin-bottom:20px; font-size:1.8rem; }
-        h3 { color:var(--secondary-color); margin:20px 0 15px 0; font-size:1.3rem; border-left:4px solid var(--accent-color); padding-left:10px; }
-        .deprecated h3 { color:var(--deprecated-color); border-left-color:var(--deprecated-color); }
-        .deprecated-notice { background:rgba(220,53,69,0.1); padding:10px; border-radius:4px; margin-bottom:15px; border-left:4px solid var(--deprecated-color); }
-        ul { list-style:none; padding-left:0; }
-        li { margin:12px 0; position:relative; padding-left:25px; }
-        li::before { content:"▶"; color:var(--accent-color); font-weight:bold; position: absolute; left:0; }
-        .deprecated li::before { color:var(--deprecated-color); }
-        a { text-decoration:none; color:var(--primary-color); font-weight:500; padding:8px 12px; background:rgba(74,144,226,0.1); border-radius:4px; display:inline-block; transition:var(--transition); }
-        a:hover { background:var(--secondary-color); color:white; transform:scale(1.05); }
-        a:focus { outline:2px solid var(--accent-color); outline-offset:2px; }
-        .deprecated a { background:rgba(220,53,69,0.1); color:var(--deprecated-color); }
-        .deprecated a:hover { background:var(--deprecated-color); color:white; }
-        .discord-link { background:rgba(88,101,242,0.1); color:var(--discord-color); }
-        .discord-link:hover { background:var(--discord-color); color:white; }
-        .github-link { background:rgba(44,90,160,0.08); color:var(--primary-color); }
-        .github-link:hover { background:var(--primary-color); color:white; }
-        .community-desc { margin:10px 0; color:var(--text-color); font-size:1rem; line-height:1.6; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChronoSeq Links</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:2rem 1rem;color:#1a202c;}
+.container{max-width:1200px;margin:0 auto;}
+.header{text-align:center;margin-bottom:2.5rem;}
+h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0.5rem;text-shadow:0 4px 6px rgba(0,0,0,0.1);}
+.subtitle{font-size:1.125rem;color:rgba(255,255,255,0.9);margin-bottom:1.5rem;}
+.view-github{display:inline-flex;align-items:center;gap:0.5rem;background:white;color:#667eea;padding:0.75rem 1.5rem;border-radius:9999px;text-decoration:none;font-weight:600;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:all 0.3s;}
+.view-github:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,0.15);}
+.searchbar{text-align:center;margin:2rem 0;}
+.search-input{width:100%;max-width:600px;padding:1rem 1.5rem;border:none;border-radius:9999px;font-size:1rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);outline:none;background:white;}
+.search-input:focus{box-shadow:0 6px 12px rgba(0,0,0,0.15);}
+.top-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:1.5rem;}
+.linear-section{display:flex;flex-direction:column;gap:1.5rem;}
+.card{background:white;border-radius:1rem;padding:1.5rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:all 0.3s;position:relative;overflow:hidden;}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.15);}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#667eea,#764ba2);}
+.card-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;}
+.icon{font-size:2rem;}
+.card-title{font-size:1.25rem;font-weight:700;color:#1a202c;flex:1;}
+.card-subtitle{font-size:0.875rem;color:#718096;margin-bottom:1rem;}
+.link-list{list-style:none;}
+.link-item{margin:0.5rem 0;}
+.link-btn{display:block;padding:0.75rem 1rem;background:rgba(102,126,234,0.05);border-radius:0.5rem;color:#1a202c;text-decoration:none;font-weight:500;transition:all 0.2s;border-left:3px solid #667eea;}
+.link-btn:hover{background:rgba(102,126,234,0.15);transform:translateX(4px);}
+.link-btn.highlight{background:linear-gradient(90deg,#667eea,#764ba2);color:white;border-left-color:white;}
+.external-link{display:inline-flex;align-items:center;gap:0.5rem;}
+.external-link::after{content:"↗";font-size:0.875rem;}
+.discord-btn{background:rgba(88,101,242,0.1);border-left-color:#5865f2;color:#5865f2;}
+.discord-btn:hover{background:rgba(88,101,242,0.2);}
+.github-btn{background:rgba(0,0,0,0.05);border-left-color:#24292e;color:#24292e;}
+.github-btn:hover{background:rgba(0,0,0,0.1);}
+.toggle{cursor:pointer;display:inline-flex;align-items:center;gap:0.5rem;background:rgba(239,68,68,0.1);color:#dc2626;padding:0.5rem 1rem;border-radius:0.5rem;font-weight:600;margin:1rem 0;user-select:none;}
+.toggle:hover{background:rgba(239,68,68,0.15);}
+.toggle::before{content:"▶";transition:transform 0.3s;}
+.toggle.open::before{transform:rotate(90deg);}
+.dep-content{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}
+.dep-content.open{max-height:2000px;padding-top:1rem;}
+.dep-notice{background:rgba(239,68,68,0.1);padding:0.75rem 1rem;border-radius:0.5rem;margin-bottom:1rem;border-left:3px solid #dc2626;font-size:0.875rem;color:#dc2626;}
+.deprecated .link-btn{background:rgba(239,68,68,0.05);border-left-color:#dc2626;color:#dc2626;}
+.deprecated .link-btn:hover{background:rgba(239,68,68,0.15);}
+@media(max-width:768px){h1{font-size:2rem;}.top-grid{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1><a href="https://github.com/kanishkasthana/ChronoSeq">ChronoSeq</a> Links</h1>
-        <p class="subtitle">Explore the key resources and documentation for the <a href="https://github.com/kanishkasthana/ChronoSeq">ChronoSeq</a> project</p>
-        <p class="total">Total: 40 pages</p>
-        <div class="section">
-            <h2>Main Hardware Pages</h2>
-            <h3>Hardware Assembly</h3>
-            <ul><li><a href="instructions_for_device_assembly_and_setup.html">View Main Hardware Assembly Page</a></li></ul>
-            <h3>Hardware Operation</h3>
-            <ul><li><a href="protocol_and_software_for_running_chronoseq_device.html">View Main Hardware Operation Page</a></li></ul>
-        </div>
-        <div class="section">
-            <h2>Data Processing and Analysis</h2>
-            <div class="analysis-desc">
-                <ul>
-                    <li>Check out the <a href="https://github.com/kanishkasthana/ChronoSeq-Tools">ChronoSeq-Tools repo</a> to help process your raw data.</li>
-                    <li>Check out the <a href="https://github.com/kanishkasthana/ChronoSeq-QC">ChronoSeq-QC repo</a> to see how the QC plots were generated.</li>
-                    <li>Check out the <a href="https://github.com/anjambor/ChronoSeq-Analysis">ChronoSeq-Analysis repo</a> to see how the ChronoSeq data was analysed.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Community</h2>
-            <div class="community-desc">
-                <p>Connect with ChronoSeq users, ask questions, share experiences, and get support:<br></p>
-            </div>
-            <h3>Join & Discuss</h3>
-            <ul>
-                <li><a href="https://discord.gg/aJC6938N" class="discord-link" target="_blank">ChronoSeq Discord Server</a></li>
-                <li><a href="https://github.com/kanishkasthana/ChronoSeq/discussions" class="github-link" target="_blank">GitHub Discussions</a></li>
-                <li><a href="https://github.com/kanishkasthana/ChronoSeq/issues" class="github-link" target="_blank">GitHub Issues / Bug Reports</a></li>
-            </ul>
-        </div>
-        <div class="section">
-            <h2><a href="https://github.com/kanishkasthana/ChronoSeq">ChronoSeq</a> Hardware Assembly</h2>
-            <ul>
-                <li><a href="./instructions_for_assembling_sensirion_flow_sensor.html">instructions_for_assembling_sensirion_flow_sensor</a></li>
-                <li><a href="./instructions_for_assembling_valve_controllerV2.html">instructions_for_assembling_valve_controllerV2</a></li>
-                <li><a href="./instructions_for_assembling_vortex_relay_controller.html">instructions_for_assembling_vortex_relay_controller</a></li>
-                <li><a href="./instructions_for_assembling_xy_robot_and_ice_boxes.html">instructions_for_assembling_xy_robot_and_ice_boxes</a></li>
-                <li><a href="./instructions_for_assembling_xyz_robot.html">instructions_for_assembling_xyz_robot</a></li>
-                <li><a href="./instructions_for_device_assembly_and_setup.html">instructions_for_device_assembly_and_setup</a></li>
-                <li><a href="./instructions_for_setting_coordinates_for_xyz_robot.html">instructions_for_setting_coordinates_for_xyz_robot</a></li>
-                <li><a href="./instructions_for_setting_up_valves_tubing_and_reservoirs.html">instructions_for_setting_up_valves_tubing_and_reservoirs</a></li>
-            </ul>
-            <div class="deprecated">
-                <h3>Deprecated</h3>
-                <div class="deprecated-notice">
-                    <strong>Note:</strong> The following hardware instructions are deprecated and may not work with the current version of ChronoSeq.
-                </div>
-                <ul>
-                    <li><a href="./instructions_for_assembling_valve_controller.html">instructions_for_assembling_valve_controller</a></li>
-                    <li><a href="./instructions_for_assembling_valve_controller_ESP32.html">instructions_for_assembling_valve_controller_ESP32</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-            <h2><a href="https://github.com/kanishkasthana/ChronoSeq">ChronoSeq</a> Protocols</h2>
-            <ul>
-                <li><a href="./protocol_and_software_for_running_chronoseq_device.html">protocol_and_software_for_running_chronoseq_device</a></li>
-                <li><a href="./protocol_for_aquapel_treatment_of_microfluidic_chips.html">protocol_for_aquapel_treatment_of_microfluidic_chips</a></li>
-                <li><a href="./protocol_for_bonding_pdms_chips_to_glass.html">protocol_for_bonding_pdms_chips_to_glass</a></li>
-                <li><a href="./protocol_for_bulk_rna_seq_library_prep.html">protocol_for_bulk_rna_seq_library_prep</a></li>
-                <li><a href="./protocol_for_making_mold_using_su8_photolithography.html">protocol_for_making_mold_using_su8_photolithography</a></li>
-                <li><a href="./protocol_for_pdms_molding.html">protocol_for_pdms_molding</a></li>
-                <li><a href="./protocol_for_preparing_3.33X_lysis_buffer_stock.html">protocol_for_preparing_3.33X_lysis_buffer_stock</a></li>
-                <li><a href="./protocol_for_preparing_cells_AdditionalFiltration.html">protocol_for_preparing_cells_AdditionalFiltration</a></li>
-                <li><a href="./protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol.html">protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol</a></li>
-                <li><a href="./protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device.html">protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device</a></li>
-                <li><a href="./protocol_for_qPCR_validation_of_chronoseq_results.html">protocol_for_qPCR_validation_of_chronoseq_results</a></li>
-                <li><a href="./protocol_for_recycling_beads.html">protocol_for_recycling_beads</a></li>
-                <li><a href="./protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification.html">protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification</a></li>
-                <li><a href="./protocol_for_tagmentation_with_KAPA_PCR.html">protocol_for_tagmentation_with_KAPA_PCR</a></li>
-                <li><a href="./protocol_library_preparation_for_dropseq_chronoseq_beads.html">protocol_library_preparation_for_dropseq_chronoseq_beads</a></li>
-            </ul>
-            <div class="deprecated">
-                <h3>Deprecated</h3>
-                <div class="deprecated-notice">
-                    <strong>Note:</strong> The following protocols are deprecated and may not work with the current version of ChronoSeq.
-                </div>
-                <ul>
-                    <li><a href="./protocol_and_software_for_running_chronoseq_device-OriginalDevice.html">protocol_and_software_for_running_chronoseq_device-OriginalDevice</a></li>
-                    <li><a href="./protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um.html">protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um</a></li>
-                    <li><a href="./protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM.html">protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM</a></li>
-                    <li><a href="./protocol_for_chronoseqv4_bead_modification_for_bulk_time_series.html">protocol_for_chronoseqv4_bead_modification_for_bulk_time_series</a></li>
-                    <li><a href="./protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads.html">protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads</a></li>
-                    <li><a href="./protocol_for_preparing_cells.html">protocol_for_preparing_cells</a></li>
-                    <li><a href="./protocol_for_preparing_cells_ExperimentalUsingBSA.html">protocol_for_preparing_cells_ExperimentalUsingBSA</a></li>
-                    <li><a href="./protocol_for_qPCR_checking_of_K562_Costimulation.html">protocol_for_qPCR_checking_of_K562_Costimulation</a></li>
-                    <li><a href="./protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification.html">protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification</a></li>
-                    <li><a href="./protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version.html">protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Other Notebooks</h2>
-            <h3>CAD_Files > 3 Port Reservoir</h3>
-            <ul>
-                <li><a href="CAD_Files/3 Port Reservoir/Manufacturing Notes.html">Manufacturing Notes</a></li>
-            </ul>
-            <h3>CAD_Files > XY Robot > Attribution</h3>
-            <ul>
-                <li><a href="CAD_Files/XY Robot/Attribution/attribution_card.html">attribution_card</a></li>
-            </ul>
-            <h3>CAD_Files > XYZ Robot > Attribution</h3>
-            <ul>
-                <li><a href="CAD_Files/XYZ Robot/Attribution/attribution_card.html">attribution_card</a></li>
-            </ul>
-            <h3>qPCR_validation_files</h3>
-            <ul>
-                <li><a href="qPCR_validation_files/qPCR Analysis.html">qPCR Analysis</a></li>
-            </ul>
-            <h3>qPCR_validation_files > K562_Costimulation_2_Samples</h3>
-            <ul>
-                <li><a href="qPCR_validation_files/K562_Costimulation_2_Samples/qPCR_analysis_publication_quality_plots.html">qPCR_analysis_publication_quality_plots</a></li>
-            </ul>
-        </div>
-    </div>
+<div class="container">
+<div class="header">
+<h1>ChronoSeq Links</h1>
+<p class="subtitle">Explore the key resources and documentation for the ChronoSeq project</p>
+<a href="https://github.com/kanishkasthana/ChronoSeq" class="view-github" target="_blank">
+<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+View on GitHub
+</a>
+</div>
+<div class="searchbar">
+<input type="text" id="searchInput" class="search-input" placeholder="🔍 Search protocols, hardware, or instructions...">
+</div>
+<!-- Top 3 cards in grid -->
+<div class="top-grid">
+<div class="card">
+<div class="card-header">
+<span class="icon">🔧</span>
+<h2 class="card-title">Main Hardware Pages</h2>
+</div>
+<p class="card-subtitle">Essential hardware documentation</p>
+<ul class="link-list">
+<li class="link-item"><a href="instructions_for_device_assembly_and_setup.html" class="link-btn">View Main Hardware Assembly Page</a></li>
+<li class="link-item"><a href="protocol_and_software_for_running_chronoseq_device.html" class="link-btn">View Main Hardware Operation Page</a></li>
+</ul>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">📊</span>
+<h2 class="card-title">Data Processing & Analysis</h2>
+</div>
+<p class="card-subtitle">Tools and repositories for data analysis</p>
+<ul class="link-list">
+<li class="link-item"><a href="https://github.com/kanishkasthana/ChronoSeq-Tools" class="link-btn external-link" target="_blank">ChronoSeq-Tools repo</a></li>
+<li class="link-item"><a href="https://github.com/kanishkasthana/ChronoSeq-QC" class="link-btn external-link" target="_blank">ChronoSeq-QC repo</a></li>
+<li class="link-item"><a href="https://github.com/anjambor/ChronoSeq-Analysis" class="link-btn external-link" target="_blank">ChronoSeq-Analysis repo</a></li>
+</ul>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">💬</span>
+<h2 class="card-title">Community</h2>
+</div>
+<p class="card-subtitle">Connect with ChronoSeq users and get support</p>
+<ul class="link-list">
+<li class="link-item"><a href="https://discord.gg/aJC6938N" class="link-btn discord-btn external-link" target="_blank">ChronoSeq Discord Server</a></li>
+<li class="link-item"><a href="https://github.com/kanishkasthana/ChronoSeq/discussions" class="link-btn github-btn external-link" target="_blank">GitHub Discussions</a></li>
+<li class="link-item"><a href="https://github.com/kanishkasthana/ChronoSeq/issues" class="link-btn github-btn external-link" target="_blank">GitHub Issues / Bug Reports</a></li>
+</ul>
+</div>
+</div>
+<!-- Remaining cards in linear layout -->
+<div class="linear-section">
+<div class="card">
+<div class="card-header">
+<span class="icon">⚙️</span>
+<h2 class="card-title">Hardware Assembly</h2>
+</div>
+<p class="card-subtitle">Detailed assembly instructions for ChronoSeq hardware components</p>
+<ul class="link-list">
+<li class="link-item"><a href="./instructions_for_assembling_sensirion_flow_sensor.html" class="link-btn">Instructions For Assembling Sensirion Flow Sensor</a></li>
+<li class="link-item"><a href="./instructions_for_assembling_valve_controllerV2.html" class="link-btn">Instructions For Assembling Valve Controllerv2</a></li>
+<li class="link-item"><a href="./instructions_for_assembling_vortex_relay_controller.html" class="link-btn">Instructions For Assembling Vortex Relay Controller</a></li>
+<li class="link-item"><a href="./instructions_for_assembling_xy_robot_and_ice_boxes.html" class="link-btn">Instructions For Assembling Xy Robot And Ice Boxes</a></li>
+<li class="link-item"><a href="./instructions_for_assembling_xyz_robot.html" class="link-btn">Instructions For Assembling Xyz Robot</a></li>
+<li class="link-item"><a href="./instructions_for_device_assembly_and_setup.html" class="link-btn">Instructions For Device Assembly And Setup</a></li>
+<li class="link-item"><a href="./instructions_for_setting_coordinates_for_xyz_robot.html" class="link-btn">Instructions For Setting Coordinates For Xyz Robot</a></li>
+<li class="link-item"><a href="./instructions_for_setting_up_valves_tubing_and_reservoirs.html" class="link-btn">Instructions For Setting Up Valves Tubing And Reservoirs</a></li>
+</ul>
+<div class="toggle" onclick="toggle(this)">⚠️ Deprecated Instructions</div>
+<div class="dep-content">
+<div class="dep-notice"><strong>Note:</strong> These instructions are deprecated and may not work with current versions.</div>
+<ul class="link-list deprecated">
+<li class="link-item"><a href="./instructions_for_assembling_valve_controller.html" class="link-btn">Instructions For Assembling Valve Controller</a></li>
+<li class="link-item"><a href="./instructions_for_assembling_valve_controller_ESP32.html" class="link-btn">Instructions For Assembling Valve Controller Esp32</a></li>
+</ul>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">📋</span>
+<h2 class="card-title">Protocols</h2>
+</div>
+<p class="card-subtitle">Laboratory protocols and procedures</p>
+<ul class="link-list">
+<li class="link-item"><a href="./protocol_and_software_for_running_chronoseq_device.html" class="link-btn">Protocol And Software For Running Chronoseq Device</a></li>
+<li class="link-item"><a href="./protocol_for_aquapel_treatment_of_microfluidic_chips.html" class="link-btn">Protocol For Aquapel Treatment Of Microfluidic Chips</a></li>
+<li class="link-item"><a href="./protocol_for_bonding_pdms_chips_to_glass.html" class="link-btn">Protocol For Bonding Pdms Chips To Glass</a></li>
+<li class="link-item"><a href="./protocol_for_bulk_rna_seq_library_prep.html" class="link-btn">Protocol For Bulk Rna Seq Library Prep</a></li>
+<li class="link-item"><a href="./protocol_for_making_mold_using_su8_photolithography.html" class="link-btn">Protocol For Making Mold Using Su8 Photolithography</a></li>
+<li class="link-item"><a href="./protocol_for_pdms_molding.html" class="link-btn">Protocol For Pdms Molding</a></li>
+<li class="link-item"><a href="./protocol_for_preparing_3.33X_lysis_buffer_stock.html" class="link-btn">Protocol For Preparing 3.33X Lysis Buffer Stock</a></li>
+<li class="link-item"><a href="./protocol_for_preparing_cells_AdditionalFiltration.html" class="link-btn">Protocol For Preparing Cells Additionalfiltration</a></li>
+<li class="link-item"><a href="./protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol.html" class="link-btn">Protocol For Preparing Chronoseq Dropseq Beads Stored In Ethanol</a></li>
+<li class="link-item"><a href="./protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device.html" class="link-btn">Protocol For Qpcr Checking Of K562 Costimulation Using Chronoseq Device</a></li>
+<li class="link-item"><a href="./protocol_for_qPCR_validation_of_chronoseq_results.html" class="link-btn">Protocol For Qpcr Validation Of Chronoseq Results</a></li>
+<li class="link-item"><a href="./protocol_for_recycling_beads.html" class="link-btn">Protocol For Recycling Beads</a></li>
+<li class="link-item"><a href="./protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification.html" class="link-btn">Protocol For Single Cell Scale Up Chronoseqv5 Dropseq Bead Modification</a></li>
+<li class="link-item"><a href="./protocol_for_tagmentation_with_KAPA_PCR.html" class="link-btn">Protocol For Tagmentation With Kapa Pcr</a></li>
+<li class="link-item"><a href="./protocol_library_preparation_for_dropseq_chronoseq_beads.html" class="link-btn">Protocol Library Preparation For Dropseq Chronoseq Beads</a></li>
+</ul>
+<div class="toggle" onclick="toggle(this)">⚠️ Deprecated Protocols</div>
+<div class="dep-content">
+<div class="dep-notice"><strong>Note:</strong> These protocols are deprecated and may not work with current versions.</div>
+<ul class="link-list deprecated">
+<li class="link-item"><a href="./protocol_and_software_for_running_chronoseq_device-OriginalDevice.html" class="link-btn">Protocol And Software For Running Chronoseq Device-Originaldevice</a></li>
+<li class="link-item"><a href="./protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um.html" class="link-btn">Protocol For Chronoseqv3 And Dropseq Bead Modification 100Um Or 10Um</a></li>
+<li class="link-item"><a href="./protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM.html" class="link-btn">Protocol For Chronoseqv3 And Dropseq Bead Modification 1Mm</a></li>
+<li class="link-item"><a href="./protocol_for_chronoseqv4_bead_modification_for_bulk_time_series.html" class="link-btn">Protocol For Chronoseqv4 Bead Modification For Bulk Time Series</a></li>
+<li class="link-item"><a href="./protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads.html" class="link-btn">Protocol For Exo1 Predigestion For Chronoseqv2 And Dropseq Beads</a></li>
+<li class="link-item"><a href="./protocol_for_preparing_cells.html" class="link-btn">Protocol For Preparing Cells</a></li>
+<li class="link-item"><a href="./protocol_for_preparing_cells_ExperimentalUsingBSA.html" class="link-btn">Protocol For Preparing Cells Experimentalusingbsa</a></li>
+<li class="link-item"><a href="./protocol_for_qPCR_checking_of_K562_Costimulation.html" class="link-btn">Protocol For Qpcr Checking Of K562 Costimulation</a></li>
+<li class="link-item"><a href="./protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification.html" class="link-btn">Protocol For Single Cell Scale Up Chronoseqv4 Dropseq Bead Modification</a></li>
+<li class="link-item"><a href="./protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version.html" class="link-btn">Protocol Library Preparation For Dropseq Chronoseq Beads Previous Version</a></li>
+</ul>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">📁</span>
+<h2 class="card-title">Other Resources</h2>
+</div>
+<p class="card-subtitle">CAD files, notebooks, and validation files</p>
+<p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;">Cad Files > 3 Port Reservoir</p>
+<ul class="link-list">
+<li class="link-item"><a href="CAD_Files/3 Port Reservoir/Manufacturing Notes.html" class="link-btn">Manufacturing Notes</a></li>
+</ul>
+<p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;">Cad Files > Xy Robot > Attribution</p>
+<ul class="link-list">
+<li class="link-item"><a href="CAD_Files/XY Robot/Attribution/attribution_card.html" class="link-btn">Attribution Card</a></li>
+</ul>
+<p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;">Cad Files > Xyz Robot > Attribution</p>
+<ul class="link-list">
+<li class="link-item"><a href="CAD_Files/XYZ Robot/Attribution/attribution_card.html" class="link-btn">Attribution Card</a></li>
+</ul>
+<p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;">Qpcr Validation Files</p>
+<ul class="link-list">
+<li class="link-item"><a href="qPCR_validation_files/qPCR Analysis.html" class="link-btn">Qpcr Analysis</a></li>
+</ul>
+<p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;">Qpcr Validation Files > K562 Costimulation 2 Samples</p>
+<ul class="link-list">
+<li class="link-item"><a href="qPCR_validation_files/K562_Costimulation_2_Samples/qPCR_analysis_publication_quality_plots.html" class="link-btn">Qpcr Analysis Publication Quality Plots</a></li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+function toggle(btn){const c=btn.nextElementSibling;c.classList.toggle("open");btn.classList.toggle("open");}
+document.getElementById("searchInput").addEventListener("input",function(){
+const q=this.value.toLowerCase().trim();
+document.querySelectorAll(".card").forEach(card=>{
+let m=false;
+card.querySelectorAll(".link-item").forEach(item=>{
+const t=item.textContent.toLowerCase();
+if(!q||t.includes(q)){item.style.display="list-item";item.querySelector(".link-btn").classList.toggle("highlight",q&&t.includes(q));m=true;}
+else{item.style.display="none";item.querySelector(".link-btn").classList.remove("highlight");}
+});
+card.style.display=m||!q?"block":"none";
+});
+});
+</script>
 </body>
 </html>

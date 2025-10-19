@@ -15201,7 +15201,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0f8d7fd3">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=573233e8">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15583,26 +15583,33 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dcbac6fc">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0e2d3718">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="k">def</span> <span class="nf">generate_sitemap_html</span><span class="p">(</span><span class="n">directory_path</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="s1">'sitemap.html'</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Generate a beautiful GitHub Pages compatible sitemap.</span>
+<span class="sd">    Top 3 cards in grid, remaining cards linear, no link count badges.</span>
+<span class="sd">    """</span>
     <span class="n">root_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span>
+    
     <span class="n">ignored_basenames</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'chronoseq_overview'</span><span class="p">,</span> <span class="s1">'convertohtml'</span><span class="p">,</span> <span class="s1">'index'</span><span class="p">,</span>
+        <span class="s1">'chronoseq_overview'</span><span class="p">,</span> <span class="s1">'convertohtml'</span><span class="p">,</span> <span class="s1">'index'</span><span class="p">,</span> 
         <span class="s1">'removelinksfromnbconverthtml'</span><span class="p">,</span> <span class="s1">'sitemap'</span>
     <span class="p">}</span>
+    
     <span class="n">deprecated_hardware_files</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'instructions_for_assembling_valve_controller'</span><span class="p">,</span>
         <span class="s1">'instructions_for_assembling_valve_controller_esp32'</span>
     <span class="p">}</span>
+    
     <span class="n">deprecated_protocol_files</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'protocol_and_software_for_running_chronoseq_device-originaldevice'</span><span class="p">,</span>
         <span class="s1">'protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um'</span><span class="p">,</span>
@@ -15615,21 +15622,24 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
         <span class="s1">'protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification'</span><span class="p">,</span>
         <span class="s1">'protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version'</span>
     <span class="p">}</span>
+    
     <span class="n">main_hardware_links</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'assembly'</span><span class="p">:</span> <span class="s1">'instructions_for_device_assembly_and_setup.html'</span><span class="p">,</span>
         <span class="s1">'operation'</span><span class="p">:</span> <span class="s1">'protocol_and_software_for_running_chronoseq_device.html'</span>
     <span class="p">}</span>
-    <span class="c1"># Community links</span>
+    
     <span class="n">chronoseq_repo</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq'</span>
     <span class="n">discord_invite</span> <span class="o">=</span> <span class="s1">'https://discord.gg/aJC6938N'</span>
     <span class="n">github_discussions</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq/discussions'</span>
     <span class="n">github_issues</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq/issues'</span>
-
+    
+    <span class="c1"># Collect files</span>
     <span class="n">html_files</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">hardware_files</span><span class="p">,</span> <span class="n">deprecated_hardware_files_found</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
-    <span class="n">protocol_files</span><span class="p">,</span> <span class="n">deprecated_protocol_files_found</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
-    <span class="n">all_found</span> <span class="o">=</span> <span class="p">[]</span>
-
+    <span class="n">hardware_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">deprecated_hardware_files_found</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">protocol_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">deprecated_protocol_files_found</span> <span class="o">=</span> <span class="p">[]</span>
+    
     <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
         <span class="n">rel_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
         <span class="k">if</span> <span class="s1">'ivPID'</span> <span class="ow">in</span> <span class="n">rel_root</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">):</span>
@@ -15640,10 +15650,7 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
                 <span class="n">basename_stripped</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
                 <span class="n">full_rel_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rel_root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">basename_stripped</span> <span class="ow">in</span> <span class="n">ignored_basenames</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Ignored (basename match): </span><span class="si">{</span><span class="n">full_rel_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
                     <span class="k">continue</span>
-                <span class="n">all_found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
                 <span class="n">basename</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
                 <span class="k">if</span> <span class="n">basename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'instructions'</span><span class="p">):</span>
                     <span class="k">if</span> <span class="n">basename_stripped</span> <span class="ow">in</span> <span class="n">deprecated_hardware_files</span><span class="p">:</span>
@@ -15660,190 +15667,251 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
                     <span class="k">if</span> <span class="n">file_dir</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">html_files</span><span class="p">:</span>
                         <span class="n">html_files</span><span class="p">[</span><span class="n">file_dir</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
                     <span class="n">html_files</span><span class="p">[</span><span class="n">file_dir</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
+    
     <span class="n">hardware_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span>
     <span class="n">deprecated_hardware_files_found</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">deprecated_hardware_files_found</span><span class="p">)</span>
     <span class="n">protocol_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span>
     <span class="n">deprecated_protocol_files_found</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">deprecated_protocol_files_found</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">dir_key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
         <span class="n">html_files</span><span class="p">[</span><span class="n">dir_key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">[</span><span class="n">dir_key</span><span class="p">])</span>
-
-    <span class="n">total_files</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">deprecated_hardware_files_found</span><span class="p">)</span> <span class="o">+</span>
-                   <span class="nb">len</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">deprecated_protocol_files_found</span><span class="p">)</span> <span class="o">+</span>
+    
+    <span class="n">total_files</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">deprecated_hardware_files_found</span><span class="p">)</span> <span class="o">+</span> 
+                   <span class="nb">len</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">deprecated_protocol_files_found</span><span class="p">)</span> <span class="o">+</span> 
                    <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">files_list</span><span class="p">)</span> <span class="k">for</span> <span class="n">files_list</span> <span class="ow">in</span> <span class="n">html_files</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+    
     <span class="k">if</span> <span class="n">total_files</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"No .html files found in the directory (excluding ignored paths)."</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"No .html files found."</span><span class="p">)</span>
         <span class="k">return</span>
-
+    
+    <span class="c1"># Modern HTML with grid for top 3, linear for rest</span>
     <span class="n">html_content</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">'&lt;!DOCTYPE html&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;html lang="en"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;head&gt;'</span><span class="p">,</span>
-        <span class="s1">'    &lt;meta charset="UTF-8"&gt;'</span><span class="p">,</span>
-        <span class="s1">'    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;'</span><span class="p">,</span>
-        <span class="s1">'    &lt;title&gt;ChronoSeq Links&lt;/title&gt;'</span><span class="p">,</span>
-        <span class="s1">'    &lt;style&gt;'</span><span class="p">,</span>
-        <span class="s1">'        :root { --primary-color: #2c5aa0; --secondary-color: #4a90e2; --accent-color: #7ed321; --text-color: #333; --bg-color: #f8f9fa; --card-bg: #ffffff; --shadow: 0 4px 6px rgba(0,0,0,0.1); --border-radius: 8px; --transition: all 0.3s ease; --deprecated-color: #dc3545; --discord-color: #5865f2; }'</span><span class="p">,</span>
-        <span class="s1">'        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text-color); background: linear-gradient(135deg,var(--bg-color) 0%,#e3f2fd 100%); margin:0; padding:20px; }'</span><span class="p">,</span>
-        <span class="s1">'        .container { max-width:1200px; margin:0 auto; }'</span><span class="p">,</span>
-        <span class="s1">'        h1 { text-align:center; color:var(--primary-color); font-size:2.5rem; margin-bottom:10px; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }'</span><span class="p">,</span>
-        <span class="s1">'        .subtitle { text-align:center; font-size:1.1rem; color:#666; margin-bottom:30px; }'</span><span class="p">,</span>
-        <span class="s1">'        .total { text-align:center; background:var(--card-bg); padding:10px; border-radius:var(--border-radius); box-shadow:var(--shadow); display:inline-block; margin-bottom:30px; font-weight:bold; color:var(--secondary-color); }'</span><span class="p">,</span>
-        <span class="s1">'        .section { background:var(--card-bg); margin:20px 0; padding:25px; border-radius:var(--border-radius); box-shadow:var(--shadow); transition:var(--transition); }'</span><span class="p">,</span>
-        <span class="s1">'        .section:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0,0,0,0.15); }'</span><span class="p">,</span>
-        <span class="s1">'        h2 { color:var(--primary-color); border-bottom:2px solid var(--secondary-color); padding-bottom:10px; margin-bottom:20px; font-size:1.8rem; }'</span><span class="p">,</span>
-        <span class="s1">'        h3 { color:var(--secondary-color); margin:20px 0 15px 0; font-size:1.3rem; border-left:4px solid var(--accent-color); padding-left:10px; }'</span><span class="p">,</span>
-        <span class="s1">'        .deprecated h3 { color:var(--deprecated-color); border-left-color:var(--deprecated-color); }'</span><span class="p">,</span>
-        <span class="s1">'        .deprecated-notice { background:rgba(220,53,69,0.1); padding:10px; border-radius:4px; margin-bottom:15px; border-left:4px solid var(--deprecated-color); }'</span><span class="p">,</span>
-        <span class="s1">'        ul { list-style:none; padding-left:0; }'</span><span class="p">,</span>
-        <span class="s1">'        li { margin:12px 0; position:relative; padding-left:25px; }'</span><span class="p">,</span>
-        <span class="s1">'        li::before { content:"▶"; color:var(--accent-color); font-weight:bold; position: absolute; left:0; }'</span><span class="p">,</span>
-        <span class="s1">'        .deprecated li::before { color:var(--deprecated-color); }'</span><span class="p">,</span>
-        <span class="s1">'        a { text-decoration:none; color:var(--primary-color); font-weight:500; padding:8px 12px; background:rgba(74,144,226,0.1); border-radius:4px; display:inline-block; transition:var(--transition); }'</span><span class="p">,</span>
-        <span class="s1">'        a:hover { background:var(--secondary-color); color:white; transform:scale(1.05); }'</span><span class="p">,</span>
-        <span class="s1">'        a:focus { outline:2px solid var(--accent-color); outline-offset:2px; }'</span><span class="p">,</span>
-        <span class="s1">'        .deprecated a { background:rgba(220,53,69,0.1); color:var(--deprecated-color); }'</span><span class="p">,</span>
-        <span class="s1">'        .deprecated a:hover { background:var(--deprecated-color); color:white; }'</span><span class="p">,</span>
-        <span class="s1">'        .discord-link { background:rgba(88,101,242,0.1); color:var(--discord-color); }'</span><span class="p">,</span>
-        <span class="s1">'        .discord-link:hover { background:var(--discord-color); color:white; }'</span><span class="p">,</span>
-        <span class="s1">'        .github-link { background:rgba(44,90,160,0.08); color:var(--primary-color); }'</span><span class="p">,</span>
-        <span class="s1">'        .github-link:hover { background:var(--primary-color); color:white; }'</span><span class="p">,</span>
-        <span class="s1">'        .community-desc { margin:10px 0; color:var(--text-color); font-size:1rem; line-height:1.6; }'</span><span class="p">,</span>
-        <span class="s1">'    &lt;/style&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;meta charset="UTF-8"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;title&gt;ChronoSeq Links&lt;/title&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;style&gt;'</span><span class="p">,</span>
+        <span class="s1">'*{margin:0;padding:0;box-sizing:border-box;}'</span><span class="p">,</span>
+        <span class="s1">'body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:2rem 1rem;color:#1a202c;}'</span><span class="p">,</span>
+        <span class="s1">'.container{max-width:1200px;margin:0 auto;}'</span><span class="p">,</span>
+        <span class="s1">'.header{text-align:center;margin-bottom:2.5rem;}'</span><span class="p">,</span>
+        <span class="s1">'h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0.5rem;text-shadow:0 4px 6px rgba(0,0,0,0.1);}'</span><span class="p">,</span>
+        <span class="s1">'.subtitle{font-size:1.125rem;color:rgba(255,255,255,0.9);margin-bottom:1.5rem;}'</span><span class="p">,</span>
+        <span class="s1">'.view-github{display:inline-flex;align-items:center;gap:0.5rem;background:white;color:#667eea;padding:0.75rem 1.5rem;border-radius:9999px;text-decoration:none;font-weight:600;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:all 0.3s;}'</span><span class="p">,</span>
+        <span class="s1">'.view-github:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'.searchbar{text-align:center;margin:2rem 0;}'</span><span class="p">,</span>
+        <span class="s1">'.search-input{width:100%;max-width:600px;padding:1rem 1.5rem;border:none;border-radius:9999px;font-size:1rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);outline:none;background:white;}'</span><span class="p">,</span>
+        <span class="s1">'.search-input:focus{box-shadow:0 6px 12px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'.top-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:1.5rem;}'</span><span class="p">,</span>
+        <span class="s1">'.linear-section{display:flex;flex-direction:column;gap:1.5rem;}'</span><span class="p">,</span>
+        <span class="s1">'.card{background:white;border-radius:1rem;padding:1.5rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:all 0.3s;position:relative;overflow:hidden;}'</span><span class="p">,</span>
+        <span class="s1">'.card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'.card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#667eea,#764ba2);}'</span><span class="p">,</span>
+        <span class="s1">'.card-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;}'</span><span class="p">,</span>
+        <span class="s1">'.icon{font-size:2rem;}'</span><span class="p">,</span>
+        <span class="s1">'.card-title{font-size:1.25rem;font-weight:700;color:#1a202c;flex:1;}'</span><span class="p">,</span>
+        <span class="s1">'.card-subtitle{font-size:0.875rem;color:#718096;margin-bottom:1rem;}'</span><span class="p">,</span>
+        <span class="s1">'.link-list{list-style:none;}'</span><span class="p">,</span>
+        <span class="s1">'.link-item{margin:0.5rem 0;}'</span><span class="p">,</span>
+        <span class="s1">'.link-btn{display:block;padding:0.75rem 1rem;background:rgba(102,126,234,0.05);border-radius:0.5rem;color:#1a202c;text-decoration:none;font-weight:500;transition:all 0.2s;border-left:3px solid #667eea;}'</span><span class="p">,</span>
+        <span class="s1">'.link-btn:hover{background:rgba(102,126,234,0.15);transform:translateX(4px);}'</span><span class="p">,</span>
+        <span class="s1">'.link-btn.highlight{background:linear-gradient(90deg,#667eea,#764ba2);color:white;border-left-color:white;}'</span><span class="p">,</span>
+        <span class="s1">'.external-link{display:inline-flex;align-items:center;gap:0.5rem;}'</span><span class="p">,</span>
+        <span class="s1">'.external-link::after{content:"↗";font-size:0.875rem;}'</span><span class="p">,</span>
+        <span class="s1">'.discord-btn{background:rgba(88,101,242,0.1);border-left-color:#5865f2;color:#5865f2;}'</span><span class="p">,</span>
+        <span class="s1">'.discord-btn:hover{background:rgba(88,101,242,0.2);}'</span><span class="p">,</span>
+        <span class="s1">'.github-btn{background:rgba(0,0,0,0.05);border-left-color:#24292e;color:#24292e;}'</span><span class="p">,</span>
+        <span class="s1">'.github-btn:hover{background:rgba(0,0,0,0.1);}'</span><span class="p">,</span>
+        <span class="s1">'.toggle{cursor:pointer;display:inline-flex;align-items:center;gap:0.5rem;background:rgba(239,68,68,0.1);color:#dc2626;padding:0.5rem 1rem;border-radius:0.5rem;font-weight:600;margin:1rem 0;user-select:none;}'</span><span class="p">,</span>
+        <span class="s1">'.toggle:hover{background:rgba(239,68,68,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'.toggle::before{content:"▶";transition:transform 0.3s;}'</span><span class="p">,</span>
+        <span class="s1">'.toggle.open::before{transform:rotate(90deg);}'</span><span class="p">,</span>
+        <span class="s1">'.dep-content{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}'</span><span class="p">,</span>
+        <span class="s1">'.dep-content.open{max-height:2000px;padding-top:1rem;}'</span><span class="p">,</span>
+        <span class="s1">'.dep-notice{background:rgba(239,68,68,0.1);padding:0.75rem 1rem;border-radius:0.5rem;margin-bottom:1rem;border-left:3px solid #dc2626;font-size:0.875rem;color:#dc2626;}'</span><span class="p">,</span>
+        <span class="s1">'.deprecated .link-btn{background:rgba(239,68,68,0.05);border-left-color:#dc2626;color:#dc2626;}'</span><span class="p">,</span>
+        <span class="s1">'.deprecated .link-btn:hover{background:rgba(239,68,68,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'@media(max-width:768px){h1{font-size:2rem;}.top-grid{grid-template-columns:1fr;}}'</span><span class="p">,</span>
+        <span class="s1">'&lt;/style&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/head&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;body&gt;'</span><span class="p">,</span>
-        <span class="s1">'    &lt;div class="container"&gt;'</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">'        &lt;h1&gt;&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; Links&lt;/h1&gt;'</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">'        &lt;p class="subtitle"&gt;Explore the key resources and documentation for the &lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; project&lt;/p&gt;'</span><span class="p">,</span>
-        <span class="s1">'        &lt;p class="total"&gt;Total: '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_files</span><span class="p">)</span> <span class="o">+</span> <span class="s1">' pages&lt;/p&gt;'</span>
+        <span class="s1">'&lt;div class="container"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="header"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;h1&gt;ChronoSeq Links&lt;/h1&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;p class="subtitle"&gt;Explore the key resources and documentation for the ChronoSeq project&lt;/p&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">" class="view-github" target="_blank"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"&gt;&lt;path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/&gt;&lt;/svg&gt;'</span><span class="p">,</span>
+        <span class="s1">'View on GitHub'</span><span class="p">,</span>
+        <span class="s1">'&lt;/a&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="searchbar"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;input type="text" id="searchInput" class="search-input" placeholder="🔍 Search protocols, hardware, or instructions..."&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;!-- Top 3 cards in grid --&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="top-grid"&gt;'</span>
     <span class="p">]</span>
-    <span class="c1"># Main Hardware Pages Section</span>
+    
+    <span class="c1"># Card 1: Main Hardware</span>
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-        <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;h2&gt;Main Hardware Pages&lt;/h2&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;h3&gt;Hardware Assembly&lt;/h3&gt;'</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">'            &lt;ul&gt;&lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"assembly"</span><span class="p">]</span><span class="si">}</span><span class="s1">"&gt;View Main Hardware Assembly Page&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;h3&gt;Hardware Operation&lt;/h3&gt;'</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">'            &lt;ul&gt;&lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"operation"</span><span class="p">]</span><span class="si">}</span><span class="s1">"&gt;View Main Hardware Operation Page&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;'</span><span class="p">,</span>
-        <span class="s1">'        &lt;/div&gt;'</span>
+        <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;span class="icon"&gt;🔧&lt;/span&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;h2 class="card-title"&gt;Main Hardware Pages&lt;/h2&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;p class="card-subtitle"&gt;Essential hardware documentation&lt;/p&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"assembly"</span><span class="p">]</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;View Main Hardware Assembly Page&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"operation"</span><span class="p">]</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;View Main Hardware Operation Page&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span>
     <span class="p">])</span>
-    <span class="c1"># Data Processing Section</span>
+    
+    <span class="c1"># Card 2: Data Processing</span>
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-        <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;h2&gt;Data Processing and Analysis&lt;/h2&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;div class="analysis-desc"&gt;'</span><span class="p">,</span>
-        <span class="s1">'                &lt;ul&gt;'</span><span class="p">,</span>
-        <span class="s1">'                    &lt;li&gt;Check out the &lt;a href="https://github.com/kanishkasthana/ChronoSeq-Tools"&gt;ChronoSeq-Tools repo&lt;/a&gt; to help process your raw data.&lt;/li&gt;'</span><span class="p">,</span>
-        <span class="s1">'                    &lt;li&gt;Check out the &lt;a href="https://github.com/kanishkasthana/ChronoSeq-QC"&gt;ChronoSeq-QC repo&lt;/a&gt; to see how the QC plots were generated.&lt;/li&gt;'</span><span class="p">,</span>
-        <span class="s1">'                    &lt;li&gt;Check out the &lt;a href="https://github.com/anjambor/ChronoSeq-Analysis"&gt;ChronoSeq-Analysis repo&lt;/a&gt; to see how the ChronoSeq data was analysed.&lt;/li&gt;'</span><span class="p">,</span>
-        <span class="s1">'                &lt;/ul&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;/div&gt;'</span><span class="p">,</span>
-        <span class="s1">'        &lt;/div&gt;'</span>
+        <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;span class="icon"&gt;📊&lt;/span&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;h2 class="card-title"&gt;Data Processing &amp; Analysis&lt;/h2&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;p class="card-subtitle"&gt;Tools and repositories for data analysis&lt;/p&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;li class="link-item"&gt;&lt;a href="https://github.com/kanishkasthana/ChronoSeq-Tools" class="link-btn external-link" target="_blank"&gt;ChronoSeq-Tools repo&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;li class="link-item"&gt;&lt;a href="https://github.com/kanishkasthana/ChronoSeq-QC" class="link-btn external-link" target="_blank"&gt;ChronoSeq-QC repo&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;li class="link-item"&gt;&lt;a href="https://github.com/anjambor/ChronoSeq-Analysis" class="link-btn external-link" target="_blank"&gt;ChronoSeq-Analysis repo&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span>
     <span class="p">])</span>
-    <span class="c1"># Community Section</span>
+    
+    <span class="c1"># Card 3: Community</span>
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-        <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;h2&gt;Community&lt;/h2&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;div class="community-desc"&gt;'</span><span class="p">,</span>
-        <span class="s1">'                &lt;p&gt;Connect with ChronoSeq users, ask questions, share experiences, and get support:&lt;br&gt;&lt;/p&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;/div&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;h3&gt;Join &amp; Discuss&lt;/h3&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;ul&gt;'</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">discord_invite</span><span class="si">}</span><span class="s1">" class="discord-link" target="_blank"&gt;ChronoSeq Discord Server&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">github_discussions</span><span class="si">}</span><span class="s1">" class="github-link" target="_blank"&gt;GitHub Discussions&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">github_issues</span><span class="si">}</span><span class="s1">" class="github-link" target="_blank"&gt;GitHub Issues / Bug Reports&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
-        <span class="s1">'            &lt;/ul&gt;'</span><span class="p">,</span>
-        <span class="s1">'        &lt;/div&gt;'</span>
+        <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;span class="icon"&gt;💬&lt;/span&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;h2 class="card-title"&gt;Community&lt;/h2&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;p class="card-subtitle"&gt;Connect with ChronoSeq users and get support&lt;/p&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">discord_invite</span><span class="si">}</span><span class="s1">" class="link-btn discord-btn external-link" target="_blank"&gt;ChronoSeq Discord Server&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">github_discussions</span><span class="si">}</span><span class="s1">" class="link-btn github-btn external-link" target="_blank"&gt;GitHub Discussions&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">github_issues</span><span class="si">}</span><span class="s1">" class="link-btn github-btn external-link" target="_blank"&gt;GitHub Issues / Bug Reports&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span>
     <span class="p">])</span>
-    <span class="c1"># Hardware Assembly Section</span>
+    
+    <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/div&gt;'</span><span class="p">,</span> <span class="s1">'&lt;!-- Remaining cards in linear layout --&gt;'</span><span class="p">,</span> <span class="s1">'&lt;div class="linear-section"&gt;'</span><span class="p">])</span>
+    
+    <span class="c1"># Hardware Assembly Card (linear)</span>
     <span class="k">if</span> <span class="n">hardware_files</span> <span class="ow">or</span> <span class="n">deprecated_hardware_files_found</span><span class="p">:</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-            <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'            &lt;h2&gt;&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; Hardware Assembly&lt;/h2&gt;'</span>
+            <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;span class="icon"&gt;⚙️&lt;/span&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;h2 class="card-title"&gt;Hardware Assembly&lt;/h2&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;p class="card-subtitle"&gt;Detailed assembly instructions for ChronoSeq hardware components&lt;/p&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;ul class="link-list"&gt;'</span>
         <span class="p">])</span>
-        <span class="k">if</span> <span class="n">hardware_files</span><span class="p">:</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;ul&gt;'</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">hardware_files</span><span class="p">:</span>
-                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>
-                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">hardware_files</span><span class="p">:</span>
+            <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">)</span>
+        
         <span class="k">if</span> <span class="n">deprecated_hardware_files_found</span><span class="p">:</span>
             <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                <span class="s1">'            &lt;div class="deprecated"&gt;'</span><span class="p">,</span>
-                <span class="s1">'                &lt;h3&gt;Deprecated&lt;/h3&gt;'</span><span class="p">,</span>
-                <span class="s1">'                &lt;div class="deprecated-notice"&gt;'</span><span class="p">,</span>
-                <span class="s1">'                    &lt;strong&gt;Note:&lt;/strong&gt; The following hardware instructions are deprecated and may not work with the current version of ChronoSeq.'</span><span class="p">,</span>
-                <span class="s1">'                &lt;/div&gt;'</span><span class="p">,</span>
-                <span class="s1">'                &lt;ul&gt;'</span>
+                <span class="s1">'&lt;div class="toggle" onclick="toggle(this)"&gt;⚠️ Deprecated Instructions&lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;div class="dep-content"&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;div class="dep-notice"&gt;&lt;strong&gt;Note:&lt;/strong&gt; These instructions are deprecated and may not work with current versions.&lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;ul class="link-list deprecated"&gt;'</span>
             <span class="p">])</span>
             <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">deprecated_hardware_files_found</span><span class="p">:</span>
-                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>
-                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                    &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                <span class="s1">'                &lt;/ul&gt;'</span><span class="p">,</span>
-                <span class="s1">'            &lt;/div&gt;'</span>
-            <span class="p">])</span>
-        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'        &lt;/div&gt;'</span><span class="p">)</span>
-    <span class="c1"># Protocols Section</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
+        
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/div&gt;'</span><span class="p">)</span>
+    
+    <span class="c1"># Protocols Card (linear)</span>
     <span class="k">if</span> <span class="n">protocol_files</span> <span class="ow">or</span> <span class="n">deprecated_protocol_files_found</span><span class="p">:</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-            <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'            &lt;h2&gt;&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">"&gt;ChronoSeq&lt;/a&gt; Protocols&lt;/h2&gt;'</span>
+            <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;span class="icon"&gt;📋&lt;/span&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;h2 class="card-title"&gt;Protocols&lt;/h2&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;p class="card-subtitle"&gt;Laboratory protocols and procedures&lt;/p&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;ul class="link-list"&gt;'</span>
         <span class="p">])</span>
-        <span class="k">if</span> <span class="n">protocol_files</span><span class="p">:</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;ul&gt;'</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">protocol_files</span><span class="p">:</span>
-                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>
-                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">protocol_files</span><span class="p">:</span>
+            <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">)</span>
+        
         <span class="k">if</span> <span class="n">deprecated_protocol_files_found</span><span class="p">:</span>
             <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                <span class="s1">'            &lt;div class="deprecated"&gt;'</span><span class="p">,</span>
-                <span class="s1">'                &lt;h3&gt;Deprecated&lt;/h3&gt;'</span><span class="p">,</span>
-                <span class="s1">'                &lt;div class="deprecated-notice"&gt;'</span><span class="p">,</span>
-                <span class="s1">'                    &lt;strong&gt;Note:&lt;/strong&gt; The following protocols are deprecated and may not work with the current version of ChronoSeq.'</span><span class="p">,</span>
-                <span class="s1">'                &lt;/div&gt;'</span><span class="p">,</span>
-                <span class="s1">'                &lt;ul&gt;'</span>
+                <span class="s1">'&lt;div class="toggle" onclick="toggle(this)"&gt;⚠️ Deprecated Protocols&lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;div class="dep-content"&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;div class="dep-notice"&gt;&lt;strong&gt;Note:&lt;/strong&gt; These protocols are deprecated and may not work with current versions.&lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;ul class="link-list deprecated"&gt;'</span>
             <span class="p">])</span>
             <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">deprecated_protocol_files_found</span><span class="p">:</span>
-                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>
-                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                    &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                <span class="s1">'                &lt;/ul&gt;'</span><span class="p">,</span>
-                <span class="s1">'            &lt;/div&gt;'</span>
-            <span class="p">])</span>
-        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'        &lt;/div&gt;'</span><span class="p">)</span>
-    <span class="c1"># Other Notebooks Section</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
+        
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/div&gt;'</span><span class="p">)</span>
+    
+    <span class="c1"># Other Resources Card (linear)</span>
     <span class="k">if</span> <span class="n">html_files</span><span class="p">:</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-            <span class="s1">'        &lt;div class="section"&gt;'</span><span class="p">,</span>
-            <span class="s1">'            &lt;h2&gt;Other Notebooks&lt;/h2&gt;'</span>
+            <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;span class="icon"&gt;📁&lt;/span&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;h2 class="card-title"&gt;Other Resources&lt;/h2&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;p class="card-subtitle"&gt;CAD files, notebooks, and validation files&lt;/p&gt;'</span>
         <span class="p">])</span>
         <span class="k">for</span> <span class="n">dir_key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-            <span class="k">if</span> <span class="n">dir_key</span><span class="p">:</span>
-                <span class="n">dir_display</span> <span class="o">=</span> <span class="n">dir_key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">' &gt; '</span><span class="p">)</span>
-                <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                    <span class="sa">f</span><span class="s1">'            &lt;h3&gt;</span><span class="si">{</span><span class="n">dir_display</span><span class="si">}</span><span class="s1">&lt;/h3&gt;'</span><span class="p">,</span>
-                    <span class="s1">'            &lt;ul&gt;'</span>
-                <span class="p">])</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                    <span class="s1">'            &lt;h3&gt;Root Directory&lt;/h3&gt;'</span><span class="p">,</span>
-                    <span class="s1">'            &lt;ul&gt;'</span>
-                <span class="p">])</span>
+            <span class="n">dir_display</span> <span class="o">=</span> <span class="n">dir_key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">' &gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="k">if</span> <span class="n">dir_key</span> <span class="k">else</span> <span class="s1">'Root Directory'</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;"&gt;</span><span class="si">{</span><span class="n">dir_display</span><span class="si">}</span><span class="s1">&lt;/p&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">html_files</span><span class="p">[</span><span class="n">dir_key</span><span class="p">]:</span>
-                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span>
-                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'                &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'            &lt;/ul&gt;'</span><span class="p">)</span>
-        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'        &lt;/div&gt;'</span><span class="p">)</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/div&gt;'</span><span class="p">)</span>
+    
+    <span class="c1"># JavaScript</span>
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-        <span class="s1">'    &lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;script&gt;'</span><span class="p">,</span>
+        <span class="s1">'function toggle(btn){const c=btn.nextElementSibling;c.classList.toggle("open");btn.classList.toggle("open");}'</span><span class="p">,</span>
+        <span class="s1">'document.getElementById("searchInput").addEventListener("input",function(){'</span><span class="p">,</span>
+        <span class="s1">'const q=this.value.toLowerCase().trim();'</span><span class="p">,</span>
+        <span class="s1">'document.querySelectorAll(".card").forEach(card=&gt;{'</span><span class="p">,</span>
+        <span class="s1">'let m=false;'</span><span class="p">,</span>
+        <span class="s1">'card.querySelectorAll(".link-item").forEach(item=&gt;{'</span><span class="p">,</span>
+        <span class="s1">'const t=item.textContent.toLowerCase();'</span><span class="p">,</span>
+        <span class="s1">'if(!q||t.includes(q)){item.style.display="list-item";item.querySelector(".link-btn").classList.toggle("highlight",q&amp;&amp;t.includes(q));m=true;}'</span><span class="p">,</span>
+        <span class="s1">'else{item.style.display="none";item.querySelector(".link-btn").classList.remove("highlight");}'</span><span class="p">,</span>
+        <span class="s1">'});'</span><span class="p">,</span>
+        <span class="s1">'card.style.display=m||!q?"block":"none";'</span><span class="p">,</span>
+        <span class="s1">'});'</span><span class="p">,</span>
+        <span class="s1">'});'</span><span class="p">,</span>
+        <span class="s1">'&lt;/script&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/body&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/html&gt;'</span>
     <span class="p">])</span>
+    
     <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_dir</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html_content</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Generated professional sitemap.html with Community/Discord/Discussions/Issues at: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✨ Generated beautiful sitemap at: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Top 3 cards in grid layout"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Remaining cards in linear stack"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - No link count badges"</span><span class="p">)</span>
 
 <span class="n">directory</span> <span class="o">=</span> <span class="s1">'.'</span>
 <span class="n">generate_sitemap_html</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -15859,7 +15927,10 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Generated professional sitemap.html with Community/Discord/Discussions/Issues at: C:\Users\ChronoSeq\ChronoSeq\sitemap.html
+<pre>✨ Generated beautiful sitemap at: C:\Users\ChronoSeq\ChronoSeq\sitemap.html
+   - Top 3 cards in grid layout
+   - Remaining cards in linear stack
+   - No link count badges
 </pre>
 </div>
 </div>
