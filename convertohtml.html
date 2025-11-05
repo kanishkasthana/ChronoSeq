@@ -15201,7 +15201,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1183a5ec">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ac5c06ab">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15598,12 +15598,12 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b5e81db4">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c68768cb">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -15611,7 +15611,8 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
 <span class="k">def</span> <span class="nf">generate_sitemap_html</span><span class="p">(</span><span class="n">directory_path</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="s1">'sitemap.html'</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">"""</span>
 <span class="sd">    Generate a beautiful GitHub Pages compatible sitemap.</span>
-<span class="sd">    Top 3 cards in grid, remaining cards linear, no link count badges.</span>
+<span class="sd">    Top 3 cards always expanded. Remaining cards have individual collapsible toggles.</span>
+<span class="sd">    Dropdowns auto-open during search, auto-close when search is cleared.</span>
 <span class="sd">    """</span>
     <span class="n">root_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span>
     
@@ -15644,7 +15645,7 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
     <span class="p">}</span>
     
     <span class="n">chronoseq_repo</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq'</span>
-    <span class="n">discord_invite</span> <span class="o">=</span> <span class="s1">'https://discord.gg/mjN7sneA'</span>  <span class="c1"># UPDATED Discord invite link</span>
+    <span class="n">discord_invite</span> <span class="o">=</span> <span class="s1">'https://discord.gg/4YcQKkynUY'</span>  <span class="c1"># UPDATED Discord link</span>
     <span class="n">github_discussions</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq/discussions'</span>
     <span class="n">github_issues</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq/issues'</span>
     
@@ -15698,7 +15699,7 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="nb">print</span><span class="p">(</span><span class="s2">"No .html files found."</span><span class="p">)</span>
         <span class="k">return</span>
     
-    <span class="c1"># Modern HTML with grid for top 3, linear for rest</span>
+    <span class="c1"># Modern HTML</span>
     <span class="n">html_content</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">'&lt;!DOCTYPE html&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;html lang="en"&gt;'</span><span class="p">,</span>
@@ -15718,15 +15719,21 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'.searchbar{text-align:center;margin:2rem 0;}'</span><span class="p">,</span>
         <span class="s1">'.search-input{width:100%;max-width:600px;padding:1rem 1.5rem;border:none;border-radius:9999px;font-size:1rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);outline:none;background:white;}'</span><span class="p">,</span>
         <span class="s1">'.search-input:focus{box-shadow:0 6px 12px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'.sections{display:flex;flex-direction:column;gap:1.5rem;}'</span><span class="p">,</span>
         <span class="s1">'.top-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:1.5rem;}'</span><span class="p">,</span>
-        <span class="s1">'.linear-section{display:flex;flex-direction:column;gap:1.5rem;}'</span><span class="p">,</span>
         <span class="s1">'.card{background:white;border-radius:1rem;padding:1.5rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:all 0.3s;position:relative;overflow:hidden;}'</span><span class="p">,</span>
         <span class="s1">'.card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
         <span class="s1">'.card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#667eea,#764ba2);}'</span><span class="p">,</span>
-        <span class="s1">'.card-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;}'</span><span class="p">,</span>
+        <span class="s1">'.card-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;cursor:pointer;user-select:none;}'</span><span class="p">,</span>
+        <span class="s1">'.card-header.collapsible{position:relative;padding-right:2rem;}'</span><span class="p">,</span>
+        <span class="s1">'.card-header.collapsible::after{content:"▶";position:absolute;right:0;transition:transform 0.3s;font-size:1.2rem;color:#667eea;font-weight:bold;}'</span><span class="p">,</span>
+        <span class="s1">'.card-header.collapsible.open::after{transform:rotate(90deg);}'</span><span class="p">,</span>
         <span class="s1">'.icon{font-size:2rem;}'</span><span class="p">,</span>
         <span class="s1">'.card-title{font-size:1.25rem;font-weight:700;color:#1a202c;flex:1;}'</span><span class="p">,</span>
         <span class="s1">'.card-subtitle{font-size:0.875rem;color:#718096;margin-bottom:1rem;}'</span><span class="p">,</span>
+        <span class="s1">'.card-content{max-height:none;overflow:visible;}'</span><span class="p">,</span>
+        <span class="s1">'.card-content.collapsed{max-height:0;overflow:hidden;margin-bottom:-1rem;}'</span><span class="p">,</span>
+        <span class="s1">'.card-content.collapsed .link-list,.card-content.collapsed .card-subtitle,.card-content.collapsed .dir-label,.card-content.collapsed .toggle,.card-content.collapsed .dep-content{display:none;}'</span><span class="p">,</span>
         <span class="s1">'.link-list{list-style:none;}'</span><span class="p">,</span>
         <span class="s1">'.link-item{margin:0.5rem 0;}'</span><span class="p">,</span>
         <span class="s1">'.link-btn{display:block;padding:0.75rem 1rem;background:rgba(102,126,234,0.05);border-radius:0.5rem;color:#1a202c;text-decoration:none;font-weight:500;transition:all 0.2s;border-left:3px solid #667eea;}'</span><span class="p">,</span>
@@ -15740,13 +15747,14 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'.github-btn:hover{background:rgba(0,0,0,0.1);}'</span><span class="p">,</span>
         <span class="s1">'.toggle{cursor:pointer;display:inline-flex;align-items:center;gap:0.5rem;background:rgba(239,68,68,0.1);color:#dc2626;padding:0.5rem 1rem;border-radius:0.5rem;font-weight:600;margin:1rem 0;user-select:none;}'</span><span class="p">,</span>
         <span class="s1">'.toggle:hover{background:rgba(239,68,68,0.15);}'</span><span class="p">,</span>
-        <span class="s1">'.toggle::before{content:"▶";transition:transform 0.3s;}'</span><span class="p">,</span>
+        <span class="s1">'.toggle::before{content:"▶";transition:transform 0.3s;display:inline-block;}'</span><span class="p">,</span>
         <span class="s1">'.toggle.open::before{transform:rotate(90deg);}'</span><span class="p">,</span>
-        <span class="s1">'.dep-content{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}'</span><span class="p">,</span>
+        <span class="s1">'.dep-content{max-height:0;overflow:hidden;transition:max-height 0.3s ease;margin-left:1rem;border-left:2px solid rgba(239,68,68,0.3);padding-left:1rem;}'</span><span class="p">,</span>
         <span class="s1">'.dep-content.open{max-height:2000px;padding-top:1rem;}'</span><span class="p">,</span>
         <span class="s1">'.dep-notice{background:rgba(239,68,68,0.1);padding:0.75rem 1rem;border-radius:0.5rem;margin-bottom:1rem;border-left:3px solid #dc2626;font-size:0.875rem;color:#dc2626;}'</span><span class="p">,</span>
         <span class="s1">'.deprecated .link-btn{background:rgba(239,68,68,0.05);border-left-color:#dc2626;color:#dc2626;}'</span><span class="p">,</span>
         <span class="s1">'.deprecated .link-btn:hover{background:rgba(239,68,68,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'.dir-label{font-weight:600;margin:1rem 0 0.5rem;color:#667eea;}'</span><span class="p">,</span>
         <span class="s1">'@media(max-width:768px){h1{font-size:2rem;}.top-grid{grid-template-columns:1fr;}}'</span><span class="p">,</span>
         <span class="s1">'&lt;/style&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/head&gt;'</span><span class="p">,</span>
@@ -15763,67 +15771,75 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'&lt;div class="searchbar"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;input type="text" id="searchInput" class="search-input" placeholder="🔍 Search protocols, hardware, or instructions..."&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
-        <span class="s1">'&lt;!-- Top 3 cards in grid --&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="sections"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;!-- Top 3 cards in grid, always expanded --&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;div class="top-grid"&gt;'</span>
     <span class="p">]</span>
     
-    <span class="c1"># Card 1: Main Hardware</span>
+    <span class="c1"># Card 1: Main Hardware (ALWAYS EXPANDED)</span>
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
         <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;span class="icon"&gt;🔧&lt;/span&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;h2 class="card-title"&gt;Main Hardware Pages&lt;/h2&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-content"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;p class="card-subtitle"&gt;Essential hardware documentation&lt;/p&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"assembly"</span><span class="p">]</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;View Main Hardware Assembly Page&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"operation"</span><span class="p">]</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;View Main Hardware Operation Page&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"assembly"</span><span class="p">]</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;Main Hardware Assembly Page&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"operation"</span><span class="p">]</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;Main Hardware Operation Page&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span>
     <span class="p">])</span>
     
-    <span class="c1"># Card 2: Data Processing</span>
+    <span class="c1"># Card 2: Data Processing (ALWAYS EXPANDED)</span>
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
         <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;span class="icon"&gt;📊&lt;/span&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;h2 class="card-title"&gt;Data Processing &amp; Analysis&lt;/h2&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-content"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;p class="card-subtitle"&gt;Tools and repositories for data analysis&lt;/p&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;li class="link-item"&gt;&lt;a href="https://github.com/kanishkasthana/ChronoSeq-Tools" class="link-btn external-link" target="_blank"&gt;ChronoSeq-Tools repo&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;li class="link-item"&gt;&lt;a href="https://github.com/kanishkasthana/ChronoSeq-QC" class="link-btn external-link" target="_blank"&gt;ChronoSeq-QC repo&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;li class="link-item"&gt;&lt;a href="https://github.com/anjambor/ChronoSeq-Analysis" class="link-btn external-link" target="_blank"&gt;ChronoSeq-Analysis repo&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span>
     <span class="p">])</span>
     
-    <span class="c1"># Card 3: Community</span>
+    <span class="c1"># Card 3: Community (ALWAYS EXPANDED)</span>
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
         <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;span class="icon"&gt;💬&lt;/span&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;h2 class="card-title"&gt;Community&lt;/h2&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-content"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;p class="card-subtitle"&gt;Connect with ChronoSeq users and get support&lt;/p&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">,</span>
         <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">discord_invite</span><span class="si">}</span><span class="s1">" class="link-btn discord-btn external-link" target="_blank"&gt;ChronoSeq Discord Server&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
         <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">github_discussions</span><span class="si">}</span><span class="s1">" class="link-btn github-btn external-link" target="_blank"&gt;GitHub Discussions&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
         <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">github_issues</span><span class="si">}</span><span class="s1">" class="link-btn github-btn external-link" target="_blank"&gt;GitHub Issues / Bug Reports&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span>
     <span class="p">])</span>
     
-    <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/div&gt;'</span><span class="p">,</span> <span class="s1">'&lt;!-- Remaining cards in linear layout --&gt;'</span><span class="p">,</span> <span class="s1">'&lt;div class="linear-section"&gt;'</span><span class="p">])</span>
+    <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/div&gt;'</span><span class="p">)</span>
     
-    <span class="c1"># Hardware Assembly Card (linear)</span>
+    <span class="c1"># Hardware Assembly Card (COLLAPSIBLE)</span>
     <span class="k">if</span> <span class="n">hardware_files</span> <span class="ow">or</span> <span class="n">deprecated_hardware_files_found</span><span class="p">:</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
             <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
-            <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-header collapsible" onclick="toggleCard(this)"&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;span class="icon"&gt;⚙️&lt;/span&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;h2 class="card-title"&gt;Hardware Assembly&lt;/h2&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-content collapsed"&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;p class="card-subtitle"&gt;Detailed assembly instructions for ChronoSeq hardware components&lt;/p&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;ul class="link-list"&gt;'</span>
         <span class="p">])</span>
@@ -15834,8 +15850,10 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         
         <span class="k">if</span> <span class="n">deprecated_hardware_files_found</span><span class="p">:</span>
             <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                <span class="s1">'&lt;div class="toggle" onclick="toggle(this)"&gt;⚠️ Deprecated Instructions&lt;/div&gt;'</span><span class="p">,</span>
-                <span class="s1">'&lt;div class="dep-content"&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;div class="toggle" onclick="toggleDep(event)"&gt;⚠️ Deprecated Instructions&lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;div class="dep-content"&gt;'</span>
+            <span class="p">])</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
                 <span class="s1">'&lt;div class="dep-notice"&gt;&lt;strong&gt;Note:&lt;/strong&gt; These instructions are deprecated and may not work with current versions.&lt;/div&gt;'</span><span class="p">,</span>
                 <span class="s1">'&lt;ul class="link-list deprecated"&gt;'</span>
             <span class="p">])</span>
@@ -15844,16 +15862,17 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
                 <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
             <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
         
-        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/div&gt;'</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/div&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
     
-    <span class="c1"># Protocols Card (linear)</span>
+    <span class="c1"># Protocols Card (COLLAPSIBLE)</span>
     <span class="k">if</span> <span class="n">protocol_files</span> <span class="ow">or</span> <span class="n">deprecated_protocol_files_found</span><span class="p">:</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
             <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
-            <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-header collapsible" onclick="toggleCard(this)"&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;span class="icon"&gt;📋&lt;/span&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;h2 class="card-title"&gt;Protocols&lt;/h2&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-content collapsed"&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;p class="card-subtitle"&gt;Laboratory protocols and procedures&lt;/p&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;ul class="link-list"&gt;'</span>
         <span class="p">])</span>
@@ -15864,8 +15883,10 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         
         <span class="k">if</span> <span class="n">deprecated_protocol_files_found</span><span class="p">:</span>
             <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                <span class="s1">'&lt;div class="toggle" onclick="toggle(this)"&gt;⚠️ Deprecated Protocols&lt;/div&gt;'</span><span class="p">,</span>
-                <span class="s1">'&lt;div class="dep-content"&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;div class="toggle" onclick="toggleDep(event)"&gt;⚠️ Deprecated Protocols&lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;div class="dep-content"&gt;'</span>
+            <span class="p">])</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
                 <span class="s1">'&lt;div class="dep-notice"&gt;&lt;strong&gt;Note:&lt;/strong&gt; These protocols are deprecated and may not work with current versions.&lt;/div&gt;'</span><span class="p">,</span>
                 <span class="s1">'&lt;ul class="link-list deprecated"&gt;'</span>
             <span class="p">])</span>
@@ -15874,44 +15895,75 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
                 <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
             <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
         
-        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/div&gt;'</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/div&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
     
-    <span class="c1"># Other Resources Card (linear)</span>
+    <span class="c1"># Other Resources Card (COLLAPSIBLE)</span>
     <span class="k">if</span> <span class="n">html_files</span><span class="p">:</span>
         <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
             <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
-            <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-header collapsible" onclick="toggleCard(this)"&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;span class="icon"&gt;📁&lt;/span&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;h2 class="card-title"&gt;Other Resources&lt;/h2&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-content collapsed"&gt;'</span><span class="p">,</span>
             <span class="s1">'&lt;p class="card-subtitle"&gt;CAD files, notebooks, and validation files&lt;/p&gt;'</span>
         <span class="p">])</span>
         <span class="k">for</span> <span class="n">dir_key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
             <span class="n">dir_display</span> <span class="o">=</span> <span class="n">dir_key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">' &gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="k">if</span> <span class="n">dir_key</span> <span class="k">else</span> <span class="s1">'Root Directory'</span>
-            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;"&gt;</span><span class="si">{</span><span class="n">dir_display</span><span class="si">}</span><span class="s1">&lt;/p&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;p class="dir-label"&gt;</span><span class="si">{</span><span class="n">dir_display</span><span class="si">}</span><span class="s1">&lt;/p&gt;'</span><span class="p">)</span>
             <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">html_files</span><span class="p">[</span><span class="n">dir_key</span><span class="p">]:</span>
                 <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
                 <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
             <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">)</span>
-        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/div&gt;'</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/div&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
     
     <span class="c1"># JavaScript</span>
     <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;script&gt;'</span><span class="p">,</span>
-        <span class="s1">'function toggle(btn){const c=btn.nextElementSibling;c.classList.toggle("open");btn.classList.toggle("open");}'</span><span class="p">,</span>
-        <span class="s1">'document.getElementById("searchInput").addEventListener("input",function(){'</span><span class="p">,</span>
+        <span class="s1">'function toggleCard(header){'</span><span class="p">,</span>
+        <span class="s1">'const content=header.nextElementSibling;'</span><span class="p">,</span>
+        <span class="s1">'header.classList.toggle("open");'</span><span class="p">,</span>
+        <span class="s1">'content.classList.toggle("collapsed");'</span><span class="p">,</span>
+        <span class="s1">'}'</span><span class="p">,</span>
+        <span class="s1">'function toggleDep(e){'</span><span class="p">,</span>
+        <span class="s1">'e.stopPropagation();'</span><span class="p">,</span>
+        <span class="s1">'const btn=e.target.closest(".toggle");'</span><span class="p">,</span>
+        <span class="s1">'const content=btn.nextElementSibling;'</span><span class="p">,</span>
+        <span class="s1">'btn.classList.toggle("open");'</span><span class="p">,</span>
+        <span class="s1">'content.classList.toggle("open");'</span><span class="p">,</span>
+        <span class="s1">'}'</span><span class="p">,</span>
+        <span class="s1">'const searchInput=document.getElementById("searchInput");'</span><span class="p">,</span>
+        <span class="s1">'searchInput.addEventListener("input",function(){'</span><span class="p">,</span>
         <span class="s1">'const q=this.value.toLowerCase().trim();'</span><span class="p">,</span>
+        <span class="s1">'const collapsibleCards=document.querySelectorAll(".card-header.collapsible");'</span><span class="p">,</span>
+        <span class="s1">'let hasSearchResults=false;'</span><span class="p">,</span>
         <span class="s1">'document.querySelectorAll(".card").forEach(card=&gt;{'</span><span class="p">,</span>
         <span class="s1">'let m=false;'</span><span class="p">,</span>
         <span class="s1">'card.querySelectorAll(".link-item").forEach(item=&gt;{'</span><span class="p">,</span>
         <span class="s1">'const t=item.textContent.toLowerCase();'</span><span class="p">,</span>
-        <span class="s1">'if(!q||t.includes(q)){item.style.display="list-item";item.querySelector(".link-btn").classList.toggle("highlight",q&amp;&amp;t.includes(q));m=true;}'</span><span class="p">,</span>
+        <span class="s1">'if(!q||t.includes(q)){item.style.display="list-item";item.querySelector(".link-btn").classList.toggle("highlight",q&amp;&amp;t.includes(q));m=true;hasSearchResults=true;}'</span><span class="p">,</span>
         <span class="s1">'else{item.style.display="none";item.querySelector(".link-btn").classList.remove("highlight");}'</span><span class="p">,</span>
         <span class="s1">'});'</span><span class="p">,</span>
         <span class="s1">'card.style.display=m||!q?"block":"none";'</span><span class="p">,</span>
+        <span class="s1">'});'</span><span class="p">,</span>
+        <span class="s1">'collapsibleCards.forEach(header=&gt;{'</span><span class="p">,</span>
+        <span class="s1">'const card=header.closest(".card");'</span><span class="p">,</span>
+        <span class="s1">'if(q){'</span><span class="p">,</span>
+        <span class="s1">'const hasMatches=Array.from(card.querySelectorAll(".link-item")).some(item=&gt;item.style.display!=="none");'</span><span class="p">,</span>
+        <span class="s1">'if(hasMatches){'</span><span class="p">,</span>
+        <span class="s1">'header.classList.add("open");'</span><span class="p">,</span>
+        <span class="s1">'header.nextElementSibling.classList.remove("collapsed");'</span><span class="p">,</span>
+        <span class="s1">'}else{'</span><span class="p">,</span>
+        <span class="s1">'header.classList.remove("open");'</span><span class="p">,</span>
+        <span class="s1">'header.nextElementSibling.classList.add("collapsed");'</span><span class="p">,</span>
+        <span class="s1">'}'</span><span class="p">,</span>
+        <span class="s1">'}else{'</span><span class="p">,</span>
+        <span class="s1">'header.classList.remove("open");'</span><span class="p">,</span>
+        <span class="s1">'header.nextElementSibling.classList.add("collapsed");'</span><span class="p">,</span>
+        <span class="s1">'}'</span><span class="p">,</span>
         <span class="s1">'});'</span><span class="p">,</span>
         <span class="s1">'});'</span><span class="p">,</span>
         <span class="s1">'&lt;/script&gt;'</span><span class="p">,</span>
@@ -15925,8 +15977,7 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
     
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✨ Generated beautiful sitemap at: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Updated Discord invite: </span><span class="si">{</span><span class="n">discord_invite</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Top 3 cards in grid layout"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Remaining cards in linear stack"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Smart dropdown auto-toggle during search"</span><span class="p">)</span>
 
 <span class="n">directory</span> <span class="o">=</span> <span class="s1">'.'</span>
 <span class="n">generate_sitemap_html</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -15943,9 +15994,8 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>✨ Generated beautiful sitemap at: C:\Users\ChronoSeq\ChronoSeq\sitemap.html
-   - Updated Discord invite: https://discord.gg/mjN7sneA
-   - Top 3 cards in grid layout
-   - Remaining cards in linear stack
+   - Updated Discord invite: https://discord.gg/4YcQKkynUY
+   - Smart dropdown auto-toggle during search
 </pre>
 </div>
 </div>
