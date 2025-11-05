@@ -16,15 +16,21 @@ h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0.5rem;text-shadow:0
 .searchbar{text-align:center;margin:2rem 0;}
 .search-input{width:100%;max-width:600px;padding:1rem 1.5rem;border:none;border-radius:9999px;font-size:1rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);outline:none;background:white;}
 .search-input:focus{box-shadow:0 6px 12px rgba(0,0,0,0.15);}
+.sections{display:flex;flex-direction:column;gap:1.5rem;}
 .top-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:1.5rem;}
-.linear-section{display:flex;flex-direction:column;gap:1.5rem;}
 .card{background:white;border-radius:1rem;padding:1.5rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:all 0.3s;position:relative;overflow:hidden;}
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.15);}
 .card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#667eea,#764ba2);}
-.card-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;}
+.card-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;cursor:pointer;user-select:none;}
+.card-header.collapsible{position:relative;padding-right:2rem;}
+.card-header.collapsible::after{content:"▶";position:absolute;right:0;transition:transform 0.3s;font-size:1.2rem;color:#667eea;font-weight:bold;}
+.card-header.collapsible.open::after{transform:rotate(90deg);}
 .icon{font-size:2rem;}
 .card-title{font-size:1.25rem;font-weight:700;color:#1a202c;flex:1;}
 .card-subtitle{font-size:0.875rem;color:#718096;margin-bottom:1rem;}
+.card-content{max-height:none;overflow:visible;}
+.card-content.collapsed{max-height:0;overflow:hidden;margin-bottom:-1rem;}
+.card-content.collapsed .link-list,.card-content.collapsed .card-subtitle,.card-content.collapsed .dir-label,.card-content.collapsed .toggle,.card-content.collapsed .dep-content{display:none;}
 .link-list{list-style:none;}
 .link-item{margin:0.5rem 0;}
 .link-btn{display:block;padding:0.75rem 1rem;background:rgba(102,126,234,0.05);border-radius:0.5rem;color:#1a202c;text-decoration:none;font-weight:500;transition:all 0.2s;border-left:3px solid #667eea;}
@@ -38,13 +44,14 @@ h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0.5rem;text-shadow:0
 .github-btn:hover{background:rgba(0,0,0,0.1);}
 .toggle{cursor:pointer;display:inline-flex;align-items:center;gap:0.5rem;background:rgba(239,68,68,0.1);color:#dc2626;padding:0.5rem 1rem;border-radius:0.5rem;font-weight:600;margin:1rem 0;user-select:none;}
 .toggle:hover{background:rgba(239,68,68,0.15);}
-.toggle::before{content:"▶";transition:transform 0.3s;}
+.toggle::before{content:"▶";transition:transform 0.3s;display:inline-block;}
 .toggle.open::before{transform:rotate(90deg);}
-.dep-content{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}
+.dep-content{max-height:0;overflow:hidden;transition:max-height 0.3s ease;margin-left:1rem;border-left:2px solid rgba(239,68,68,0.3);padding-left:1rem;}
 .dep-content.open{max-height:2000px;padding-top:1rem;}
 .dep-notice{background:rgba(239,68,68,0.1);padding:0.75rem 1rem;border-radius:0.5rem;margin-bottom:1rem;border-left:3px solid #dc2626;font-size:0.875rem;color:#dc2626;}
 .deprecated .link-btn{background:rgba(239,68,68,0.05);border-left-color:#dc2626;color:#dc2626;}
 .deprecated .link-btn:hover{background:rgba(239,68,68,0.15);}
+.dir-label{font-weight:600;margin:1rem 0 0.5rem;color:#667eea;}
 @media(max-width:768px){h1{font-size:2rem;}.top-grid{grid-template-columns:1fr;}}
 </style>
 </head>
@@ -61,24 +68,28 @@ View on GitHub
 <div class="searchbar">
 <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search protocols, hardware, or instructions...">
 </div>
-<!-- Top 3 cards in grid -->
+<div class="sections">
+<!-- Top 3 cards in grid, always expanded -->
 <div class="top-grid">
 <div class="card">
 <div class="card-header">
 <span class="icon">🔧</span>
 <h2 class="card-title">Main Hardware Pages</h2>
 </div>
+<div class="card-content">
 <p class="card-subtitle">Essential hardware documentation</p>
 <ul class="link-list">
-<li class="link-item"><a href="instructions_for_device_assembly_and_setup.html" class="link-btn">View Main Hardware Assembly Page</a></li>
-<li class="link-item"><a href="protocol_and_software_for_running_chronoseq_device.html" class="link-btn">View Main Hardware Operation Page</a></li>
+<li class="link-item"><a href="instructions_for_device_assembly_and_setup.html" class="link-btn">Main Hardware Assembly Page</a></li>
+<li class="link-item"><a href="protocol_and_software_for_running_chronoseq_device.html" class="link-btn">Main Hardware Operation Page</a></li>
 </ul>
+</div>
 </div>
 <div class="card">
 <div class="card-header">
 <span class="icon">📊</span>
 <h2 class="card-title">Data Processing & Analysis</h2>
 </div>
+<div class="card-content">
 <p class="card-subtitle">Tools and repositories for data analysis</p>
 <ul class="link-list">
 <li class="link-item"><a href="https://github.com/kanishkasthana/ChronoSeq-Tools" class="link-btn external-link" target="_blank">ChronoSeq-Tools repo</a></li>
@@ -86,11 +97,13 @@ View on GitHub
 <li class="link-item"><a href="https://github.com/anjambor/ChronoSeq-Analysis" class="link-btn external-link" target="_blank">ChronoSeq-Analysis repo</a></li>
 </ul>
 </div>
+</div>
 <div class="card">
 <div class="card-header">
 <span class="icon">💬</span>
 <h2 class="card-title">Community</h2>
 </div>
+<div class="card-content">
 <p class="card-subtitle">Connect with ChronoSeq users and get support</p>
 <ul class="link-list">
 <li class="link-item"><a href="https://discord.gg/mjN7sneA" class="link-btn discord-btn external-link" target="_blank">ChronoSeq Discord Server</a></li>
@@ -99,13 +112,13 @@ View on GitHub
 </ul>
 </div>
 </div>
-<!-- Remaining cards in linear layout -->
-<div class="linear-section">
+</div>
 <div class="card">
-<div class="card-header">
+<div class="card-header collapsible" onclick="toggleCard(this)">
 <span class="icon">⚙️</span>
 <h2 class="card-title">Hardware Assembly</h2>
 </div>
+<div class="card-content collapsed">
 <p class="card-subtitle">Detailed assembly instructions for ChronoSeq hardware components</p>
 <ul class="link-list">
 <li class="link-item"><a href="./instructions_for_assembling_sensirion_flow_sensor.html" class="link-btn">Instructions For Assembling Sensirion Flow Sensor</a></li>
@@ -117,7 +130,7 @@ View on GitHub
 <li class="link-item"><a href="./instructions_for_setting_coordinates_for_xyz_robot.html" class="link-btn">Instructions For Setting Coordinates For Xyz Robot</a></li>
 <li class="link-item"><a href="./instructions_for_setting_up_valves_tubing_and_reservoirs.html" class="link-btn">Instructions For Setting Up Valves Tubing And Reservoirs</a></li>
 </ul>
-<div class="toggle" onclick="toggle(this)">⚠️ Deprecated Instructions</div>
+<div class="toggle" onclick="toggleDep(event)">⚠️ Deprecated Instructions</div>
 <div class="dep-content">
 <div class="dep-notice"><strong>Note:</strong> These instructions are deprecated and may not work with current versions.</div>
 <ul class="link-list deprecated">
@@ -126,11 +139,13 @@ View on GitHub
 </ul>
 </div>
 </div>
+</div>
 <div class="card">
-<div class="card-header">
+<div class="card-header collapsible" onclick="toggleCard(this)">
 <span class="icon">📋</span>
 <h2 class="card-title">Protocols</h2>
 </div>
+<div class="card-content collapsed">
 <p class="card-subtitle">Laboratory protocols and procedures</p>
 <ul class="link-list">
 <li class="link-item"><a href="./protocol_and_software_for_running_chronoseq_device.html" class="link-btn">Protocol And Software For Running Chronoseq Device</a></li>
@@ -149,7 +164,7 @@ View on GitHub
 <li class="link-item"><a href="./protocol_for_tagmentation_with_KAPA_PCR.html" class="link-btn">Protocol For Tagmentation With Kapa Pcr</a></li>
 <li class="link-item"><a href="./protocol_library_preparation_for_dropseq_chronoseq_beads.html" class="link-btn">Protocol Library Preparation For Dropseq Chronoseq Beads</a></li>
 </ul>
-<div class="toggle" onclick="toggle(this)">⚠️ Deprecated Protocols</div>
+<div class="toggle" onclick="toggleDep(event)">⚠️ Deprecated Protocols</div>
 <div class="dep-content">
 <div class="dep-notice"><strong>Note:</strong> These protocols are deprecated and may not work with current versions.</div>
 <ul class="link-list deprecated">
@@ -166,47 +181,80 @@ View on GitHub
 </ul>
 </div>
 </div>
+</div>
 <div class="card">
-<div class="card-header">
+<div class="card-header collapsible" onclick="toggleCard(this)">
 <span class="icon">📁</span>
 <h2 class="card-title">Other Resources</h2>
 </div>
+<div class="card-content collapsed">
 <p class="card-subtitle">CAD files, notebooks, and validation files</p>
-<p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;">Cad Files > 3 Port Reservoir</p>
+<p class="dir-label">Cad Files > 3 Port Reservoir</p>
 <ul class="link-list">
 <li class="link-item"><a href="CAD_Files/3 Port Reservoir/Manufacturing Notes.html" class="link-btn">Manufacturing Notes</a></li>
 </ul>
-<p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;">Cad Files > Xy Robot > Attribution</p>
+<p class="dir-label">Cad Files > Xy Robot > Attribution</p>
 <ul class="link-list">
 <li class="link-item"><a href="CAD_Files/XY Robot/Attribution/attribution_card.html" class="link-btn">Attribution Card</a></li>
 </ul>
-<p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;">Cad Files > Xyz Robot > Attribution</p>
+<p class="dir-label">Cad Files > Xyz Robot > Attribution</p>
 <ul class="link-list">
 <li class="link-item"><a href="CAD_Files/XYZ Robot/Attribution/attribution_card.html" class="link-btn">Attribution Card</a></li>
 </ul>
-<p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;">Qpcr Validation Files</p>
+<p class="dir-label">Qpcr Validation Files</p>
 <ul class="link-list">
 <li class="link-item"><a href="qPCR_validation_files/qPCR Analysis.html" class="link-btn">Qpcr Analysis</a></li>
 </ul>
-<p style="font-weight:600;margin:1rem 0 0.5rem;color:#667eea;">Qpcr Validation Files > K562 Costimulation 2 Samples</p>
+<p class="dir-label">Qpcr Validation Files > K562 Costimulation 2 Samples</p>
 <ul class="link-list">
 <li class="link-item"><a href="qPCR_validation_files/K562_Costimulation_2_Samples/qPCR_analysis_publication_quality_plots.html" class="link-btn">Qpcr Analysis Publication Quality Plots</a></li>
 </ul>
 </div>
 </div>
 </div>
+</div>
 <script>
-function toggle(btn){const c=btn.nextElementSibling;c.classList.toggle("open");btn.classList.toggle("open");}
-document.getElementById("searchInput").addEventListener("input",function(){
+function toggleCard(header){
+const content=header.nextElementSibling;
+header.classList.toggle("open");
+content.classList.toggle("collapsed");
+}
+function toggleDep(e){
+e.stopPropagation();
+const btn=e.target.closest(".toggle");
+const content=btn.nextElementSibling;
+btn.classList.toggle("open");
+content.classList.toggle("open");
+}
+const searchInput=document.getElementById("searchInput");
+searchInput.addEventListener("input",function(){
 const q=this.value.toLowerCase().trim();
+const collapsibleCards=document.querySelectorAll(".card-header.collapsible");
+let hasSearchResults=false;
 document.querySelectorAll(".card").forEach(card=>{
 let m=false;
 card.querySelectorAll(".link-item").forEach(item=>{
 const t=item.textContent.toLowerCase();
-if(!q||t.includes(q)){item.style.display="list-item";item.querySelector(".link-btn").classList.toggle("highlight",q&&t.includes(q));m=true;}
+if(!q||t.includes(q)){item.style.display="list-item";item.querySelector(".link-btn").classList.toggle("highlight",q&&t.includes(q));m=true;hasSearchResults=true;}
 else{item.style.display="none";item.querySelector(".link-btn").classList.remove("highlight");}
 });
 card.style.display=m||!q?"block":"none";
+});
+collapsibleCards.forEach(header=>{
+const card=header.closest(".card");
+if(q){
+const hasMatches=Array.from(card.querySelectorAll(".link-item")).some(item=>item.style.display!=="none");
+if(hasMatches){
+header.classList.add("open");
+header.nextElementSibling.classList.remove("collapsed");
+}else{
+header.classList.remove("open");
+header.nextElementSibling.classList.add("collapsed");
+}
+}else{
+header.classList.remove("open");
+header.nextElementSibling.classList.add("collapsed");
+}
 });
 });
 </script>
