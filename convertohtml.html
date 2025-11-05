@@ -15201,7 +15201,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=951cd1d0">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e2dce188">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15240,7 +15240,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="sd">        str: Updated HTML body.</span>
 <span class="sd">    """</span>
     <span class="c1"># Submodule mappings: local path prefix -&gt; actual GitHub repo URL</span>
-    <span class="c1"># Add more submodules here as needed</span>
     <span class="n">submodule_mappings</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'arduino-liquid-flow-snippets'</span><span class="p">:</span> <span class="s1">'https://github.com/kanishkasthana/arduino-liquid-flow-snippets/tree/master'</span><span class="p">,</span>
         <span class="s1">'ivPID'</span><span class="p">:</span> <span class="s1">'https://github.com/kanishkasthana/ivPID/tree/master'</span><span class="p">,</span>
@@ -15262,17 +15261,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         <span class="n">img_tag</span> <span class="o">=</span> <span class="n">a_tag</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'img'</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">img_tag</span> <span class="ow">and</span> <span class="s1">'src'</span> <span class="ow">in</span> <span class="n">img_tag</span><span class="o">.</span><span class="n">attrs</span><span class="p">:</span>
             <span class="n">img_src</span> <span class="o">=</span> <span class="n">img_tag</span><span class="p">[</span><span class="s1">'src'</span><span class="p">]</span>
-            <span class="c1"># Extract VIDEO_ID from href (watch?v=VIDEO_ID)</span>
             <span class="n">video_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'youtube\.com/watch\?v=([a-zA-Z0-9_-]+)'</span><span class="p">,</span> <span class="n">a_tag</span><span class="p">[</span><span class="s1">'href'</span><span class="p">])</span>
             <span class="k">if</span> <span class="n">video_match</span><span class="p">:</span>
                 <span class="n">video_id</span> <span class="o">=</span> <span class="n">video_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-                <span class="c1"># Check if src is YouTube thumbnail (vi/VIDEO_ID/hqdefault.jpg or similar)</span>
                 <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">rf</span><span class="s1">'img\.youtube\.com/vi/</span><span class="si">{</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">video_id</span><span class="p">)</span><span class="si">}</span><span class="s1">/[a-z]+default\.jpg'</span><span class="p">,</span> <span class="n">img_src</span><span class="p">):</span>
-                    <span class="c1"># Create responsive iframe wrapper</span>
                     <span class="n">responsive_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">new_tag</span><span class="p">(</span><span class="s1">'div'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;"</span><span class="p">)</span>
                     <span class="n">responsive_div</span><span class="p">[</span><span class="s1">'class'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'youtube-embed'</span>
                     
-                    <span class="c1"># Create iframe with 560x315 dimensions</span>
                     <span class="n">iframe</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">new_tag</span><span class="p">(</span><span class="s1">'iframe'</span><span class="p">,</span>
                                           <span class="n">width</span><span class="o">=</span><span class="s2">"560"</span><span class="p">,</span>
                                           <span class="n">height</span><span class="o">=</span><span class="s2">"315"</span><span class="p">,</span>
@@ -15283,19 +15278,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                                           <span class="n">referrerpolicy</span><span class="o">=</span><span class="s2">"strict-origin-when-cross-origin"</span><span class="p">,</span>
                                           <span class="n">allowfullscreen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
                     
-                    <span class="c1"># Make iframe responsive within the div</span>
                     <span class="n">iframe</span><span class="p">[</span><span class="s1">'style'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"position: absolute; top: 0; left: 0; width: 100%; height: 100%;"</span>
                     <span class="n">responsive_div</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">iframe</span><span class="p">)</span>
-                    
-                    <span class="c1"># Replace the entire &lt;a&gt;&lt;img&gt;&lt;/a&gt; with the responsive iframe div</span>
                     <span class="n">a_tag</span><span class="o">.</span><span class="n">replace_with</span><span class="p">(</span><span class="n">responsive_div</span><span class="p">)</span>
                     <span class="n">replacements</span> <span class="o">+=</span> <span class="mi">1</span>
                     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Replaced YouTube thumbnail (</span><span class="si">{</span><span class="n">video_id</span><span class="si">}</span><span class="s2">) with embedded iframe"</span><span class="p">)</span>
     
-    <span class="c1"># Handle local directory/file links - redirect to GitHub repository</span>
-    <span class="c1"># EXCLUDE ANY links containing ".html" or ".pdf" anywhere in the href</span>
-    <span class="c1"># SPECIAL HANDLING for .md files - use blob URLs instead of tree URLs</span>
-    <span class="c1"># SPECIAL HANDLING for submodules - redirect to actual submodule repo</span>
+    <span class="c1"># Handle local directory/file links</span>
     <span class="n">github_base_url</span> <span class="o">=</span> <span class="s2">"https://github.com/kanishkasthana/ChronoSeq"</span>
     <span class="n">github_tree_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_base_url</span><span class="si">}</span><span class="s2">/tree/master"</span>
     <span class="n">github_blob_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_base_url</span><span class="si">}</span><span class="s2">/blob/master"</span>
@@ -15304,25 +15293,20 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="k">for</span> <span class="n">a_tag</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="n">href</span> <span class="o">=</span> <span class="n">a_tag</span><span class="p">[</span><span class="s1">'href'</span><span class="p">]</span>
         
-        <span class="c1"># Skip if it's already an external URL (http/https), anchor (#), or contains .html/.pdf ANYWHERE</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s1">'http://'</span><span class="p">,</span> <span class="s1">'https://'</span><span class="p">,</span> <span class="s1">'#'</span><span class="p">,</span> <span class="s1">'mailto:'</span><span class="p">))</span> <span class="ow">or</span> 
-            <span class="s1">'.html'</span> <span class="ow">in</span> <span class="n">href</span> <span class="ow">or</span>  <span class="c1"># Skip ANY link containing .html anywhere</span>
-            <span class="s1">'.pdf'</span> <span class="ow">in</span> <span class="n">href</span> <span class="ow">or</span>   <span class="c1"># Skip ANY link containing .pdf anywhere</span>
+            <span class="s1">'.html'</span> <span class="ow">in</span> <span class="n">href</span> <span class="ow">or</span>
+            <span class="s1">'.pdf'</span> <span class="ow">in</span> <span class="n">href</span> <span class="ow">or</span>
             <span class="s1">'youtube.com'</span> <span class="ow">in</span> <span class="n">href</span> <span class="ow">or</span>
             <span class="s1">'github.com'</span> <span class="ow">in</span> <span class="n">href</span><span class="p">):</span>
             <span class="k">continue</span>
         
-        <span class="c1"># Check if it's a relative path (local directory/file)</span>
-        <span class="c1"># Common patterns: ./CAD_Files/folder, CAD_Files/folder, ../folder, folder/file.ext, file.md</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'./'</span><span class="p">)</span> <span class="ow">or</span> 
             <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'../'</span><span class="p">)</span> <span class="ow">or</span> 
-            <span class="p">(</span><span class="s1">'/'</span> <span class="ow">in</span> <span class="n">href</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'/'</span><span class="p">))</span> <span class="ow">or</span>  <span class="c1"># Relative path with subdirs</span>
-            <span class="p">(</span><span class="ow">not</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">'.'</span> <span class="ow">in</span> <span class="n">href</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">href</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">))):</span>  <span class="c1"># File or multi-level path</span>
+            <span class="p">(</span><span class="s1">'/'</span> <span class="ow">in</span> <span class="n">href</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'/'</span><span class="p">))</span> <span class="ow">or</span>
+            <span class="p">(</span><span class="ow">not</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">'.'</span> <span class="ow">in</span> <span class="n">href</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">href</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">))):</span>
             
-            <span class="c1"># Clean up the path</span>
-            <span class="n">clean_path</span> <span class="o">=</span> <span class="n">href</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">'./'</span><span class="p">)</span>  <span class="c1"># Remove leading ./</span>
+            <span class="n">clean_path</span> <span class="o">=</span> <span class="n">href</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">'./'</span><span class="p">)</span>
             
-            <span class="c1"># Handle ../ paths (go up one level - for simplicity, treat as relative to root)</span>
             <span class="k">if</span> <span class="n">clean_path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'../'</span><span class="p">):</span>
                 <span class="n">clean_path</span> <span class="o">=</span> <span class="n">clean_path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'../'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
             
@@ -15330,8 +15314,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             <span class="n">github_url</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="k">for</span> <span class="n">submodule_path</span><span class="p">,</span> <span class="n">submodule_repo_url</span> <span class="ow">in</span> <span class="n">submodule_mappings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="k">if</span> <span class="n">clean_path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">submodule_path</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">)</span> <span class="ow">or</span> <span class="n">clean_path</span> <span class="o">==</span> <span class="n">submodule_path</span><span class="p">:</span>
-                    <span class="c1"># This is a submodule path - redirect to the actual submodule repo</span>
-                    <span class="c1"># Remove the submodule prefix and append to submodule repo URL</span>
                     <span class="n">subpath</span> <span class="o">=</span> <span class="n">clean_path</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">submodule_path</span><span class="p">):]</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
                     <span class="k">if</span> <span class="n">subpath</span><span class="p">:</span>
                         <span class="n">github_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">submodule_repo_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">subpath</span><span class="si">}</span><span class="s2">"</span>
@@ -15340,28 +15322,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Redirected submodule link: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">github_url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
                     <span class="k">break</span>
             
-            <span class="c1"># If not a submodule, use standard GitHub URL logic</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">github_url</span><span class="p">:</span>
-                <span class="c1"># Determine if it's a .md file or other file type vs directory</span>
                 <span class="k">if</span> <span class="n">clean_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.md'</span><span class="p">):</span>
-                    <span class="c1"># For .md files, use blob URL</span>
                     <span class="n">github_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_blob_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">clean_path</span><span class="si">}</span><span class="s2">"</span>
                     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Redirected .md file: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">github_url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
                 <span class="k">elif</span> <span class="s1">'.'</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">clean_path</span><span class="p">):</span>
-                    <span class="c1"># For other files with extensions, use blob URL  </span>
                     <span class="n">github_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_blob_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">clean_path</span><span class="si">}</span><span class="s2">"</span>
                     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Redirected file: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">github_url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="c1"># For directories (no extension), use tree URL</span>
                     <span class="n">github_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">github_tree_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">clean_path</span><span class="si">}</span><span class="s2">"</span>
                     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Redirected directory: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">github_url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             
-            <span class="c1"># Update the href</span>
             <span class="n">a_tag</span><span class="p">[</span><span class="s1">'href'</span><span class="p">]</span> <span class="o">=</span> <span class="n">github_url</span>
-            
-            <span class="c1"># Add target="_blank" to open in new tab</span>
             <span class="n">a_tag</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'_blank'</span>
-            
             <span class="n">local_link_replacements</span> <span class="o">+=</span> <span class="mi">1</span>
     
     <span class="k">if</span> <span class="n">replacements</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -15374,66 +15347,79 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <span class="k">def</span> <span class="nf">convert_ipynb_to_html_with_link_updates</span><span class="p">(</span><span class="n">directory_path</span><span class="p">):</span>
     <span class="sd">"""</span>
-<span class="sd">    Recursively convert all .ipynb files to HTML, preserving relative images and updating links:</span>
+<span class="sd">    Recursively convert all .ipynb files to HTML, excluding:</span>
+<span class="sd">    - ivPID directory</span>
+<span class="sd">    - test directory (NEW)</span>
+<span class="sd">    </span>
+<span class="sd">    Features:</span>
 <span class="sd">    1. .ipynb links -&gt; .html links (with anchors)</span>
 <span class="sd">    2. YouTube thumbnails -&gt; embedded iframes (560x315)</span>
 <span class="sd">    3. Local directory/file links -&gt; GitHub repository links (EXCLUDING .html and .pdf links)</span>
 <span class="sd">    4. .md files -&gt; GitHub blob URLs</span>
 <span class="sd">    5. Submodule paths -&gt; Actual submodule repository URLs</span>
-<span class="sd">       - arduino-liquid-flow-snippets -&gt; https://github.com/kanishkasthana/arduino-liquid-flow-snippets</span>
-<span class="sd">       - ivPID -&gt; https://github.com/kanishkasthana/ivPID</span>
 <span class="sd">    Special handling: Rename "OPEN ME FIRST - README - Main Menu.ipynb" output to root index.html.</span>
 <span class="sd">    </span>
 <span class="sd">    Args:</span>
 <span class="sd">        directory_path (str): Path to the root directory to search for .ipynb files.</span>
 <span class="sd">    """</span>
-    <span class="c1"># Find all .ipynb files recursively (sorted for consistent order)</span>
+    <span class="c1"># Find all .ipynb files recursively</span>
     <span class="n">ipynb_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory_path</span><span class="p">,</span> <span class="s1">'**'</span><span class="p">,</span> <span class="s1">'*.ipynb'</span><span class="p">),</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
     
     <span class="k">if</span> <span class="ow">not</span> <span class="n">ipynb_files</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"No .ipynb files found in the directory."</span><span class="p">)</span>
         <span class="k">return</span>
     
-    <span class="c1"># Configure exporter for relative paths (no embedding)</span>
+    <span class="c1"># Directories to skip (case-insensitive matching)</span>
+    <span class="n">skip_dirs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'ivpid'</span><span class="p">,</span> <span class="s1">'test'</span><span class="p">}</span>
+    
+    <span class="c1"># Filter out files in excluded directories</span>
+    <span class="n">filtered_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ipynb_path</span> <span class="ow">in</span> <span class="n">ipynb_files</span><span class="p">:</span>
+        <span class="n">rel_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">,</span> <span class="n">directory_path</span><span class="p">)</span>
+        <span class="n">path_parts</span> <span class="o">=</span> <span class="n">rel_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span>
+        
+        <span class="c1"># Check if any part of the path matches excluded directories</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">skip_dirs</span> <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">path_parts</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Skipping (excluded directory): </span><span class="si">{</span><span class="n">ipynb_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="k">continue</span>
+        
+        <span class="n">filtered_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">filtered_files</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"No .ipynb files to convert after filtering excluded directories."</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="c1"># Configure exporter</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span>
     <span class="n">c</span><span class="o">.</span><span class="n">HTMLExporter</span><span class="o">.</span><span class="n">embed_images</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
     
     <span class="n">root_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span>
-    <span class="n">target_notebook_name</span> <span class="o">=</span> <span class="s2">"OPEN ME FIRST - README - Main Menu.ipynb"</span>  <span class="c1"># Exact filename with spaces</span>
+    <span class="n">target_notebook_name</span> <span class="o">=</span> <span class="s2">"OPEN ME FIRST - README - Main Menu.ipynb"</span>
     
-    <span class="k">for</span> <span class="n">ipynb_path</span> <span class="ow">in</span> <span class="n">ipynb_files</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">ipynb_path</span> <span class="ow">in</span> <span class="n">filtered_files</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="c1"># Read the notebook</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
             
-            <span class="c1"># Convert to HTML</span>
             <span class="n">body</span><span class="p">,</span> <span class="n">resources</span> <span class="o">=</span> <span class="n">exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-            
-            <span class="c1"># Post-process: Update all links (ipynb-&gt;html, YouTube embeds, GitHub redirects, submodules)</span>
             <span class="n">body</span> <span class="o">=</span> <span class="n">update_ipynb_links_to_html</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
             
-            <span class="c1"># Determine output path</span>
             <span class="n">notebook_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">notebook_name</span> <span class="o">==</span> <span class="n">target_notebook_name</span><span class="p">:</span>
-                <span class="c1"># Special case: Rename to root index.html</span>
                 <span class="n">html_filename</span> <span class="o">=</span> <span class="s1">'index.html'</span>
                 <span class="n">html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_dir</span><span class="p">,</span> <span class="n">html_filename</span><span class="p">)</span>
-                <span class="n">resource_dir_name</span> <span class="o">=</span> <span class="s1">'index_files'</span>  <span class="c1"># For attachments</span>
+                <span class="n">resource_dir_name</span> <span class="o">=</span> <span class="s1">'index_files'</span>
                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Special conversion: Renaming to root </span><span class="si">{</span><span class="n">html_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="c1"># Standard: .html in same dir</span>
                 <span class="n">html_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
                 <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">notebook_name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
                 <span class="n">html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html_dir</span><span class="p">,</span> <span class="n">html_filename</span><span class="p">)</span>
                 <span class="n">resource_dir_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">_files"</span>
             
-            <span class="c1"># Write updated HTML file</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
             
-            <span class="c1"># Extract attachments to _files if present</span>
             <span class="k">if</span> <span class="n">resources</span> <span class="ow">and</span> <span class="s1">'files'</span> <span class="ow">in</span> <span class="n">resources</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">notebook_name</span> <span class="o">==</span> <span class="n">target_notebook_name</span><span class="p">:</span>
                     <span class="n">resource_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_dir</span><span class="p">,</span> <span class="n">resource_dir_name</span><span class="p">)</span>
@@ -15445,13 +15431,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                         <span class="n">res_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Extracted attachments to: </span><span class="si">{</span><span class="n">resource_dir</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Converted with all link updates: </span><span class="si">{</span><span class="n">ipynb_path</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">html_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Converted: </span><span class="si">{</span><span class="n">ipynb_path</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">html_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error converting </span><span class="si">{</span><span class="n">ipynb_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="c1"># Execute conversion in current directory</span>
-<span class="n">directory</span> <span class="o">=</span> <span class="s1">'.'</span>  <span class="c1"># Current directory; change as needed</span>
+<span class="c1"># Execute conversion</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">'.'</span>
 <span class="n">convert_ipynb_to_html_with_link_updates</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -15465,11 +15451,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Redirected file: CAD_Files/3%20Port%20Reservoir/Screenshot%202024-05-18%20at%206.41.43%E2%80%AFPM.png -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/CAD_Files/3%20Port%20Reservoir/Screenshot%202024-05-18%20at%206.41.43%E2%80%AFPM.png
+<pre>Skipping (excluded directory): .\test\test_pbmc_conditions_comparison.ipynb
+Redirected file: CAD_Files/3%20Port%20Reservoir/Screenshot%202024-05-18%20at%206.41.43%E2%80%AFPM.png -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/CAD_Files/3%20Port%20Reservoir/Screenshot%202024-05-18%20at%206.41.43%E2%80%AFPM.png
 Redirected file: CAD_Files/3%20Port%20Reservoir/3%20Port%20Cap%20XY%20Compensation.3mf -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/CAD_Files/3%20Port%20Reservoir/3%20Port%20Cap%20XY%20Compensation.3mf
 Total local directory/file links redirected to GitHub: 2
-Converted with all link updates: .\CAD_Files\3 Port Reservoir\Manufacturing Notes.ipynb -&gt; .\CAD_Files\3 Port Reservoir\Manufacturing Notes.html
-Converted with all link updates: .\ChronoSeq_Overview.ipynb -&gt; .\ChronoSeq_Overview.html
+Converted: .\CAD_Files\3 Port Reservoir\Manufacturing Notes.ipynb -&gt; .\CAD_Files\3 Port Reservoir\Manufacturing Notes.html
+Converted: .\ChronoSeq_Overview.ipynb -&gt; .\ChronoSeq_Overview.html
 Replaced YouTube thumbnail (qbhCONpUdx0) with embedded iframe
 Replaced YouTube thumbnail (J2O1kA4chU0) with embedded iframe
 Replaced YouTube thumbnail (qFouf2HrKSk) with embedded iframe
@@ -15480,23 +15467,23 @@ Redirected file: conda_environment_file/Anaconda%20Prompt.lnk -&gt; https://gith
 Total YouTube thumbnails replaced with iframes: 4
 Total local directory/file links redirected to GitHub: 3
 Special conversion: Renaming to root C:\Users\ChronoSeq\ChronoSeq\index.html
-Converted with all link updates: .\OPEN ME FIRST - README - Main Menu.ipynb -&gt; C:\Users\ChronoSeq\ChronoSeq\index.html
-Converted with all link updates: .\convertohtml.ipynb -&gt; .\convertohtml.html
+Converted: .\OPEN ME FIRST - README - Main Menu.ipynb -&gt; C:\Users\ChronoSeq\ChronoSeq\index.html
+Converted: .\convertohtml.ipynb -&gt; .\convertohtml.html
 Redirected file: CAD_Files/Sensirion%20LG16-1000D%20Flow%20Sensor/LG16-1000D%20Sensirion%20Housing%20With%20Arduino%20Nano.3mf -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/CAD_Files/Sensirion%20LG16-1000D%20Flow%20Sensor/LG16-1000D%20Sensirion%20Housing%20With%20Arduino%20Nano.3mf
 Redirected directory: CAD_Files/Sensirion%20LG16-1000D%20Flow%20Sensor -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sensirion%20LG16-1000D%20Flow%20Sensor
 Redirected submodule link: arduino-liquid-flow-snippets/example_03_read_scalefactor_and_unit -&gt; https://github.com/kanishkasthana/arduino-liquid-flow-snippets/tree/master/example_03_read_scalefactor_and_unit
 Total local directory/file links redirected to GitHub: 3
-Converted with all link updates: .\instructions_for_assembling_sensirion_flow_sensor.ipynb -&gt; .\instructions_for_assembling_sensirion_flow_sensor.html
+Converted: .\instructions_for_assembling_sensirion_flow_sensor.ipynb -&gt; .\instructions_for_assembling_sensirion_flow_sensor.html
 Redirected file: CAD_Files/Valve%20Controller/Valve%20Relay%20Controller%20Housing.3mf -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/CAD_Files/Valve%20Controller/Valve%20Relay%20Controller%20Housing.3mf
 Redirected directory: CAD_Files/Valve%20Controller -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Valve%20Controller
 Redirected directory: relay_Control/ -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/relay_Control/
 Total local directory/file links redirected to GitHub: 3
-Converted with all link updates: .\instructions_for_assembling_valve_controller.ipynb -&gt; .\instructions_for_assembling_valve_controller.html
+Converted: .\instructions_for_assembling_valve_controller.ipynb -&gt; .\instructions_for_assembling_valve_controller.html
 Redirected file: CAD_Files/Valve%20Controller%20V2/Valve%20Relay%20Controller%20Housing%20V2.3mf -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/CAD_Files/Valve%20Controller%20V2/Valve%20Relay%20Controller%20Housing%20V2.3mf
 Redirected directory: CAD_Files/Valve%20Controller%20V2 -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Valve%20Controller%20V2
 Redirected directory: relay_Control/ -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/relay_Control/
 Total local directory/file links redirected to GitHub: 3
-Converted with all link updates: .\instructions_for_assembling_valve_controllerV2.ipynb -&gt; .\instructions_for_assembling_valve_controllerV2.html
+Converted: .\instructions_for_assembling_valve_controllerV2.ipynb -&gt; .\instructions_for_assembling_valve_controllerV2.html
 </pre>
 </div>
 </div>
@@ -15515,8 +15502,8 @@ Converted with all link updates: .\instructions_for_assembling_valve_controllerV
 Redirected directory: CAD_Files/Valve%20Controller%20ESP32 -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Valve%20Controller%20ESP32
 Redirected directory: relay_Control_esp32/ -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/relay_Control_esp32/
 Total local directory/file links redirected to GitHub: 3
-Converted with all link updates: .\instructions_for_assembling_valve_controller_ESP32.ipynb -&gt; .\instructions_for_assembling_valve_controller_ESP32.html
-Converted with all link updates: .\instructions_for_assembling_vortex_relay_controller.ipynb -&gt; .\instructions_for_assembling_vortex_relay_controller.html
+Converted: .\instructions_for_assembling_valve_controller_ESP32.ipynb -&gt; .\instructions_for_assembling_valve_controller_ESP32.html
+Converted: .\instructions_for_assembling_vortex_relay_controller.ipynb -&gt; .\instructions_for_assembling_vortex_relay_controller.html
 </pre>
 </div>
 </div>
@@ -15535,83 +15522,83 @@ Converted with all link updates: .\instructions_for_assembling_vortex_relay_cont
 Redirected directory: CAD_Files/Ice%20Box%20Lids%20for%20Heathrow%20Scientific%20HS23271A -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Ice%20Box%20Lids%20for%20Heathrow%20Scientific%20HS23271A
 Redirected directory: droplet_collector/ -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/droplet_collector/
 Total local directory/file links redirected to GitHub: 3
-Converted with all link updates: .\instructions_for_assembling_xy_robot_and_ice_boxes.ipynb -&gt; .\instructions_for_assembling_xy_robot_and_ice_boxes.html
+Converted: .\instructions_for_assembling_xy_robot_and_ice_boxes.ipynb -&gt; .\instructions_for_assembling_xy_robot_and_ice_boxes.html
 Redirected directory: CAD_Files/XYZ%20Robot -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/XYZ%20Robot
 Redirected directory: CAD_Files/XYZ%20Robot -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/XYZ%20Robot
 Redirected directory: doesbot/ -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/doesbot/
 Total local directory/file links redirected to GitHub: 3
-Converted with all link updates: .\instructions_for_assembling_xyz_robot.ipynb -&gt; .\instructions_for_assembling_xyz_robot.html
+Converted: .\instructions_for_assembling_xyz_robot.ipynb -&gt; .\instructions_for_assembling_xyz_robot.html
 Redirected directory: CAD_Files/ChronoSeq%20Device -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/ChronoSeq%20Device
 Redirected directory: CAD_Files/iPhone%2013%20Pro%20Holder%20and%20Lens%20Attachment%20for%20Recording%20on%20the%20Motic%20AE31%20Microscope -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/iPhone%2013%20Pro%20Holder%20and%20Lens%20Attachment%20for%20Recording%20on%20the%20Motic%20AE31%20Microscope
 Redirected directory: CAD_Files/Valve%20Holders -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Valve%20Holders
 Redirected directory: CAD_Files/3%20Port%20Reservoir -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/3%20Port%20Reservoir
 Redirected .md file: Computer%20Selection.md -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/Computer%20Selection.md
 Total local directory/file links redirected to GitHub: 5
-Converted with all link updates: .\instructions_for_device_assembly_and_setup.ipynb -&gt; .\instructions_for_device_assembly_and_setup.html
-Converted with all link updates: .\instructions_for_setting_coordinates_for_xyz_robot.ipynb -&gt; .\instructions_for_setting_coordinates_for_xyz_robot.html
-Converted with all link updates: .\instructions_for_setting_up_valves_tubing_and_reservoirs.ipynb -&gt; .\instructions_for_setting_up_valves_tubing_and_reservoirs.html
-Converted with all link updates: .\protocol_and_software_for_running_chronoseq_device-OriginalDevice.ipynb -&gt; .\protocol_and_software_for_running_chronoseq_device-OriginalDevice.html
-Converted with all link updates: .\protocol_and_software_for_running_chronoseq_device.ipynb -&gt; .\protocol_and_software_for_running_chronoseq_device.html
-Converted with all link updates: .\protocol_for_aquapel_treatment_of_microfluidic_chips.ipynb -&gt; .\protocol_for_aquapel_treatment_of_microfluidic_chips.html
-Converted with all link updates: .\protocol_for_bonding_pdms_chips_to_glass.ipynb -&gt; .\protocol_for_bonding_pdms_chips_to_glass.html
-Converted with all link updates: .\protocol_for_bulk_rna_seq_library_prep.ipynb -&gt; .\protocol_for_bulk_rna_seq_library_prep.html
-Converted with all link updates: .\protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um.ipynb -&gt; .\protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um.html
-Converted with all link updates: .\protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM.ipynb -&gt; .\protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM.html
+Converted: .\instructions_for_device_assembly_and_setup.ipynb -&gt; .\instructions_for_device_assembly_and_setup.html
+Converted: .\instructions_for_setting_coordinates_for_xyz_robot.ipynb -&gt; .\instructions_for_setting_coordinates_for_xyz_robot.html
+Converted: .\instructions_for_setting_up_valves_tubing_and_reservoirs.ipynb -&gt; .\instructions_for_setting_up_valves_tubing_and_reservoirs.html
+Converted: .\protocol_and_software_for_running_chronoseq_device-OriginalDevice.ipynb -&gt; .\protocol_and_software_for_running_chronoseq_device-OriginalDevice.html
+Converted: .\protocol_and_software_for_running_chronoseq_device.ipynb -&gt; .\protocol_and_software_for_running_chronoseq_device.html
+Converted: .\protocol_for_aquapel_treatment_of_microfluidic_chips.ipynb -&gt; .\protocol_for_aquapel_treatment_of_microfluidic_chips.html
+Converted: .\protocol_for_bonding_pdms_chips_to_glass.ipynb -&gt; .\protocol_for_bonding_pdms_chips_to_glass.html
+Converted: .\protocol_for_bulk_rna_seq_library_prep.ipynb -&gt; .\protocol_for_bulk_rna_seq_library_prep.html
+Converted: .\protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um.ipynb -&gt; .\protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um.html
+Converted: .\protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM.ipynb -&gt; .\protocol_for_chronoseqv3_and_dropseq_bead_modification_1mM.html
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Total local directory/file links redirected to GitHub: 1
-Converted with all link updates: .\protocol_for_chronoseqv4_bead_modification_for_bulk_time_series.ipynb -&gt; .\protocol_for_chronoseqv4_bead_modification_for_bulk_time_series.html
-Converted with all link updates: .\protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads.ipynb -&gt; .\protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads.html
+Converted: .\protocol_for_chronoseqv4_bead_modification_for_bulk_time_series.ipynb -&gt; .\protocol_for_chronoseqv4_bead_modification_for_bulk_time_series.html
+Converted: .\protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads.ipynb -&gt; .\protocol_for_exo1_predigestion_for_chronoseqV2_and_dropseq_beads.html
 Redirected file: CAD_Files/Microfluidic%20Chip%20Manufacture/2D%20CAD%20Model%20for%20Chip/HighResistanceWideChannelV14.dwg -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/CAD_Files/Microfluidic%20Chip%20Manufacture/2D%20CAD%20Model%20for%20Chip/HighResistanceWideChannelV14.dwg
 Redirected directory: CAD_Files/Microfluidic%20Chip%20Manufacture/3D%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Microfluidic%20Chip%20Manufacture/3D%20CAD%20Models
 Total local directory/file links redirected to GitHub: 2
-Converted with all link updates: .\protocol_for_making_mold_using_su8_photolithography.ipynb -&gt; .\protocol_for_making_mold_using_su8_photolithography.html
-Converted with all link updates: .\protocol_for_pdms_molding.ipynb -&gt; .\protocol_for_pdms_molding.html
-Converted with all link updates: .\protocol_for_preparing_3.33X_lysis_buffer_stock.ipynb -&gt; .\protocol_for_preparing_3.33X_lysis_buffer_stock.html
-Converted with all link updates: .\protocol_for_preparing_cells.ipynb -&gt; .\protocol_for_preparing_cells.html
+Converted: .\protocol_for_making_mold_using_su8_photolithography.ipynb -&gt; .\protocol_for_making_mold_using_su8_photolithography.html
+Converted: .\protocol_for_pdms_molding.ipynb -&gt; .\protocol_for_pdms_molding.html
+Converted: .\protocol_for_preparing_3.33X_lysis_buffer_stock.ipynb -&gt; .\protocol_for_preparing_3.33X_lysis_buffer_stock.html
+Converted: .\protocol_for_preparing_cells.ipynb -&gt; .\protocol_for_preparing_cells.html
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Total local directory/file links redirected to GitHub: 1
-Converted with all link updates: .\protocol_for_preparing_cells_AdditionalFiltration.ipynb -&gt; .\protocol_for_preparing_cells_AdditionalFiltration.html
-Converted with all link updates: .\protocol_for_preparing_cells_ExperimentalUsingBSA.ipynb -&gt; .\protocol_for_preparing_cells_ExperimentalUsingBSA.html
+Converted: .\protocol_for_preparing_cells_AdditionalFiltration.ipynb -&gt; .\protocol_for_preparing_cells_AdditionalFiltration.html
+Converted: .\protocol_for_preparing_cells_ExperimentalUsingBSA.ipynb -&gt; .\protocol_for_preparing_cells_ExperimentalUsingBSA.html
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Redirected directory: CAD_Files/GL45_Cap -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/GL45_Cap
 Total local directory/file links redirected to GitHub: 2
-Converted with all link updates: .\protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol.ipynb -&gt; .\protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol.html
-Converted with all link updates: .\protocol_for_qPCR_checking_of_K562_Costimulation.ipynb -&gt; .\protocol_for_qPCR_checking_of_K562_Costimulation.html
-Converted with all link updates: .\protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device.ipynb -&gt; .\protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device.html
-Converted with all link updates: .\protocol_for_qPCR_validation_of_chronoseq_results.ipynb -&gt; .\protocol_for_qPCR_validation_of_chronoseq_results.html
+Converted: .\protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol.ipynb -&gt; .\protocol_for_preparing_chronoseq_dropseq_beads_stored_in_ethanol.html
+Converted: .\protocol_for_qPCR_checking_of_K562_Costimulation.ipynb -&gt; .\protocol_for_qPCR_checking_of_K562_Costimulation.html
+Converted: .\protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device.ipynb -&gt; .\protocol_for_qPCR_checking_of_K562_Costimulation_using_ChronoSeq_device.html
+Converted: .\protocol_for_qPCR_validation_of_chronoseq_results.ipynb -&gt; .\protocol_for_qPCR_validation_of_chronoseq_results.html
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Total local directory/file links redirected to GitHub: 1
-Converted with all link updates: .\protocol_for_recycling_beads.ipynb -&gt; .\protocol_for_recycling_beads.html
+Converted: .\protocol_for_recycling_beads.ipynb -&gt; .\protocol_for_recycling_beads.html
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Total local directory/file links redirected to GitHub: 2
-Converted with all link updates: .\protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification.ipynb -&gt; .\protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification.html
+Converted: .\protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification.ipynb -&gt; .\protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification.html
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Total local directory/file links redirected to GitHub: 2
-Converted with all link updates: .\protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification.ipynb -&gt; .\protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification.html
-Converted with all link updates: .\protocol_for_tagmentation_with_KAPA_PCR.ipynb -&gt; .\protocol_for_tagmentation_with_KAPA_PCR.html
+Converted: .\protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification.ipynb -&gt; .\protocol_for_single_cell_scale_up_chronoseqv5_dropseq_bead_modification.html
+Converted: .\protocol_for_tagmentation_with_KAPA_PCR.ipynb -&gt; .\protocol_for_tagmentation_with_KAPA_PCR.html
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Redirected file: Seq_Only_Sample_Info_Template_July2023.xlsx -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/Seq_Only_Sample_Info_Template_July2023.xlsx
 Redirected file: Example_Sequencing_Manifest.xlsx -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/Example_Sequencing_Manifest.xlsx
 Total local directory/file links redirected to GitHub: 4
-Converted with all link updates: .\protocol_library_preparation_for_dropseq_chronoseq_beads.ipynb -&gt; .\protocol_library_preparation_for_dropseq_chronoseq_beads.html
+Converted: .\protocol_library_preparation_for_dropseq_chronoseq_beads.ipynb -&gt; .\protocol_library_preparation_for_dropseq_chronoseq_beads.html
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Redirected directory: CAD_Files/Sorval%20ST8R%20CAD%20Models -&gt; https://github.com/kanishkasthana/ChronoSeq/tree/master/CAD_Files/Sorval%20ST8R%20CAD%20Models
 Redirected file: Seq_Only_Sample_Info_Template_July2023.xlsx -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/Seq_Only_Sample_Info_Template_July2023.xlsx
 Redirected file: Example_Sequencing_Manifest.xlsx -&gt; https://github.com/kanishkasthana/ChronoSeq/blob/master/Example_Sequencing_Manifest.xlsx
 Total local directory/file links redirected to GitHub: 4
-Converted with all link updates: .\protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version.ipynb -&gt; .\protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version.html
-Converted with all link updates: .\qPCR_validation_files\K562_Costimulation_2_Samples\qPCR_analysis_publication_quality_plots.ipynb -&gt; .\qPCR_validation_files\K562_Costimulation_2_Samples\qPCR_analysis_publication_quality_plots.html
-Converted with all link updates: .\qPCR_validation_files\qPCR Analysis.ipynb -&gt; .\qPCR_validation_files\qPCR Analysis.html
-Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvertHTML.html
+Converted: .\protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version.ipynb -&gt; .\protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version.html
+Converted: .\qPCR_validation_files\K562_Costimulation_2_Samples\qPCR_analysis_publication_quality_plots.ipynb -&gt; .\qPCR_validation_files\K562_Costimulation_2_Samples\qPCR_analysis_publication_quality_plots.html
+Converted: .\qPCR_validation_files\qPCR Analysis.ipynb -&gt; .\qPCR_validation_files\qPCR Analysis.html
+Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvertHTML.html
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fbc402be">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ce23244a">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15960,6 +15947,406 @@ Converted with all link updates: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\re
    - Top 3 cards in grid layout
    - Remaining cards in linear stack
 </pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e2cd14a1">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">generate_sitemap_html</span><span class="p">(</span><span class="n">directory_path</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="s1">'sitemap.html'</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Generate a beautiful GitHub Pages compatible sitemap.</span>
+<span class="sd">    Top 3 cards always expanded. Remaining cards have individual collapsible toggles.</span>
+<span class="sd">    Deprecated sections are nested dropdowns.</span>
+<span class="sd">    """</span>
+    <span class="n">root_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span>
+    
+    <span class="n">ignored_basenames</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'chronoseq_overview'</span><span class="p">,</span> <span class="s1">'convertohtml'</span><span class="p">,</span> <span class="s1">'index'</span><span class="p">,</span> 
+        <span class="s1">'removelinksfromnbconverthtml'</span><span class="p">,</span> <span class="s1">'sitemap'</span>
+    <span class="p">}</span>
+    
+    <span class="n">deprecated_hardware_files</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'instructions_for_assembling_valve_controller'</span><span class="p">,</span>
+        <span class="s1">'instructions_for_assembling_valve_controller_esp32'</span>
+    <span class="p">}</span>
+    
+    <span class="n">deprecated_protocol_files</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'protocol_and_software_for_running_chronoseq_device-originaldevice'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_chronoseqv3_and_dropseq_bead_modification_100um_or_10um'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_chronoseqv3_and_dropseq_bead_modification_1mm'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_chronoseqv4_bead_modification_for_bulk_time_series'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_exo1_predigestion_for_chronoseqv2_and_dropseq_beads'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_preparing_cells'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_preparing_cells_experimentalusingbsa'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_qpcr_checking_of_k562_costimulation'</span><span class="p">,</span>
+        <span class="s1">'protocol_for_single_cell_scale_up_chronoseqv4_dropseq_bead_modification'</span><span class="p">,</span>
+        <span class="s1">'protocol_library_preparation_for_dropseq_chronoseq_beads_previous_version'</span>
+    <span class="p">}</span>
+    
+    <span class="n">main_hardware_links</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'assembly'</span><span class="p">:</span> <span class="s1">'instructions_for_device_assembly_and_setup.html'</span><span class="p">,</span>
+        <span class="s1">'operation'</span><span class="p">:</span> <span class="s1">'protocol_and_software_for_running_chronoseq_device.html'</span>
+    <span class="p">}</span>
+    
+    <span class="n">chronoseq_repo</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq'</span>
+    <span class="n">discord_invite</span> <span class="o">=</span> <span class="s1">'https://discord.gg/mjN7sneA'</span>
+    <span class="n">github_discussions</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq/discussions'</span>
+    <span class="n">github_issues</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq/issues'</span>
+    
+    <span class="c1"># Collect files</span>
+    <span class="n">html_files</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">hardware_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">deprecated_hardware_files_found</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">protocol_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">deprecated_protocol_files_found</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
+        <span class="n">rel_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">'ivPID'</span> <span class="ow">in</span> <span class="n">rel_root</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">):</span>
+            <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">continue</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">):</span>
+                <span class="n">basename_stripped</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="n">full_rel_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rel_root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">basename_stripped</span> <span class="ow">in</span> <span class="n">ignored_basenames</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">basename</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">basename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'instructions'</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">basename_stripped</span> <span class="ow">in</span> <span class="n">deprecated_hardware_files</span><span class="p">:</span>
+                        <span class="n">deprecated_hardware_files_found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">hardware_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">basename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'protocol'</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">basename_stripped</span> <span class="ow">in</span> <span class="n">deprecated_protocol_files</span><span class="p">:</span>
+                        <span class="n">deprecated_protocol_files_found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">protocol_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">file_dir</span> <span class="o">=</span> <span class="n">rel_root</span> <span class="k">if</span> <span class="n">rel_root</span> <span class="o">!=</span> <span class="s1">'.'</span> <span class="k">else</span> <span class="s1">''</span>
+                    <span class="k">if</span> <span class="n">file_dir</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">html_files</span><span class="p">:</span>
+                        <span class="n">html_files</span><span class="p">[</span><span class="n">file_dir</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="n">html_files</span><span class="p">[</span><span class="n">file_dir</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full_rel_path</span><span class="p">)</span>
+    
+    <span class="n">hardware_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span>
+    <span class="n">deprecated_hardware_files_found</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">deprecated_hardware_files_found</span><span class="p">)</span>
+    <span class="n">protocol_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span>
+    <span class="n">deprecated_protocol_files_found</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">deprecated_protocol_files_found</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">dir_key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+        <span class="n">html_files</span><span class="p">[</span><span class="n">dir_key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">[</span><span class="n">dir_key</span><span class="p">])</span>
+    
+    <span class="n">total_files</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hardware_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">deprecated_hardware_files_found</span><span class="p">)</span> <span class="o">+</span> 
+                   <span class="nb">len</span><span class="p">(</span><span class="n">protocol_files</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">deprecated_protocol_files_found</span><span class="p">)</span> <span class="o">+</span> 
+                   <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">files_list</span><span class="p">)</span> <span class="k">for</span> <span class="n">files_list</span> <span class="ow">in</span> <span class="n">html_files</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+    
+    <span class="k">if</span> <span class="n">total_files</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"No .html files found."</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="c1"># Modern HTML</span>
+    <span class="n">html_content</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'&lt;!DOCTYPE html&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;html lang="en"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;head&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;meta charset="UTF-8"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;title&gt;ChronoSeq Links&lt;/title&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;style&gt;'</span><span class="p">,</span>
+        <span class="s1">'*{margin:0;padding:0;box-sizing:border-box;}'</span><span class="p">,</span>
+        <span class="s1">'body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:2rem 1rem;color:#1a202c;}'</span><span class="p">,</span>
+        <span class="s1">'.container{max-width:1200px;margin:0 auto;}'</span><span class="p">,</span>
+        <span class="s1">'.header{text-align:center;margin-bottom:2.5rem;}'</span><span class="p">,</span>
+        <span class="s1">'h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0.5rem;text-shadow:0 4px 6px rgba(0,0,0,0.1);}'</span><span class="p">,</span>
+        <span class="s1">'.subtitle{font-size:1.125rem;color:rgba(255,255,255,0.9);margin-bottom:1.5rem;}'</span><span class="p">,</span>
+        <span class="s1">'.view-github{display:inline-flex;align-items:center;gap:0.5rem;background:white;color:#667eea;padding:0.75rem 1.5rem;border-radius:9999px;text-decoration:none;font-weight:600;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:all 0.3s;}'</span><span class="p">,</span>
+        <span class="s1">'.view-github:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'.searchbar{text-align:center;margin:2rem 0;}'</span><span class="p">,</span>
+        <span class="s1">'.search-input{width:100%;max-width:600px;padding:1rem 1.5rem;border:none;border-radius:9999px;font-size:1rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);outline:none;background:white;}'</span><span class="p">,</span>
+        <span class="s1">'.search-input:focus{box-shadow:0 6px 12px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'.sections{display:flex;flex-direction:column;gap:1.5rem;}'</span><span class="p">,</span>
+        <span class="s1">'.top-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:1.5rem;}'</span><span class="p">,</span>
+        <span class="s1">'.card{background:white;border-radius:1rem;padding:1.5rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:all 0.3s;position:relative;overflow:hidden;}'</span><span class="p">,</span>
+        <span class="s1">'.card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'.card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#667eea,#764ba2);}'</span><span class="p">,</span>
+        <span class="s1">'.card-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;cursor:pointer;user-select:none;}'</span><span class="p">,</span>
+        <span class="s1">'.card-header.collapsible{position:relative;padding-right:2rem;}'</span><span class="p">,</span>
+        <span class="s1">'.card-header.collapsible::after{content:"▶";position:absolute;right:0;transition:transform 0.3s;font-size:1.2rem;color:#667eea;font-weight:bold;}'</span><span class="p">,</span>
+        <span class="s1">'.card-header.collapsible.open::after{transform:rotate(90deg);}'</span><span class="p">,</span>
+        <span class="s1">'.icon{font-size:2rem;}'</span><span class="p">,</span>
+        <span class="s1">'.card-title{font-size:1.25rem;font-weight:700;color:#1a202c;flex:1;}'</span><span class="p">,</span>
+        <span class="s1">'.card-subtitle{font-size:0.875rem;color:#718096;margin-bottom:1rem;}'</span><span class="p">,</span>
+        <span class="s1">'.card-content{max-height:none;overflow:visible;}'</span><span class="p">,</span>
+        <span class="s1">'.card-content.collapsed{max-height:0;overflow:hidden;margin-bottom:-1rem;}'</span><span class="p">,</span>
+        <span class="s1">'.card-content.collapsed .link-list,.card-content.collapsed .card-subtitle{display:none;}'</span><span class="p">,</span>
+        <span class="s1">'.link-list{list-style:none;}'</span><span class="p">,</span>
+        <span class="s1">'.link-item{margin:0.5rem 0;}'</span><span class="p">,</span>
+        <span class="s1">'.link-btn{display:block;padding:0.75rem 1rem;background:rgba(102,126,234,0.05);border-radius:0.5rem;color:#1a202c;text-decoration:none;font-weight:500;transition:all 0.2s;border-left:3px solid #667eea;}'</span><span class="p">,</span>
+        <span class="s1">'.link-btn:hover{background:rgba(102,126,234,0.15);transform:translateX(4px);}'</span><span class="p">,</span>
+        <span class="s1">'.link-btn.highlight{background:linear-gradient(90deg,#667eea,#764ba2);color:white;border-left-color:white;}'</span><span class="p">,</span>
+        <span class="s1">'.external-link{display:inline-flex;align-items:center;gap:0.5rem;}'</span><span class="p">,</span>
+        <span class="s1">'.external-link::after{content:"↗";font-size:0.875rem;}'</span><span class="p">,</span>
+        <span class="s1">'.discord-btn{background:rgba(88,101,242,0.1);border-left-color:#5865f2;color:#5865f2;}'</span><span class="p">,</span>
+        <span class="s1">'.discord-btn:hover{background:rgba(88,101,242,0.2);}'</span><span class="p">,</span>
+        <span class="s1">'.github-btn{background:rgba(0,0,0,0.05);border-left-color:#24292e;color:#24292e;}'</span><span class="p">,</span>
+        <span class="s1">'.github-btn:hover{background:rgba(0,0,0,0.1);}'</span><span class="p">,</span>
+        <span class="s1">'.toggle{cursor:pointer;display:inline-flex;align-items:center;gap:0.5rem;background:rgba(239,68,68,0.1);color:#dc2626;padding:0.5rem 1rem;border-radius:0.5rem;font-weight:600;margin:1rem 0;user-select:none;}'</span><span class="p">,</span>
+        <span class="s1">'.toggle:hover{background:rgba(239,68,68,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'.toggle::before{content:"▶";transition:transform 0.3s;display:inline-block;}'</span><span class="p">,</span>
+        <span class="s1">'.toggle.open::before{transform:rotate(90deg);}'</span><span class="p">,</span>
+        <span class="s1">'.dep-content{max-height:0;overflow:hidden;transition:max-height 0.3s ease;margin-left:1rem;border-left:2px solid rgba(239,68,68,0.3);padding-left:1rem;}'</span><span class="p">,</span>
+        <span class="s1">'.dep-content.open{max-height:2000px;padding-top:1rem;}'</span><span class="p">,</span>
+        <span class="s1">'.dep-notice{background:rgba(239,68,68,0.1);padding:0.75rem 1rem;border-radius:0.5rem;margin-bottom:1rem;border-left:3px solid #dc2626;font-size:0.875rem;color:#dc2626;}'</span><span class="p">,</span>
+        <span class="s1">'.deprecated .link-btn{background:rgba(239,68,68,0.05);border-left-color:#dc2626;color:#dc2626;}'</span><span class="p">,</span>
+        <span class="s1">'.deprecated .link-btn:hover{background:rgba(239,68,68,0.15);}'</span><span class="p">,</span>
+        <span class="s1">'.dir-label{font-weight:600;margin:1rem 0 0.5rem;color:#667eea;}'</span><span class="p">,</span>
+        <span class="s1">'@media(max-width:768px){h1{font-size:2rem;}.top-grid{grid-template-columns:1fr;}}'</span><span class="p">,</span>
+        <span class="s1">'&lt;/style&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/head&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;body&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="container"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="header"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;h1&gt;ChronoSeq Links&lt;/h1&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;p class="subtitle"&gt;Explore the key resources and documentation for the ChronoSeq project&lt;/p&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">" class="view-github" target="_blank"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"&gt;&lt;path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/&gt;&lt;/svg&gt;'</span><span class="p">,</span>
+        <span class="s1">'View on GitHub'</span><span class="p">,</span>
+        <span class="s1">'&lt;/a&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="searchbar"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;input type="text" id="searchInput" class="search-input" placeholder="🔍 Search protocols, hardware, or instructions..."&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="sections"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;!-- Top 3 cards in grid, always expanded --&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="top-grid"&gt;'</span>
+    <span class="p">]</span>
+    
+    <span class="c1"># Card 1: Main Hardware (ALWAYS EXPANDED)</span>
+    <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+        <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;span class="icon"&gt;🔧&lt;/span&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;h2 class="card-title"&gt;Main Hardware Pages&lt;/h2&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-content"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;p class="card-subtitle"&gt;Essential hardware documentation&lt;/p&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"assembly"</span><span class="p">]</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;Main Hardware Assembly Page&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">main_hardware_links</span><span class="p">[</span><span class="s2">"operation"</span><span class="p">]</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;Main Hardware Operation Page&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span>
+    <span class="p">])</span>
+    
+    <span class="c1"># Card 2: Data Processing (ALWAYS EXPANDED)</span>
+    <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+        <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;span class="icon"&gt;📊&lt;/span&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;h2 class="card-title"&gt;Data Processing &amp; Analysis&lt;/h2&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-content"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;p class="card-subtitle"&gt;Tools and repositories for data analysis&lt;/p&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;li class="link-item"&gt;&lt;a href="https://github.com/kanishkasthana/ChronoSeq-Tools" class="link-btn external-link" target="_blank"&gt;ChronoSeq-Tools repo&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;li class="link-item"&gt;&lt;a href="https://github.com/kanishkasthana/ChronoSeq-QC" class="link-btn external-link" target="_blank"&gt;ChronoSeq-QC repo&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;li class="link-item"&gt;&lt;a href="https://github.com/anjambor/ChronoSeq-Analysis" class="link-btn external-link" target="_blank"&gt;ChronoSeq-Analysis repo&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span>
+    <span class="p">])</span>
+    
+    <span class="c1"># Card 3: Community (ALWAYS EXPANDED)</span>
+    <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+        <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-header"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;span class="icon"&gt;💬&lt;/span&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;h2 class="card-title"&gt;Community&lt;/h2&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="card-content"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;p class="card-subtitle"&gt;Connect with ChronoSeq users and get support&lt;/p&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">discord_invite</span><span class="si">}</span><span class="s1">" class="link-btn discord-btn external-link" target="_blank"&gt;ChronoSeq Discord Server&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">github_discussions</span><span class="si">}</span><span class="s1">" class="link-btn github-btn external-link" target="_blank"&gt;GitHub Discussions&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">github_issues</span><span class="si">}</span><span class="s1">" class="link-btn github-btn external-link" target="_blank"&gt;GitHub Issues / Bug Reports&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span>
+    <span class="p">])</span>
+    
+    <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/div&gt;'</span><span class="p">)</span>
+    
+    <span class="c1"># Hardware Assembly Card (COLLAPSIBLE)</span>
+    <span class="k">if</span> <span class="n">hardware_files</span> <span class="ow">or</span> <span class="n">deprecated_hardware_files_found</span><span class="p">:</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-header collapsible" onclick="toggleCard(this)"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;span class="icon"&gt;⚙️&lt;/span&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;h2 class="card-title"&gt;Hardware Assembly&lt;/h2&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-content collapsed"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;p class="card-subtitle"&gt;Detailed assembly instructions for ChronoSeq hardware components&lt;/p&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;ul class="link-list"&gt;'</span>
+        <span class="p">])</span>
+        <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">hardware_files</span><span class="p">:</span>
+            <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">deprecated_hardware_files_found</span><span class="p">:</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="s1">'&lt;div class="toggle" onclick="toggleDep(event)"&gt;⚠️ Deprecated Instructions&lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;div class="dep-content"&gt;'</span>
+            <span class="p">])</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="s1">'&lt;div class="dep-notice"&gt;&lt;strong&gt;Note:&lt;/strong&gt; These instructions are deprecated and may not work with current versions.&lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;ul class="link-list deprecated"&gt;'</span>
+            <span class="p">])</span>
+            <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">deprecated_hardware_files_found</span><span class="p">:</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
+        
+        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/div&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
+    
+    <span class="c1"># Protocols Card (COLLAPSIBLE)</span>
+    <span class="k">if</span> <span class="n">protocol_files</span> <span class="ow">or</span> <span class="n">deprecated_protocol_files_found</span><span class="p">:</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-header collapsible" onclick="toggleCard(this)"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;span class="icon"&gt;📋&lt;/span&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;h2 class="card-title"&gt;Protocols&lt;/h2&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-content collapsed"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;p class="card-subtitle"&gt;Laboratory protocols and procedures&lt;/p&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;ul class="link-list"&gt;'</span>
+        <span class="p">])</span>
+        <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">protocol_files</span><span class="p">:</span>
+            <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">deprecated_protocol_files_found</span><span class="p">:</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="s1">'&lt;div class="toggle" onclick="toggleDep(event)"&gt;⚠️ Deprecated Protocols&lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;div class="dep-content"&gt;'</span>
+            <span class="p">])</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="s1">'&lt;div class="dep-notice"&gt;&lt;strong&gt;Note:&lt;/strong&gt; These protocols are deprecated and may not work with current versions.&lt;/div&gt;'</span><span class="p">,</span>
+                <span class="s1">'&lt;ul class="link-list deprecated"&gt;'</span>
+            <span class="p">])</span>
+            <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">deprecated_protocol_files_found</span><span class="p">:</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
+        
+        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/div&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
+    
+    <span class="c1"># Other Resources Card (COLLAPSIBLE)</span>
+    <span class="k">if</span> <span class="n">html_files</span><span class="p">:</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="s1">'&lt;div class="card"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-header collapsible" onclick="toggleCard(this)"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;span class="icon"&gt;📁&lt;/span&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;h2 class="card-title"&gt;Other Resources&lt;/h2&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;div class="card-content collapsed"&gt;'</span><span class="p">,</span>
+            <span class="s1">'&lt;p class="card-subtitle"&gt;CAD files, notebooks, and validation files&lt;/p&gt;'</span>
+        <span class="p">])</span>
+        <span class="k">for</span> <span class="n">dir_key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="n">dir_display</span> <span class="o">=</span> <span class="n">dir_key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="s1">' &gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="k">if</span> <span class="n">dir_key</span> <span class="k">else</span> <span class="s1">'Root Directory'</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;p class="dir-label"&gt;</span><span class="si">{</span><span class="n">dir_display</span><span class="si">}</span><span class="s1">&lt;/p&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">html_files</span><span class="p">[</span><span class="n">dir_key</span><span class="p">]:</span>
+                <span class="n">link_text</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'%20'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+                <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s1">" class="link-btn"&gt;</span><span class="si">{</span><span class="n">link_text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span><span class="p">)</span>
+            <span class="n">html_content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">)</span>
+        <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">'&lt;/div&gt;'</span><span class="p">,</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">])</span>
+    
+    <span class="c1"># JavaScript</span>
+    <span class="n">html_content</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;script&gt;'</span><span class="p">,</span>
+        <span class="s1">'function toggleCard(header){'</span><span class="p">,</span>
+        <span class="s1">'const content=header.nextElementSibling;'</span><span class="p">,</span>
+        <span class="s1">'header.classList.toggle("open");'</span><span class="p">,</span>
+        <span class="s1">'content.classList.toggle("collapsed");'</span><span class="p">,</span>
+        <span class="s1">'}'</span><span class="p">,</span>
+        <span class="s1">'function toggleDep(e){'</span><span class="p">,</span>
+        <span class="s1">'e.stopPropagation();'</span><span class="p">,</span>
+        <span class="s1">'const btn=e.target.closest(".toggle");'</span><span class="p">,</span>
+        <span class="s1">'const content=btn.nextElementSibling;'</span><span class="p">,</span>
+        <span class="s1">'btn.classList.toggle("open");'</span><span class="p">,</span>
+        <span class="s1">'content.classList.toggle("open");'</span><span class="p">,</span>
+        <span class="s1">'}'</span><span class="p">,</span>
+        <span class="s1">'document.getElementById("searchInput").addEventListener("input",function(){'</span><span class="p">,</span>
+        <span class="s1">'const q=this.value.toLowerCase().trim();'</span><span class="p">,</span>
+        <span class="s1">'document.querySelectorAll(".card").forEach(card=&gt;{'</span><span class="p">,</span>
+        <span class="s1">'let m=false;'</span><span class="p">,</span>
+        <span class="s1">'card.querySelectorAll(".link-item").forEach(item=&gt;{'</span><span class="p">,</span>
+        <span class="s1">'const t=item.textContent.toLowerCase();'</span><span class="p">,</span>
+        <span class="s1">'if(!q||t.includes(q)){item.style.display="list-item";item.querySelector(".link-btn").classList.toggle("highlight",q&amp;&amp;t.includes(q));m=true;}'</span><span class="p">,</span>
+        <span class="s1">'else{item.style.display="none";item.querySelector(".link-btn").classList.remove("highlight");}'</span><span class="p">,</span>
+        <span class="s1">'});'</span><span class="p">,</span>
+        <span class="s1">'card.style.display=m||!q?"block":"none";'</span><span class="p">,</span>
+        <span class="s1">'});'</span><span class="p">,</span>
+        <span class="s1">'});'</span><span class="p">,</span>
+        <span class="s1">'&lt;/script&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/body&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/html&gt;'</span>
+    <span class="p">])</span>
+    
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_dir</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html_content</span><span class="p">))</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✨ Generated beautiful sitemap at: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Top 3 cards always expanded"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Each remaining card has its own dropdown arrow"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Nested collapsible deprecated sections"</span><span class="p">)</span>
+
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">'.'</span>
+<span class="n">generate_sitemap_html</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>✨ Generated beautiful sitemap at: C:\Users\ChronoSeq\ChronoSeq\sitemap.html
+   - Top 3 cards always expanded
+   - Each remaining card has its own dropdown arrow
+   - Nested collapsible deprecated sections
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b92b1e5e">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 </div>
 </div>
 </div>
