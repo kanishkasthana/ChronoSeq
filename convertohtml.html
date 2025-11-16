@@ -15201,7 +15201,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4c3ade2d">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c9cdd89e">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15599,12 +15599,12 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2bccbcf5">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=81656ea5">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -15647,6 +15647,7 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
     <span class="p">}</span>
     
     <span class="n">chronoseq_repo</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq'</span>
+    <span class="n">preprint_link</span> <span class="o">=</span> <span class="s1">'preprints/BIORXIV-2025-688181v1-Wang.pdf'</span>
     <span class="n">discord_invite</span> <span class="o">=</span> <span class="s1">'https://discord.gg/4YcQKkynUY'</span>
     <span class="n">github_discussions</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq/discussions'</span>
     <span class="n">github_issues</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq/issues'</span>
@@ -15708,7 +15709,7 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'&lt;head&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;meta charset="UTF-8"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;'</span><span class="p">,</span>
-        <span class="s1">'&lt;base target="_top"&gt;'</span><span class="p">,</span>  <span class="c1"># ADDED: Force all links to break out of iframe</span>
+        <span class="s1">'&lt;base target="_top"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;title&gt;ChronoSeq Links&lt;/title&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;style&gt;'</span><span class="p">,</span>
         <span class="s1">'*{margin:0;padding:0;box-sizing:border-box;}'</span><span class="p">,</span>
@@ -15717,8 +15718,18 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'.header{text-align:center;margin-bottom:2.5rem;}'</span><span class="p">,</span>
         <span class="s1">'h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0.5rem;text-shadow:0 4px 6px rgba(0,0,0,0.1);}'</span><span class="p">,</span>
         <span class="s1">'.subtitle{font-size:1.125rem;color:rgba(255,255,255,0.9);margin-bottom:1.5rem;}'</span><span class="p">,</span>
-        <span class="s1">'.view-github{display:inline-flex;align-items:center;gap:0.5rem;background:white;color:#667eea;padding:0.75rem 1.5rem;border-radius:9999px;text-decoration:none;font-weight:600;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:all 0.3s;}'</span><span class="p">,</span>
+        <span class="s1">'.header-buttons{display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap;}'</span><span class="p">,</span>
+        <span class="c1"># Both buttons same size now</span>
+        <span class="s1">'.view-github,.read-preprint{display:inline-flex;align-items:center;gap:0.75rem;padding:1rem 2rem;border-radius:9999px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:all 0.3s;position:relative;overflow:hidden;}'</span><span class="p">,</span>
+        <span class="s1">'.view-github{background:white;color:#667eea;box-shadow:0 4px 6px rgba(0,0,0,0.1);}'</span><span class="p">,</span>
         <span class="s1">'.view-github:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
+        <span class="c1"># Enhanced preprint button styling with animations</span>
+        <span class="s1">'.read-preprint{background:linear-gradient(135deg,#ff6b6b,#ee5a6f,#c44569);color:white;box-shadow:0 6px 20px rgba(238,90,111,0.4);}'</span><span class="p">,</span>
+        <span class="s1">'.read-preprint::before{content:"";position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,0.3);transform:translate(-50%,-50%);transition:width 0.6s,height 0.6s;}'</span><span class="p">,</span>
+        <span class="s1">'.read-preprint:hover::before{width:300px;height:300px;}'</span><span class="p">,</span>
+        <span class="s1">'.read-preprint:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 10px 30px rgba(238,90,111,0.6);}'</span><span class="p">,</span>
+        <span class="s1">'@keyframes pulse{0%,100%{box-shadow:0 6px 20px rgba(238,90,111,0.4);}50%{box-shadow:0 6px 30px rgba(238,90,111,0.7);}}'</span><span class="p">,</span>
+        <span class="s1">'.read-preprint{animation:pulse 2s infinite;}'</span><span class="p">,</span>
         <span class="s1">'.searchbar{text-align:center;margin:2rem 0;}'</span><span class="p">,</span>
         <span class="s1">'.search-input{width:100%;max-width:600px;padding:1rem 1.5rem;border:none;border-radius:9999px;font-size:1rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);outline:none;background:white;}'</span><span class="p">,</span>
         <span class="s1">'.search-input:focus{box-shadow:0 6px 12px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
@@ -15758,7 +15769,7 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'.deprecated .link-btn{background:rgba(239,68,68,0.05);border-left-color:#dc2626;color:#dc2626;}'</span><span class="p">,</span>
         <span class="s1">'.deprecated .link-btn:hover{background:rgba(239,68,68,0.15);}'</span><span class="p">,</span>
         <span class="s1">'.dir-label{font-weight:600;margin:1rem 0 0.5rem;color:#667eea;}'</span><span class="p">,</span>
-        <span class="s1">'@media(max-width:768px){h1{font-size:2rem;}.top-grid{grid-template-columns:1fr;}}'</span><span class="p">,</span>
+        <span class="s1">'@media(max-width:768px){h1{font-size:2rem;}.top-grid{grid-template-columns:1fr;}.header-buttons{flex-direction:column;}}'</span><span class="p">,</span>
         <span class="s1">'&lt;/style&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/head&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;body&gt;'</span><span class="p">,</span>
@@ -15766,10 +15777,16 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'&lt;div class="header"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;h1&gt;ChronoSeq Links&lt;/h1&gt;'</span><span class="p">,</span>
         <span class="sa">f</span><span class="s1">'&lt;p class="subtitle"&gt;Explore the key resources and documentation for the ChronoSeq project&lt;/p&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="header-buttons"&gt;'</span><span class="p">,</span>
         <span class="sa">f</span><span class="s1">'&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">" class="view-github"&gt;'</span><span class="p">,</span>
-        <span class="s1">'&lt;svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"&gt;&lt;path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/&gt;&lt;/svg&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"&gt;&lt;path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/&gt;&lt;/svg&gt;'</span><span class="p">,</span>
         <span class="s1">'View on GitHub'</span><span class="p">,</span>
         <span class="s1">'&lt;/a&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;a href="</span><span class="si">{</span><span class="n">preprint_link</span><span class="si">}</span><span class="s1">" class="read-preprint"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="position:relative;z-index:1;"&gt;&lt;path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/&gt;&lt;/svg&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;span style="position:relative;z-index:1;"&gt;Read our preprint&lt;/span&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/a&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;div class="searchbar"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;input type="text" id="searchInput" class="search-input" placeholder="🔍 Search protocols, hardware, or instructions..."&gt;'</span><span class="p">,</span>
@@ -15979,8 +15996,7 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html_content</span><span class="p">))</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✨ Generated sitemap at: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Added &lt;base target='_top'&gt; to break out of iframe"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - All links will now open in the top-level window"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Both buttons are now the same size"</span><span class="p">)</span>
 
 <span class="n">directory</span> <span class="o">=</span> <span class="s1">'.'</span>
 <span class="n">generate_sitemap_html</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -15997,8 +16013,7 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>✨ Generated sitemap at: C:\Users\ChronoSeq\ChronoSeq\sitemap.html
-   - Added &lt;base target='_top'&gt; to break out of iframe
-   - All links will now open in the top-level window
+   - Both buttons are now the same size
 </pre>
 </div>
 </div>
