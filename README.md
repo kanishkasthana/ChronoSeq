@@ -71,4 +71,4 @@ Best regards,
 
 + Check out the [ChronoSeq-Tools repo](https://github.com/kanishkasthana/ChronoSeq-Tools) to help process your raw data.
 + Check out the [ChronoSeq-QC repo](https://github.com/kanishkasthana/ChronoSeq-QC) to see how the QC plots were generated.
-+ Check out the [ChronoSeq-Analysis repo](https://github.com/anjambor/ChronoSeq-Analysis) to see how the ChronoSeq data was analysed. 
++ Check out the [ChronoPack repo](https://github.com/anjambor/ChronoPack) to see how the ChronoSeq data was analysed. 
