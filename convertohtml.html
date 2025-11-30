@@ -15201,7 +15201,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0c8878b8">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=25144020">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15599,12 +15599,12 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0871bb9b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5b3609d9">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -15647,10 +15647,12 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
     <span class="p">}</span>
     
     <span class="n">chronoseq_repo</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq'</span>
-    <span class="n">preprint_link</span> <span class="o">=</span> <span class="s1">'https://doi.org/10.1101/2025.11.15.688181'</span>  <span class="c1"># UPDATED to DOI link</span>
+    <span class="n">preprint_link</span> <span class="o">=</span> <span class="s1">'https://doi.org/10.1101/2025.11.15.688181'</span>
+    <span class="n">youtube_video</span> <span class="o">=</span> <span class="s1">'https://www.youtube.com/watch?v=8NZF_kFQE5k'</span>
+    <span class="n">device_gif</span> <span class="o">=</span> <span class="s1">'img/Simplified</span><span class="si">%20F</span><span class="s1">igure.gif'</span>
     <span class="n">discord_invite</span> <span class="o">=</span> <span class="s1">'https://discord.gg/4YcQKkynUY'</span>
     <span class="n">github_discussions</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq/discussions'</span>
-    <span class="n">github_issues</span> <span class="o">=</span> <span class="s1">'https://github.com/kanishkasthana/ChronoSeq/issues'</span>
+    <span class="n">kanishk_linktree</span> <span class="o">=</span> <span class="s1">'https://linktr.ee/kanishkasthana'</span>
     
     <span class="c1"># Collect files</span>
     <span class="n">html_files</span> <span class="o">=</span> <span class="p">{}</span>
@@ -15716,10 +15718,13 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:2rem 1rem;color:#1a202c;}'</span><span class="p">,</span>
         <span class="s1">'.container{max-width:1200px;margin:0 auto;}'</span><span class="p">,</span>
         <span class="s1">'.header{text-align:center;margin-bottom:2.5rem;}'</span><span class="p">,</span>
-        <span class="s1">'h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0.5rem;text-shadow:0 4px 6px rgba(0,0,0,0.1);}'</span><span class="p">,</span>
+        <span class="s1">'.header-title{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-bottom:1rem;}'</span><span class="p">,</span>
+        <span class="s1">'h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0;text-shadow:0 4px 6px rgba(0,0,0,0.1);}'</span><span class="p">,</span>
+        <span class="s1">'.header-gif-small{width:100px;height:auto;border-radius:0.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.2);cursor:pointer;transition:all 0.3s ease;flex-shrink:0;}'</span><span class="p">,</span>
+        <span class="s1">'.header-gif-small:hover{transform:scale(1.08);}'</span><span class="p">,</span>
         <span class="s1">'.subtitle{font-size:1.125rem;color:rgba(255,255,255,0.9);margin-bottom:1.5rem;}'</span><span class="p">,</span>
         <span class="s1">'.header-buttons{display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap;}'</span><span class="p">,</span>
-        <span class="s1">'.view-github,.read-preprint{display:inline-flex;align-items:center;gap:0.75rem;padding:1rem 2rem;border-radius:9999px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:all 0.3s;position:relative;overflow:hidden;}'</span><span class="p">,</span>
+        <span class="s1">'.view-github,.read-preprint,.build-montage{display:inline-flex;align-items:center;gap:0.75rem;padding:1rem 2rem;border-radius:9999px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:all 0.3s;position:relative;overflow:hidden;}'</span><span class="p">,</span>
         <span class="s1">'.view-github{background:white;color:#667eea;box-shadow:0 4px 6px rgba(0,0,0,0.1);}'</span><span class="p">,</span>
         <span class="s1">'.view-github:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
         <span class="s1">'.read-preprint{background:linear-gradient(135deg,#ff6b6b,#ee5a6f,#c44569);color:white;box-shadow:0 6px 20px rgba(238,90,111,0.4);}'</span><span class="p">,</span>
@@ -15728,6 +15733,20 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'.read-preprint:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 10px 30px rgba(238,90,111,0.6);}'</span><span class="p">,</span>
         <span class="s1">'@keyframes pulse{0%,100%{box-shadow:0 6px 20px rgba(238,90,111,0.4);}50%{box-shadow:0 6px 30px rgba(238,90,111,0.7);}}'</span><span class="p">,</span>
         <span class="s1">'.read-preprint{animation:pulse 2s infinite;}'</span><span class="p">,</span>
+        <span class="s1">'.build-montage{background:linear-gradient(135deg,#ff0000,#cc0000);color:white;box-shadow:0 6px 20px rgba(255,0,0,0.4);}'</span><span class="p">,</span>
+        <span class="s1">'.build-montage::before{content:"";position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,0.2);transform:translate(-50%,-50%);transition:width 0.6s,height 0.6s;}'</span><span class="p">,</span>
+        <span class="s1">'.build-montage:hover::before{width:300px;height:300px;}'</span><span class="p">,</span>
+        <span class="s1">'.build-montage:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 10px 30px rgba(255,0,0,0.6);}'</span><span class="p">,</span>
+        <span class="s1">'@keyframes gifExpand{0%{width:80px;height:auto;transform:scale(0.3);}50%{width:400px;height:auto;transform:scale(0.7);}100%{width:90vw;height:90vh;max-width:1000px;max-height:800px;transform:scale(1);}}'</span><span class="p">,</span>
+        <span class="s1">'@keyframes gifFadeIn{0%{opacity:0;}30%{opacity:0.3;}100%{opacity:1;}}'</span><span class="p">,</span>
+        <span class="s1">'@keyframes overlayFadeIn{0%{opacity:0;}100%{opacity:1;}}'</span><span class="p">,</span>
+        <span class="s1">'.gif-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:1000;opacity:0;cursor:pointer;}'</span><span class="p">,</span>
+        <span class="s1">'.gif-overlay.active{display:flex;animation:overlayFadeIn 0.3s ease-out forwards;}'</span><span class="p">,</span>
+        <span class="s1">'.gif-overlay.closing{animation:overlayFadeOut 0.3s ease-out forwards;}'</span><span class="p">,</span>
+        <span class="s1">'@keyframes overlayFadeOut{0%{opacity:1;}100%{opacity:0;}}'</span><span class="p">,</span>
+        <span class="s1">'.gif-overlay img{width:90vw;height:90vh;max-width:1000px;max-height:800px;object-fit:contain;border-radius:1rem;box-shadow:0 10px 40px rgba(0,0,0,0.4);pointer-events:none;opacity:0;}'</span><span class="p">,</span>
+        <span class="s1">'.gif-overlay.active img{animation:gifExpand 1.2s cubic-bezier(0.25,0.46,0.45,0.94) forwards,gifFadeIn 1.2s ease-out forwards;}'</span><span class="p">,</span>
+        <span class="s1">'.gif-overlay.closing img{animation:none;}'</span><span class="p">,</span>
         <span class="s1">'.searchbar{text-align:center;margin:2rem 0;}'</span><span class="p">,</span>
         <span class="s1">'.search-input{width:100%;max-width:600px;padding:1rem 1.5rem;border:none;border-radius:9999px;font-size:1rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);outline:none;background:white;}'</span><span class="p">,</span>
         <span class="s1">'.search-input:focus{box-shadow:0 6px 12px rgba(0,0,0,0.15);}'</span><span class="p">,</span>
@@ -15767,13 +15786,16 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'.deprecated .link-btn{background:rgba(239,68,68,0.05);border-left-color:#dc2626;color:#dc2626;}'</span><span class="p">,</span>
         <span class="s1">'.deprecated .link-btn:hover{background:rgba(239,68,68,0.15);}'</span><span class="p">,</span>
         <span class="s1">'.dir-label{font-weight:600;margin:1rem 0 0.5rem;color:#667eea;}'</span><span class="p">,</span>
-        <span class="s1">'@media(max-width:768px){h1{font-size:2rem;}.top-grid{grid-template-columns:1fr;}.header-buttons{flex-direction:column;}}'</span><span class="p">,</span>
+        <span class="s1">'@media(max-width:768px){h1{font-size:2rem;}.top-grid{grid-template-columns:1fr;}.header-buttons{flex-direction:column;}.header-gif-small{width:80px;}.header-title{gap:1rem;}}'</span><span class="p">,</span>
         <span class="s1">'&lt;/style&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/head&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;body&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;div class="container"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;div class="header"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div class="header-title"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;h1&gt;ChronoSeq Links&lt;/h1&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;img src="</span><span class="si">{</span><span class="n">device_gif</span><span class="si">}</span><span class="s1">" alt="ChronoSeq Device" class="header-gif-small" id="deviceGif"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="sa">f</span><span class="s1">'&lt;p class="subtitle"&gt;Explore the key resources and documentation for the ChronoSeq project&lt;/p&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;div class="header-buttons"&gt;'</span><span class="p">,</span>
         <span class="sa">f</span><span class="s1">'&lt;a href="</span><span class="si">{</span><span class="n">chronoseq_repo</span><span class="si">}</span><span class="s1">" class="view-github"&gt;'</span><span class="p">,</span>
@@ -15784,7 +15806,14 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'&lt;svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="position:relative;z-index:1;"&gt;&lt;path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/&gt;&lt;/svg&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;span style="position:relative;z-index:1;"&gt;Read our preprint&lt;/span&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/a&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;a href="</span><span class="si">{</span><span class="n">youtube_video</span><span class="si">}</span><span class="s1">" class="build-montage" target="_blank" rel="noopener noreferrer"&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="position:relative;z-index:1;"&gt;&lt;path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/&gt;&lt;/svg&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;span style="position:relative;z-index:1;"&gt;Build montage&lt;/span&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/a&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
+        <span class="s1">'&lt;div id="gifOverlay" class="gif-overlay"&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;img src="</span><span class="si">{</span><span class="n">device_gif</span><span class="si">}</span><span class="s1">" alt="ChronoSeq Device Overview Expanded"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;div class="searchbar"&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;input type="text" id="searchInput" class="search-input" placeholder="🔍 Search protocols, hardware, or instructions..."&gt;'</span><span class="p">,</span>
@@ -15841,7 +15870,7 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'&lt;ul class="link-list"&gt;'</span><span class="p">,</span>
         <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">discord_invite</span><span class="si">}</span><span class="s1">" class="link-btn discord-btn external-link"&gt;ChronoSeq Discord Server&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
         <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">github_discussions</span><span class="si">}</span><span class="s1">" class="link-btn github-btn external-link"&gt;GitHub Discussions&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">github_issues</span><span class="si">}</span><span class="s1">" class="link-btn github-btn external-link"&gt;GitHub Issues / Bug Reports&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'&lt;li class="link-item"&gt;&lt;a href="</span><span class="si">{</span><span class="n">kanishk_linktree</span><span class="si">}</span><span class="s1">" class="link-btn external-link" target="_blank" rel="noopener noreferrer"&gt;Linktree&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span>
@@ -15941,6 +15970,20 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;/div&gt;'</span><span class="p">,</span>
         <span class="s1">'&lt;script&gt;'</span><span class="p">,</span>
+        <span class="s1">'const deviceGif=document.getElementById("deviceGif");'</span><span class="p">,</span>
+        <span class="s1">'const gifOverlay=document.getElementById("gifOverlay");'</span><span class="p">,</span>
+        <span class="s1">'deviceGif.addEventListener("click",function(e){'</span><span class="p">,</span>
+        <span class="s1">'e.stopPropagation();'</span><span class="p">,</span>
+        <span class="s1">'gifOverlay.classList.remove("closing");'</span><span class="p">,</span>
+        <span class="s1">'gifOverlay.classList.add("active");'</span><span class="p">,</span>
+        <span class="s1">'});'</span><span class="p">,</span>
+        <span class="s1">'gifOverlay.addEventListener("click",function(){'</span><span class="p">,</span>
+        <span class="s1">'gifOverlay.classList.remove("active");'</span><span class="p">,</span>
+        <span class="s1">'gifOverlay.classList.add("closing");'</span><span class="p">,</span>
+        <span class="s1">'setTimeout(()=&gt;{'</span><span class="p">,</span>
+        <span class="s1">'gifOverlay.classList.remove("closing");'</span><span class="p">,</span>
+        <span class="s1">'},300);'</span><span class="p">,</span>
+        <span class="s1">'});'</span><span class="p">,</span>
         <span class="s1">'function toggleCard(header){'</span><span class="p">,</span>
         <span class="s1">'const content=header.nextElementSibling;'</span><span class="p">,</span>
         <span class="s1">'header.classList.toggle("open");'</span><span class="p">,</span>
@@ -15994,7 +16037,8 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html_content</span><span class="p">))</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✨ Generated sitemap at: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Preprint button now links to DOI: </span><span class="si">{</span><span class="n">preprint_link</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Removed GitHub Issues / Bug Reports link"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Renamed Kanishk's Linktree to Linktree"</span><span class="p">)</span>
 
 <span class="n">directory</span> <span class="o">=</span> <span class="s1">'.'</span>
 <span class="n">generate_sitemap_html</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -16011,7 +16055,8 @@ Converted: .\removeLinksFromNBConvertHTML.ipynb -&gt; .\removeLinksFromNBConvert
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>✨ Generated sitemap at: C:\Users\ChronoSeq\ChronoSeq\sitemap.html
-   - Preprint button now links to DOI: https://doi.org/10.1101/2025.11.15.688181
+   - Removed GitHub Issues / Bug Reports link
+   - Renamed Kanishk's Linktree to Linktree
 </pre>
 </div>
 </div>

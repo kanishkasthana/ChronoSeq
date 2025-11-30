@@ -10,10 +10,13 @@
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:2rem 1rem;color:#1a202c;}
 .container{max-width:1200px;margin:0 auto;}
 .header{text-align:center;margin-bottom:2.5rem;}
-h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0.5rem;text-shadow:0 4px 6px rgba(0,0,0,0.1);}
+.header-title{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-bottom:1rem;}
+h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0;text-shadow:0 4px 6px rgba(0,0,0,0.1);}
+.header-gif-small{width:100px;height:auto;border-radius:0.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.2);cursor:pointer;transition:all 0.3s ease;flex-shrink:0;}
+.header-gif-small:hover{transform:scale(1.08);}
 .subtitle{font-size:1.125rem;color:rgba(255,255,255,0.9);margin-bottom:1.5rem;}
 .header-buttons{display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap;}
-.view-github,.read-preprint{display:inline-flex;align-items:center;gap:0.75rem;padding:1rem 2rem;border-radius:9999px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:all 0.3s;position:relative;overflow:hidden;}
+.view-github,.read-preprint,.build-montage{display:inline-flex;align-items:center;gap:0.75rem;padding:1rem 2rem;border-radius:9999px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:all 0.3s;position:relative;overflow:hidden;}
 .view-github{background:white;color:#667eea;box-shadow:0 4px 6px rgba(0,0,0,0.1);}
 .view-github:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,0.15);}
 .read-preprint{background:linear-gradient(135deg,#ff6b6b,#ee5a6f,#c44569);color:white;box-shadow:0 6px 20px rgba(238,90,111,0.4);}
@@ -22,6 +25,20 @@ h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0.5rem;text-shadow:0
 .read-preprint:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 10px 30px rgba(238,90,111,0.6);}
 @keyframes pulse{0%,100%{box-shadow:0 6px 20px rgba(238,90,111,0.4);}50%{box-shadow:0 6px 30px rgba(238,90,111,0.7);}}
 .read-preprint{animation:pulse 2s infinite;}
+.build-montage{background:linear-gradient(135deg,#ff0000,#cc0000);color:white;box-shadow:0 6px 20px rgba(255,0,0,0.4);}
+.build-montage::before{content:"";position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,0.2);transform:translate(-50%,-50%);transition:width 0.6s,height 0.6s;}
+.build-montage:hover::before{width:300px;height:300px;}
+.build-montage:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 10px 30px rgba(255,0,0,0.6);}
+@keyframes gifExpand{0%{width:80px;height:auto;transform:scale(0.3);}50%{width:400px;height:auto;transform:scale(0.7);}100%{width:90vw;height:90vh;max-width:1000px;max-height:800px;transform:scale(1);}}
+@keyframes gifFadeIn{0%{opacity:0;}30%{opacity:0.3;}100%{opacity:1;}}
+@keyframes overlayFadeIn{0%{opacity:0;}100%{opacity:1;}}
+.gif-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:1000;opacity:0;cursor:pointer;}
+.gif-overlay.active{display:flex;animation:overlayFadeIn 0.3s ease-out forwards;}
+.gif-overlay.closing{animation:overlayFadeOut 0.3s ease-out forwards;}
+@keyframes overlayFadeOut{0%{opacity:1;}100%{opacity:0;}}
+.gif-overlay img{width:90vw;height:90vh;max-width:1000px;max-height:800px;object-fit:contain;border-radius:1rem;box-shadow:0 10px 40px rgba(0,0,0,0.4);pointer-events:none;opacity:0;}
+.gif-overlay.active img{animation:gifExpand 1.2s cubic-bezier(0.25,0.46,0.45,0.94) forwards,gifFadeIn 1.2s ease-out forwards;}
+.gif-overlay.closing img{animation:none;}
 .searchbar{text-align:center;margin:2rem 0;}
 .search-input{width:100%;max-width:600px;padding:1rem 1.5rem;border:none;border-radius:9999px;font-size:1rem;box-shadow:0 4px 6px rgba(0,0,0,0.1);outline:none;background:white;}
 .search-input:focus{box-shadow:0 6px 12px rgba(0,0,0,0.15);}
@@ -61,13 +78,16 @@ h1{font-size:3rem;font-weight:800;color:white;margin-bottom:0.5rem;text-shadow:0
 .deprecated .link-btn{background:rgba(239,68,68,0.05);border-left-color:#dc2626;color:#dc2626;}
 .deprecated .link-btn:hover{background:rgba(239,68,68,0.15);}
 .dir-label{font-weight:600;margin:1rem 0 0.5rem;color:#667eea;}
-@media(max-width:768px){h1{font-size:2rem;}.top-grid{grid-template-columns:1fr;}.header-buttons{flex-direction:column;}}
+@media(max-width:768px){h1{font-size:2rem;}.top-grid{grid-template-columns:1fr;}.header-buttons{flex-direction:column;}.header-gif-small{width:80px;}.header-title{gap:1rem;}}
 </style>
 </head>
 <body>
 <div class="container">
 <div class="header">
+<div class="header-title">
 <h1>ChronoSeq Links</h1>
+<img src="img/Simplified%20Figure.gif" alt="ChronoSeq Device" class="header-gif-small" id="deviceGif">
+</div>
 <p class="subtitle">Explore the key resources and documentation for the ChronoSeq project</p>
 <div class="header-buttons">
 <a href="https://github.com/kanishkasthana/ChronoSeq" class="view-github">
@@ -78,7 +98,14 @@ View on GitHub
 <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="position:relative;z-index:1;"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
 <span style="position:relative;z-index:1;">Read our preprint</span>
 </a>
+<a href="https://www.youtube.com/watch?v=8NZF_kFQE5k" class="build-montage" target="_blank" rel="noopener noreferrer">
+<svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="position:relative;z-index:1;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+<span style="position:relative;z-index:1;">Build montage</span>
+</a>
 </div>
+</div>
+<div id="gifOverlay" class="gif-overlay">
+<img src="img/Simplified%20Figure.gif" alt="ChronoSeq Device Overview Expanded">
 </div>
 <div class="searchbar">
 <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search protocols, hardware, or instructions...">
@@ -123,7 +150,7 @@ View on GitHub
 <ul class="link-list">
 <li class="link-item"><a href="https://discord.gg/4YcQKkynUY" class="link-btn discord-btn external-link">ChronoSeq Discord Server</a></li>
 <li class="link-item"><a href="https://github.com/kanishkasthana/ChronoSeq/discussions" class="link-btn github-btn external-link">GitHub Discussions</a></li>
-<li class="link-item"><a href="https://github.com/kanishkasthana/ChronoSeq/issues" class="link-btn github-btn external-link">GitHub Issues / Bug Reports</a></li>
+<li class="link-item"><a href="https://linktr.ee/kanishkasthana" class="link-btn external-link" target="_blank" rel="noopener noreferrer">Linktree</a></li>
 </ul>
 </div>
 </div>
@@ -229,6 +256,20 @@ View on GitHub
 </div>
 </div>
 <script>
+const deviceGif=document.getElementById("deviceGif");
+const gifOverlay=document.getElementById("gifOverlay");
+deviceGif.addEventListener("click",function(e){
+e.stopPropagation();
+gifOverlay.classList.remove("closing");
+gifOverlay.classList.add("active");
+});
+gifOverlay.addEventListener("click",function(){
+gifOverlay.classList.remove("active");
+gifOverlay.classList.add("closing");
+setTimeout(()=>{
+gifOverlay.classList.remove("closing");
+},300);
+});
 function toggleCard(header){
 const content=header.nextElementSibling;
 header.classList.toggle("open");
